@@ -2,45 +2,65 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class ScaryDoTweenEffect : ScaryEffect
+public enum DoTweenType
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    None,
+    Move,
+    Rotate,
+    Scale,
+    Shake,
+    Fade
+}
 
+public class ScaryDoTweenEffect : MonoBehaviour
+{
+    public DoTweenType doTweenType;
+    public Vector3 targetPosition;
+    public Vector3 targetRotation;
+    public Vector3 targetScale;
+    public float shakePosition;
+    public Ease ease;
+    public float duration = 1f;
+
+    public ScaryEvent targetSource;
+
+    private void Start()
+    {
+        targetSource = transform.parent.GetComponent<ScaryEvent>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Position()
     {
-
+        var a = targetSource.GetCurrentTarget<Transform>("transform");
+        a.DOMove(new Vector3(targetPosition.x,targetPosition.y,targetPosition.z), duration)
+            .SetEase(ease);
     }
 
-
-    public void RotatingLightBeamWithScaling()
+    public void Rotation()
     {
-        var a = targetSource.GetCurrentTarget<Light>("light");
-
-        // Light 색상 변화 효과
-        DOTween.To(() => a.color, x => a.color = x, new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value), 1f)
-            .SetEase(Ease.Linear)
-            .SetLoops(-1, LoopType.Restart);
-
-        a.color = Color.red; // 목표 색상을 빨간색으로 설정
+        var a = targetSource.GetCurrentTarget<Transform>("transform");
+        a.DORotate(new Vector3(targetRotation.x,targetRotation.y,targetRotation.z), duration, RotateMode.FastBeyond360)
+            .SetEase(ease)
+            .SetLoops(-1, LoopType.Restart); 
     }
 
-    //GameObject가 페이드 인-아웃 하는 동안 관련된 Light가 깜박이는 효과를 생성합니다. 이 메서드는 음산한 분위기를 연출하거나 주의를 끌고자 할 때 유용합니다.
-    public void LightFlickerAndGameObjectFade()
+    public void Scale()
     {
-        var a = targetSource.GetCurrentTarget<Light>("light");
-        // GameObject 페이드 인-아웃 효과
-        a.color = Color.green;
-        // Light 깜박임 효과
-        DOTween.To(() => a.intensity, x => a.intensity = x, 0, 0.1f)
-            .SetEase(Ease.InOutQuad)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetDelay(0.5f); // 깜박임 시작 전 약간의 지연을 추가
+        var a = targetSource.GetCurrentTarget<Transform>("transform");
+        a.DOScale(new Vector3(targetScale.x, targetScale.y, targetScale.z), duration)
+            .SetEase(ease)
+            .SetLoops(-1, LoopType.Yoyo);
+    }
 
-        //a.color = Color.blue;
+    //우선 위치로 흔들리게 했는데, rotate/scale도 있어서 이건 상의 하면 좋을듯!
+    public void Shaking()
+    {
+        var a = targetSource.GetCurrentTarget<Transform>("transform");
+        a.DOShakePosition(shakePosition, duration);
+    }
+
+    public void Fade()
+    {
+        //음.. 머테리얼 가져와야하는데,, ObjectInfoHolder에 추가할까,,,?
     }
 }

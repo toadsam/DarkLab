@@ -5,32 +5,34 @@ using UnityEngine;
 
 public class ObjectEventHandler : MonoBehaviour
 {
-    public List<ScaryEvent> scaryEvents;
-
+    public ScaryEvent[] scaryEvents;
+    [SerializeField] private ObjectInfoHolder[] startTargets;
+    public ObjectInfoHolder targrt;  
+    
     private void Start()
     {
-        scaryEvents = new List<ScaryEvent>();
-        Debug.Log(transform.childCount);
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            scaryEvents.Add(transform.GetChild(i).GetComponent<ScaryEvent>());
+        scaryEvents = FindObjectsOfType<ScaryEvent>();
+        if (startTargets == null)
+            Debug.Log("없음");
+        else
+        {             
+            for (int i = 0; i <startTargets.Length; i++)              
+                Match(startTargets[i], scaryEventWhen.OnAwake);
         }
-        //처음 이벤트 시작
     }
-
-    public void Match(ObjectInfoHolder objectInfoHolder, scaryEventWhen eventWhen)
+   
+    public void Match(ObjectInfoHolder objectInfoHolder,scaryEventWhen eventWhen) 
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < scaryEvents.Length; i++)
         {
-            if (objectInfoHolder.ObjectTier == scaryEvents[i].scaryEventTier && eventWhen == scaryEvents[i].scaryEventWhen)
+            if (objectInfoHolder.ObjectTier == scaryEvents[i].scaryEventTier && eventWhen  == scaryEvents[i].scaryEventWhen)
             {
                 scaryEvents[i].currentEventTarget = objectInfoHolder;
+                scaryEvents[i].ResetIndexForTargets();
+                Debug.Log(objectInfoHolder.name);
+                scaryEvents[i].StartEvent();
+               
             }
         }
-
-
-
     }
-
-
 }
