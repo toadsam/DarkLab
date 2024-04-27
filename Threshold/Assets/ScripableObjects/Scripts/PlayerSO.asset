@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fc211181f9a7342be3475085d2b7dc, type: 3}
+  m_Name: PlayerSO
+  m_EditorClassIdentifier: 
+  <GroundedData>k__BackingField:
+    <BaseSpeed>k__BackingField: 3
+    <BaseRotationDamping>k__BackingField: 8
+    <WalkSpeedModifier>k__BackingField: 0.5
+    <RunSpeedModifier>k__BackingField: 1
+  <AirData>k__BackingField:
+    <JumpForce>k__BackingField: 4
+  <AttakData>k__BackingField:
+    <AttackInfoDatas>k__BackingField:
+    - <AttackName>k__BackingField: "\uAE30\uBCF8 1\uD0C0"
+      <ComboStateIndex>k__BackingField: 1
+      <ComboTransitionTime>k__BackingField: 0.8
+      <ForceTransitionTime>k__BackingField: 0.1
+      <Force>k__BackingField: 1
+      <Damage>k__BackingField: 5
+    - <AttackName>k__BackingField: "\uAE30\uBCF8 2\uD0C0"
+      <ComboStateIndex>k__BackingField: 1
+      <ComboTransitionTime>k__BackingField: 0.8
+      <ForceTransitionTime>k__BackingField: 0.1
+      <Force>k__BackingField: 1
+      <Damage>k__BackingField: 5
+    - <AttackName>k__BackingField: "\uAE30\uBCF8 3\uD0C0"
+      <ComboStateIndex>k__BackingField: 1
+      <ComboTransitionTime>k__BackingField: 0.8
+      <ForceTransitionTime>k__BackingField: 0.1
+      <Force>k__BackingField: 1
+      <Damage>k__BackingField: 5
