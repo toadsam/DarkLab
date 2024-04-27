@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
     {
        // MainManager.Instance.objectEventHandler.targrt = null;     
         InputActions = new PlayerInputActions();
-        //InputActions.Player.Exit.performed += ctx => OnEscapePressed();
+        InputActions.Player.Exit.performed += ctx => OnEscapePressed();
 
         cameraObj = objectCamera.GetComponent<Camera>();
         renderTexture = objectCamera.GetComponent<Camera>().targetTexture;

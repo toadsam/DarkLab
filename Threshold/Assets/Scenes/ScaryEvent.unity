@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1048,14 +1048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5748059f3fa51e4fbb5f1d6c8265bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doTweenType: 0
-  targetPosition: {x: 1, y: 1, z: 1}
-  targetRotation: {x: 3, y: 3, z: 3}
-  targetScale: {x: 4, y: 4, z: 4}
-  shakePosition: 0
-  ease: 0
-  duration: 1
-  targetSource: {fileID: 0}
 --- !u!114 &381792781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,15 +1060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b7b956c40ef9747b5f0f783a53aad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectType: 2
-  lightComponent: {fileID: 0}
-  targetColor: {r: 0, g: 0, b: 0, a: 0}
-  targetIntensity: 0
-  targetIndirectMultiplier: 0
-  targetShadowType: 0
-  targetDrawHalo: 0
-  duration: 0
-  targetSource: {fileID: 0}
 --- !u!1 &384896760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a64d8a3c202ac3438dcf3681f71068c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 481249526}
   drag: 0.3
 --- !u!143 &481249526
 CharacterController:
@@ -1529,7 +1512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571500c6fba1d41428cd4e8701c687a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 0}
+  <Data>k__BackingField: {fileID: 11400000, guid: 4b4fc62862797fc46808e4a69ab3c9a9,
+    type: 2}
   <AnimationData>k__BackingField:
     groundParameterName: '@Ground'
     idleParameterName: Idle
@@ -2993,12 +2977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da1e8bda2f1f4e139dbeb0d9948ed66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightTargets:
-  - {fileID: 352885245}
-  - {fileID: 352885245}
-  transformTargets: []
-  audioTargets: []
-  ObjectTier: 0
 --- !u!1 &1091316395
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,15 +5387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b7b956c40ef9747b5f0f783a53aad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectType: 1
-  lightComponent: {fileID: 0}
-  targetColor: {r: 1, g: 0, b: 0, a: 0}
-  targetIntensity: 0
-  targetIndirectMultiplier: 0
-  targetShadowType: 0
-  targetDrawHalo: 0
-  duration: 1
-  targetSource: {fileID: 0}
 --- !u!114 &1996018276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5430,14 +5399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5748059f3fa51e4fbb5f1d6c8265bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doTweenType: 4
-  targetPosition: {x: 1, y: 1, z: 1}
-  targetRotation: {x: 3, y: 3, z: 3}
-  targetScale: {x: 4, y: 4, z: 4}
-  shakePosition: 3
-  ease: 0
-  duration: 1
-  targetSource: {fileID: 0}
 --- !u!1001 &2011483440
 PrefabInstance:
   m_ObjectHideFlags: 0
