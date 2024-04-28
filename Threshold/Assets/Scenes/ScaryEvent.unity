@@ -1012,8 +1012,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 381792778}
+  - component: {fileID: 381792780}
   - component: {fileID: 381792779}
-  - component: {fileID: 381792781}
   m_Layer: 0
   m_Name: Effects
   m_TagString: Untagged
@@ -1045,10 +1045,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 381792777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5748059f3fa51e4fbb5f1d6c8265bd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 54ff8f31c183f714e88a26722e147d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &381792781
+  effectType: 0
+  lightComponent: {fileID: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  targetIntensity: 0
+  targetIndirectMultiplier: 0
+  targetShadowType: 0
+  targetDrawHalo: 0
+  duration: 0
+  targetSource: {fileID: 0}
+--- !u!114 &381792780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1057,9 +1066,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 381792777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b7b956c40ef9747b5f0f783a53aad7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doTweenType: 3
+  targetPosition: {x: 3, y: 3, z: 3}
+  targetRotation: {x: 0, y: 0, z: 0}
+  targetScale: {x: 3, y: 3, z: 3}
+  shakePosition: 0
+  ease: 0
+  duration: 1
+  targetSource: {fileID: 0}
 --- !u!1 &384896760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,7 +2235,19 @@ MonoBehaviour:
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 381792780}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Rotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -3487,10 +3516,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9b61ce55cc5544eade7655e394e9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaryEvents: []
+  scaryEvents:
+  - {fileID: 0}
   startTargets:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1049525180}
+  - {fileID: 2125482725}
   targrt: {fileID: 0}
 --- !u!1 &1413448576
 GameObject:
@@ -5384,9 +5414,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996018273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b7b956c40ef9747b5f0f783a53aad7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doTweenType: 1
+  targetPosition: {x: 3, y: 3, z: 3}
+  targetRotation: {x: 3, y: 3, z: 3}
+  targetScale: {x: 3, y: 3, z: 3}
+  shakePosition: 0
+  ease: 0
+  duration: 1
+  targetSource: {fileID: 0}
 --- !u!114 &1996018276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5396,9 +5434,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996018273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5748059f3fa51e4fbb5f1d6c8265bd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 54ff8f31c183f714e88a26722e147d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectType: 0
+  lightComponent: {fileID: 0}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  targetIntensity: 0
+  targetIndirectMultiplier: 0
+  targetShadowType: 0
+  targetDrawHalo: 0
+  duration: 0
+  targetSource: {fileID: 0}
 --- !u!1001 &2011483440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5974,7 +6021,31 @@ MonoBehaviour:
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1996018275}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Scale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1996018275}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Position
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPlay:
     m_PersistentCalls:
       m_Calls: []
@@ -6326,4 +6397,4 @@ MonoBehaviour:
   - {fileID: 2039994685}
   - {fileID: 638616235}
   audioTargets: []
-  ObjectTier: 1
+  ObjectTier: 0
