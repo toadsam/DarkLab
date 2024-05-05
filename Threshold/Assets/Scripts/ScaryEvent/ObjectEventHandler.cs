@@ -13,7 +13,7 @@ public class ObjectEventHandler : MonoBehaviour
     {
         scaryEvents = FindObjectsOfType<ScaryEvent>();
         if (startTargets == null)
-            Debug.Log("¾øÀ½");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
         else
         {             
             for (int i = 0; i <startTargets.Length; i++)              
@@ -28,8 +28,10 @@ public class ObjectEventHandler : MonoBehaviour
             if (objectInfoHolder.ObjectTier == scaryEvents[i].scaryEventTier && eventWhen  == scaryEvents[i].scaryEventWhen)
             {
                 scaryEvents[i].currentEventTarget = objectInfoHolder;
+                //if (scaryEvents[i].currentEventTarget != null)
+                Debug.Log(scaryEvents[i].currentEventTarget);
                 scaryEvents[i].ResetIndexForTargets();
-                Debug.Log(objectInfoHolder.name);
+              //  Debug.Log(objectInfoHolder.name);
                 scaryEvents[i].StartEvent();
                
             }
