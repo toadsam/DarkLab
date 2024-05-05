@@ -24,7 +24,7 @@ public class ScaryDoTweenEffect : MonoBehaviour
 
     public ScaryEvent targetSource;
 
-    private void Start()
+    private void Awake()
     {
         targetSource = transform.parent.GetComponent<ScaryEvent>();
     }
