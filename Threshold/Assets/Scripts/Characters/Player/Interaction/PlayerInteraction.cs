@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScaryEvents;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScaryEvents;
 using UnityEngine;
 
 public enum scaryEventTier { Low, Medium, High };
