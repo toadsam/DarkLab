@@ -44,6 +44,8 @@ namespace ScaryEvents.ScaryEffects
                     Fade();
                     break;
             }
+            
+            DelayAndStopEffect();
         }
 
         #region Dotween Functions
@@ -53,7 +55,6 @@ namespace ScaryEvents.ScaryEffects
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             a.DOMove(new Vector3(targetPosition.x,targetPosition.y,targetPosition.z), duration)
                 .SetEase(ease);
-            DelayAndStopEffect();
         }
 
         public void Rotation()
@@ -62,7 +63,6 @@ namespace ScaryEvents.ScaryEffects
             a.DORotate(new Vector3(targetRotation.x,targetRotation.y,targetRotation.z), duration, RotateMode.FastBeyond360)
                 .SetEase(ease)
                 .SetLoops(-1, LoopType.Restart); 
-            DelayAndStopEffect();
         }
 
         public void Scale()
@@ -71,7 +71,6 @@ namespace ScaryEvents.ScaryEffects
             a.DOScale(new Vector3(targetScale.x, targetScale.y, targetScale.z), duration)
                 .SetEase(ease)
                 .SetLoops(-1, LoopType.Yoyo);
-            DelayAndStopEffect();
         }
 
         //우선 위치로 흔들리게 했는데, rotate/scale도 있어서 이건 상의 하면 좋을듯!
@@ -79,7 +78,6 @@ namespace ScaryEvents.ScaryEffects
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             a.DOShakePosition(shakePosition, duration);
-            DelayAndStopEffect();
         }
 
         public void Fade()
@@ -88,9 +86,6 @@ namespace ScaryEvents.ScaryEffects
         }
 
         #endregion
-
-    
-    
     
     }
 }

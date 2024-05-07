@@ -11,28 +11,42 @@ namespace ScaryEvents.ScaryEffects
         IntensityChange
     }
 
-    public class ScaryLightEffect : MonoBehaviour
+    public class ScaryLightEffect : ScaryEffect
     {
+        
         public LightEffectType effectType;
-        public Light lightComponent; //이거 왜 필요한거야?? target에서 가져오지 않나??!
+        
+        // Light variables
         public Color targetColor;
         public float targetIntensity;
         public float targetIndirectMultiplier;
         public LightShadows targetShadowType;
         public bool targetDrawHalo;
-        public float duration;
 
-        public ScaryEvent targetSource;
-
+        public override void StartEffectInternal()
+        {
+            switch (effectType)
+            {
+                case LightEffectType.Flicker:
+                    Flicker();
+                    break;
+                case LightEffectType.ColorChange:
+                    ColorChange();
+                    break;
+                case LightEffectType.IntensityChange:
+                    IntensityChange();
+                    break;
+            }
+            
+            DelayAndStopEffect();
+        }
+        
         //Light도 DoTween 이용해서 쉽게 구현할건지
         //아니면 코루틴 이용해서 구현할건지 정해야할 것 같습니다!!!
-        //근데 코드가 깔끔한거는 DoTween인 것 같아요,,훗,,
+        //근데 코드가 깔끔한거는 DoTween인 것 같아요,,훗,, => ㅎㅎ 좋은 것 같아요!
 
-        void Start()
-        {
-            targetSource = transform.parent.GetComponent<ScaryEvent>();
-        }
-    
+        #region Light Functions
+        
         public void Flicker()
         {
             var a = targetSource.GetCurrentTarget<Light>("light");
@@ -55,7 +69,7 @@ namespace ScaryEvents.ScaryEffects
             a.DOIntensity(targetIntensity, duration)
                 .SetEase(Ease.InOutSine);
         }
-
-    
+        
+        #endregion
     }
 }
