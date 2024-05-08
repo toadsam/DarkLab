@@ -13,6 +13,7 @@ public class MainManager : MonoBehaviour
   //  public AudioManager audioManager;
     //public UIManager uiManager;
     //public GameManager gameManager;
+    public RoomManager roomManager;
     public ObjectEventHandler objectEventHandler;
 
     private void Awake()
