@@ -49,6 +49,8 @@ public class ScaryEffectEditor : Editor
             targetRange = serializedObject.FindProperty("targetRange");
             targetSpotAngle = serializedObject.FindProperty("targetSpotAngle");
             targetShadowStrength = serializedObject.FindProperty("targetShadowStrength");
+            flickerCount = serializedObject.FindProperty("flickerCount");
+            flickerDuration = serializedObject.FindProperty("flickerDuration");
         }
     }
 
@@ -118,6 +120,8 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(targetColor);
                 break;
             case LightEffectType.IntensityChange:
+                EditorGUILayout.PropertyField(targetIntensity);
+                break;
             case LightEffectType.Flicker:
                 EditorGUILayout.PropertyField(targetIntensity);
                 EditorGUILayout.PropertyField(flickerCount);
