@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interaction
+  - FocusObject
+  - Group1
+  - Group2
+  - Group3
+  - Group4
   layers:
   - Default
   - TransparentFX
