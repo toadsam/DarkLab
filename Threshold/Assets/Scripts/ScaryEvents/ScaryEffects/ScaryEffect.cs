@@ -11,11 +11,11 @@ namespace ScaryEvents.ScaryEffects
         [HideInInspector] public ScaryEvent targetSource;
     
         // animation settings
-        public float duration;
-        public float delay;
-        public Ease ease;
-        public int loop = 1;
-        private int loopCount;
+        public float duration = 1;
+        public float delay = 0;
+        public Ease ease = Ease.Linear;
+        public int loops = 1;
+        private int loopCount = 1;
     
         // events
         public UnityEvent onStart;
@@ -27,6 +27,9 @@ namespace ScaryEvents.ScaryEffects
         private bool isUpdating = false;
         protected List<Coroutine> effectCoroutines; // lifecycle 에 의해 관리되는 coroutine 이므로, sub class 에서도 사용 가능.
 
+        // Inspector UI
+        [HideInInspector] public bool showProperties = false;
+        
         #region Effect Functions
     
         /// <summary>
@@ -61,7 +64,7 @@ namespace ScaryEvents.ScaryEffects
         /// </summary>
         public void StopEffect()
         {
-            if (loop > loopCount)
+            if (loops > loopCount)
             {
                 loopCount++;
                 StartEffectInternalWrapper();

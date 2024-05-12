@@ -23,10 +23,10 @@ namespace ScaryEvents.ScaryEffects
     
         // DoTween variables
         // targetPosition and targetRotation is based on World Space. local Space 나 Relative 한 case 또한 고려하면 좋을 듯.
-        public Vector3 targetPosition;
-        public Vector3 targetRotation;
-        public Vector3 targetScale;
-        public float shakePosition;
+        public Vector3 targetPosition = Vector3.zero;
+        public Vector3 targetRotation = Vector3.zero;
+        public Vector3 targetScale = Vector3.one;
+        public float shakePosition = 1;
         
         public override void StartEffectInternal()
         {
