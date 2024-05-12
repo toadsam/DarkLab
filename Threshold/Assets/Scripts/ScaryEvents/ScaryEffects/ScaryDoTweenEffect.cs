@@ -15,7 +15,7 @@ namespace ScaryEvents.ScaryEffects
 
     public class ScaryDoTweenEffect : ScaryEffect
     {
-        [Space(10)] [Header("DoTween Settings")]
+        [Header("DoTween Settings")]
         public DoTweenType doTweenType;
         public bool isRelative;
         public LoopType doTweenLoopType = LoopType.Restart;

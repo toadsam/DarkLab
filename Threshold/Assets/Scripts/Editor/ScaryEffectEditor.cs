@@ -5,6 +5,18 @@ using ScaryEvents.ScaryEffects;  // Ensure this namespace matches your actual na
 [CustomEditor(typeof(ScaryEffect), true), CanEditMultipleObjects]
 public class ScaryEffectEditor : Editor
 {
+    // Default properties
+    SerializedProperty duration;
+    SerializedProperty delay;
+    SerializedProperty ease;
+    SerializedProperty loops;
+    SerializedProperty showProperties;
+    SerializedProperty onStart;
+    SerializedProperty onPlay;
+    SerializedProperty onUpdate;
+    SerializedProperty onComplete;
+    
+    
     // ScaryDoTweenEffect properties
     SerializedProperty doTweenType;
     SerializedProperty targetPosition;
@@ -24,9 +36,26 @@ public class ScaryEffectEditor : Editor
     SerializedProperty targetShadowStrength;
     SerializedProperty flickerCount;
     SerializedProperty flickerDuration;
+    
+    // ScaryPostProcessingEffect properties
+    SerializedProperty postProcessingEffectType;
+    SerializedProperty weight;
+    SerializedProperty onTransitionDuration;
+    SerializedProperty offTransitionDuration;
+    SerializedProperty targetVolume;
 
     private void OnEnable()
     {
+        duration = serializedObject.FindProperty("duration");
+        delay = serializedObject.FindProperty("delay");
+        ease = serializedObject.FindProperty("ease");
+        loops = serializedObject.FindProperty("loops");
+        showProperties = serializedObject.FindProperty("showProperties");
+        onStart = serializedObject.FindProperty("onStart");
+        onPlay = serializedObject.FindProperty("onPlay");
+        onUpdate = serializedObject.FindProperty("onUpdate");
+        onComplete = serializedObject.FindProperty("onComplete");
+        
         // Find properties for ScaryDoTweenEffect
         if (target is ScaryDoTweenEffect)
         {
@@ -52,6 +81,16 @@ public class ScaryEffectEditor : Editor
             flickerCount = serializedObject.FindProperty("flickerCount");
             flickerDuration = serializedObject.FindProperty("flickerDuration");
         }
+        
+        // Initialize properties for ScaryPostProcessingEffect
+        if (target is ScaryPostProcessingEffect)
+        {
+            postProcessingEffectType = serializedObject.FindProperty("effectType");
+            weight = serializedObject.FindProperty("weight");
+            onTransitionDuration = serializedObject.FindProperty("onTransitionDuration");
+            offTransitionDuration = serializedObject.FindProperty("offTransitionDuration");
+            targetVolume = serializedObject.FindProperty("targetVolume");
+        }
     }
 
     public override void OnInspectorGUI()
@@ -63,10 +102,19 @@ public class ScaryEffectEditor : Editor
         // Use a foldout for ScaryEffect properties
         if (effect != null)
         {
-            effect.showProperties = EditorGUILayout.Foldout(effect.showProperties, "Scary Effect Properties", true);
+            EditorGUILayout.PropertyField(duration);
+            EditorGUILayout.PropertyField(delay);
+            EditorGUILayout.PropertyField(ease);
+            EditorGUILayout.PropertyField(loops);
+            
+            effect.showProperties = EditorGUILayout.Foldout(effect.showProperties, "UnityEvents", true);
             if (effect.showProperties)
             {
-                DrawDefaultInspector(); // Draws all the default items
+                // UnityEvents drawing
+                EditorGUILayout.PropertyField(onStart, new GUIContent("On Start"));
+                EditorGUILayout.PropertyField(onPlay, new GUIContent("On Play"));
+                EditorGUILayout.PropertyField(onUpdate, new GUIContent("On Update"));
+                EditorGUILayout.PropertyField(onComplete, new GUIContent("On Complete"));
             }
 
             if (effect is ScaryDoTweenEffect)
@@ -77,6 +125,11 @@ public class ScaryEffectEditor : Editor
             if (effect is ScaryLightEffect)
             {
                 DrawLightEffectProperties(effect as ScaryLightEffect);
+            }
+            
+            if (effect is ScaryPostProcessingEffect)
+            {
+                DrawPostProcessingEffectProperties(effect as ScaryPostProcessingEffect);
             }
         }
 
@@ -137,5 +190,14 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(targetShadowStrength);
                 break;
         }
+    }
+    
+    private void DrawPostProcessingEffectProperties(ScaryPostProcessingEffect effect)
+    {
+        EditorGUILayout.PropertyField(postProcessingEffectType);
+        EditorGUILayout.PropertyField(weight);
+        EditorGUILayout.PropertyField(onTransitionDuration);
+        EditorGUILayout.PropertyField(offTransitionDuration);
+        EditorGUILayout.PropertyField(targetVolume);
     }
 }

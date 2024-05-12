@@ -17,7 +17,7 @@ namespace ScaryEvents.ScaryEffects
 
     public class ScaryLightEffect : ScaryEffect
     {
-        [Space(10)][Header("Light Settings")]
+        [Header("Light Settings")]
         public LightEffectType effectType;
 
         // Light variables

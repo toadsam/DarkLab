@@ -25,7 +25,7 @@ namespace ScaryEvents.ScaryEffects
     
         // internal logics
         private bool isUpdating = false;
-        protected List<Coroutine> effectCoroutines; // lifecycle 에 의해 관리되는 coroutine 이므로, sub class 에서도 사용 가능.
+        protected List<Coroutine> effectCoroutines = new List<Coroutine>(); // lifecycle 에 의해 관리되는 coroutine 이므로, sub class 에서도 사용 가능.
 
         // Inspector UI
         [HideInInspector] public bool showProperties = false;
@@ -74,9 +74,12 @@ namespace ScaryEvents.ScaryEffects
                 isUpdating = false;
                 onComplete.Invoke();
 
-                foreach (var effectCoroutine in effectCoroutines)
+                if (effectCoroutines != null)
                 {
-                    StopCoroutine(effectCoroutine);
+                    foreach (var effectCoroutine in effectCoroutines)
+                    {
+                        StopCoroutine(effectCoroutine);
+                    }
                 }
             }
         }
