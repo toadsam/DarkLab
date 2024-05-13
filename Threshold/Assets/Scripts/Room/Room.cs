@@ -59,7 +59,7 @@ public class Room : MonoBehaviour
             }
         }
 
-        return null;  // ÀÌ °æ¿ì ¹ß»ýÇÒ ¼ö ¾øÁö¸¸, null ¹ÝÈ¯À¸·Î ¿¹¿Ü Ã³¸®
+        return null;  // ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, null ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
     }
 
 
@@ -77,16 +77,20 @@ public class Room : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            string roomName = GetRandomItem();
-            if (roomName == "Room")
-            {
-                Scene scene = SceneManager.GetActiveScene();
-                CheckRoomName(scene.name);
+            if(this.gameObject.name == "NextStageDoor"){
+                string roomName = GetRandomItem();
+                if (roomName == "Room")
+                {
+                    Scene scene = SceneManager.GetActiveScene();
+                    CheckRoomName(scene.name);
 
-            }
-            else
-            {
-                SceneManager.LoadScene(roomName);
+                }
+                else
+                {
+                    SceneManager.LoadScene(roomName);
+                }
+            }else{
+                MainManager.Instance.roomManager.ChangeRandomObject();
             }
         }
     }
