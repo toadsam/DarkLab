@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WareHouse.unity
     guid: 79aece989c614f14c9a6cfe0d88d9e9a
+  - enabled: 1
+    path: Assets/Scenes/BathRoom.unity
+    guid: aa9e5300b3af4254c9157720ca2a7378
   m_configObjects: {}
