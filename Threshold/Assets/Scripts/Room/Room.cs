@@ -13,9 +13,6 @@ public class Room : MonoBehaviour
         itemsWithProbabilities = new Dictionary<string, float>();
     }
 
-
-
-
     private void Awake()
     {
         itemsWithProbabilities.Add("Room", 0.8f);
@@ -65,6 +62,16 @@ public class Room : MonoBehaviour
         return null;  // 이 경우 발생할 수 없지만, null 반환으로 예외 처리
     }
 
+
+    private void CheckRoomName(string sceneName)
+    {
+        if (sceneName == "StudentRoom")
+            SceneManager.LoadScene("GrandmaRoom");
+        else if (sceneName == "GrandmaRoom")
+            SceneManager.LoadScene("BoyRoom");
+        else
+            SceneManager.LoadScene("StudentRoom");
+    }
     private void OnTriggerEnter(Collider other)
     {
 
@@ -73,6 +80,9 @@ public class Room : MonoBehaviour
             string roomName = GetRandomItem();
             if (roomName == "Room")
             {
+                Scene scene = SceneManager.GetActiveScene();
+                CheckRoomName(scene.name);
+
             }
             else
             {
@@ -86,4 +96,3 @@ public class Room : MonoBehaviour
 
 
 }
-
