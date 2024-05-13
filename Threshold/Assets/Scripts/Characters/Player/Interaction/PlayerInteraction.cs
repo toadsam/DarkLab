@@ -96,8 +96,8 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // 물체와의 충돌이 종료될 때 UI 텍스트 비활성화
-        MainManager.Instance.objectEventHandler.targrt = null;
-        interactionText.gameObject.SetActive(false);
+       // MainManager.Instance.objectEventHandler.targrt = null; 일단은 여기 부분 주석처리! 방생성 때 오류를 방지하기 위해서!
+       // interactionText.gameObject.SetActive(false);
     }
 
     
