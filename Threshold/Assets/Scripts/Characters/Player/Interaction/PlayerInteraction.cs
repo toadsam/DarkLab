@@ -43,11 +43,11 @@ public class PlayerInteraction : MonoBehaviour
         InputActions = new PlayerInputActions();
         InputActions.Player.Exit.performed += ctx => OnEscapePressed();
 
-        cameraObj = objectCamera.GetComponent<Camera>();
-        renderTexture = objectCamera.GetComponent<Camera>().targetTexture;
+     //   cameraObj = objectCamera.GetComponent<Camera>();  일단 여기 부분은 주석처리한다.
+      //  renderTexture = objectCamera.GetComponent<Camera>().targetTexture;
 
-        interactionText.GetComponent<Button>().onClick.AddListener(OnInteraction);
-        cameraUI.GetComponent<EventTrigger>().AddListener(EventTriggerType.PointerClick, OnClick);
+       // interactionText.GetComponent<Button>().onClick.AddListener(OnInteraction);
+        //cameraUI.GetComponent<EventTrigger>().AddListener(EventTriggerType.PointerClick, OnClick);
 
         isDetect = false;
     }
