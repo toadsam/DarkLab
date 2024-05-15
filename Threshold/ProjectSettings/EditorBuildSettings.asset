@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/StudentRoom.unity
+    guid: 6712dd265107d934883102e2856dd347
+  - enabled: 1
+    path: Assets/Scenes/BoyRoom.unity
+    guid: b017686173cb068498d13983f4c21f2f
+  - enabled: 1
+    path: Assets/Scenes/GrandmaRoom.unity
+    guid: e46b54fa8ae43e946b982c9d9d6d7cc7
+  - enabled: 1
+    path: Assets/Scenes/ScaryEvent.unity
+    guid: 3da89d40fe9f045bda16b8641e6bc644
+  - enabled: 1
+    path: Assets/Scenes/WareHouse.unity
+    guid: 79aece989c614f14c9a6cfe0d88d9e9a
+  - enabled: 1
+    path: Assets/Scenes/BathRoom.unity
+    guid: aa9e5300b3af4254c9157720ca2a7378
   m_configObjects: {}

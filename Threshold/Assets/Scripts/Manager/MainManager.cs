@@ -10,15 +10,18 @@ public class MainManager : MonoBehaviour
 
     public scaryEventWhen PlayerEventWhen;
     public static MainManager Instance { get; private set; }
+    public RoomManager roomManager;
 
   //  public AudioManager audioManager;
     //public UIManager uiManager;
     //public GameManager gameManager;
     public ObjectEventHandler objectEventHandler;
+    public GameObject player;
+    public Vector3 resetPos;
 
     private void Awake()
     {
-        // 싱글톤 패턴 구현
+        resetPos = player.transform.position;
         if (Instance == null)
         {
             Instance = this;
