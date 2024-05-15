@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ScaryEvents
@@ -6,25 +7,33 @@ namespace ScaryEvents
     {
         public ScaryEvent[] scaryEvents;
         [SerializeField] private ObjectInfoHolder[] startTargets;
-        public ObjectInfoHolder targrt;  
-    
-        private void Start()
+        public ObjectInfoHolder targrt;
+
+        // Setup for scary events
+        private void Awake()
         {
             scaryEvents = FindObjectsOfType<ScaryEvent>();
-            if (startTargets == null)
-                Debug.Log("����");
-            else
-            {             
-                for (int i = 0; i <startTargets.Length; i++)              
-                    Match(startTargets[i], scaryEventWhen.OnAwake);
-            }
+            
+        }
+
+        // 방이 바뀌는 경우를 염두. (하나의 씬에서 다른 방으로 바뀔 수 있음 - 구역이 바뀌면, 다른 ObjectInfoHolder[]를 받아와야 함)
+        // 현재 구역별로 바뀌므로, 전체 ObjectInfoHolder 는 다른 곳에서 관리해야 할 것으로 보임.
+        public void ChangeRoom(ObjectInfoHolder[] inputObjectInfoHolders)
+        {
+            startTargets = inputObjectInfoHolders;
+        }
+
+        public void AwakeRoom()
+        {
+            for (int i = 0; i <startTargets.Length; i++)              
+                Match(startTargets[i], scaryEventWhen.OnAwake);
         }
    
         public void Match(ObjectInfoHolder objectInfoHolder,scaryEventWhen eventWhen) 
         {
             for (int i = 0; i < scaryEvents.Length; i++)
             {
-                if (objectInfoHolder.ObjectTier == scaryEvents[i].scaryEventTier && eventWhen  == scaryEvents[i].scaryEventWhen)
+                if (objectInfoHolder.objectTier == scaryEvents[i].scaryEventTier && eventWhen  == scaryEvents[i].scaryEventWhen)
                 {
                     scaryEvents[i].currentEventTarget = objectInfoHolder;
                     //if (scaryEvents[i].currentEventTarget != null)
@@ -33,8 +42,19 @@ namespace ScaryEvents
                     //  Debug.Log(objectInfoHolder.name);
                     scaryEvents[i].StartEvent();
                
+                    break;
                 }
             }
         }
+
+        #region Test Code
+
+        // 기존 코드와 동일한 동작을 위한 테스트 코드
+        private void Start()
+        {
+            AwakeRoom();
+        }
+
+        #endregion
     }
 }

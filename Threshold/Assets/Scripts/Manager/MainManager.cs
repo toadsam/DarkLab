@@ -18,7 +18,7 @@ public class MainManager : MonoBehaviour
 
     private void Awake()
     {
-        // ½Ì±ÛÅæ ÆÐÅÏ ±¸Çö
+        // ì‹±ê¸€í†¤ íŒ¨í„´ êµ¬í˜„
         if (Instance == null)
         {
             Instance = this;
