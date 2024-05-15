@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/Interaction/CameraRays.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/Interaction/CameraRays.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/Interaction/PlayerInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/Interaction/PlayerInteraction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ObjectEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ObjectEventHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ObjectInfoHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ObjectInfoHolder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,7 @@
       <workItem from="1713958707786" duration="1623000" />
       <workItem from="1715086752665" duration="7025000" />
       <workItem from="1715484310431" duration="8302000" />
-      <workItem from="1715778008493" duration="2007000" />
+      <workItem from="1715778008493" duration="3279000" />
     </task>
     <servers />
   </component>
