@@ -35,10 +35,10 @@ public class RoomChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RoomStage(curObjects);  // 스페이스바를 누르면 이 함수 실행
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     RoomStage(curObjects);  // 스페이스바를 누르면 이 함수 실행
+        // }
     }
 
     private List<GameObject> RandomSelect()
