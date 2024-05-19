@@ -36,10 +36,10 @@ public class RoomManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeRandomObject();
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     ChangeRandomObject();
+        // }
     }
 
     void ActivateFirstObject(List<GameObject> group, int groupIndex)
