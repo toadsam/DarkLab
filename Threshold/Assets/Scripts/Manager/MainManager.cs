@@ -10,7 +10,6 @@ public class MainManager : MonoBehaviour
 
     public scaryEventWhen PlayerEventWhen;
     public static MainManager Instance { get; private set; }
-    public RoomManager roomManager;
 
   //  public AudioManager audioManager;
     //public UIManager uiManager;

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    public GameObject version1;
+    public GameObject version2;
+
     public List<GameObject> group1 = new List<GameObject>();
     public List<GameObject> group2 = new List<GameObject>();
     public List<GameObject> group3 = new List<GameObject>();
@@ -18,6 +21,8 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
+        AssignObjectsToGroups();
+
         // 각 그룹별 사용된 오브젝트 배열 및 다음에 사용될 오브젝트 인덱스 초기화
         usedObjects = new bool[4][];
         usedObjects[0] = new bool[group1.Count];
@@ -40,6 +45,40 @@ public class RoomManager : MonoBehaviour
         // {
         //     ChangeRandomObject();
         // }
+    }
+
+    void AssignObjectsToGroups()
+    {
+        // 랜덤으로 A버전 또는 B버전 선택
+        GameObject selectedVersion = Random.value > 0.5f ? version1 : version2;
+
+        // 선택된 버전의 하위 오브젝트들을 각 그룹에 할당
+        Transform[] children = selectedVersion.GetComponentsInChildren<Transform>(true);
+        
+        // 각 그룹에 할당할 오브젝트 리스트
+        List<GameObject> tempGroup1 = new List<GameObject>();
+        List<GameObject> tempGroup2 = new List<GameObject>();
+        List<GameObject> tempGroup3 = new List<GameObject>();
+        List<GameObject> tempGroup4 = new List<GameObject>();
+
+        foreach (var child in children)
+        {
+            if (child.name.Contains("Group1"))
+                tempGroup1.Add(child.gameObject);
+            else if (child.name.Contains("Group2"))
+                tempGroup2.Add(child.gameObject);
+            else if (child.name.Contains("Group3"))
+                tempGroup3.Add(child.gameObject);
+            else if (child.name.Contains("Group4"))
+                tempGroup4.Add(child.gameObject);
+        }
+
+        group1 = tempGroup1;
+        group2 = tempGroup2;
+        group3 = tempGroup3;
+        group4 = tempGroup4;
+
+        selectedVersion.SetActive(true);
     }
 
     void ActivateFirstObject(List<GameObject> group, int groupIndex)

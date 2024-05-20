@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Room : MonoBehaviour
 {
+    public RoomManager rm;
     private Dictionary<string, float> itemsWithProbabilities;
 
     public Room()
@@ -82,12 +83,7 @@ public class Room : MonoBehaviour
                 else
                     SceneManager.LoadScene(roomName);
             }else
-                MainManager.Instance.roomManager.ChangeRandomObject();
+                rm.ChangeRandomObject();
         }
     }
-
-
-
-
-
 }
