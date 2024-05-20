@@ -43,9 +43,7 @@ public class Room : MonoBehaviour
     {
         float totalProbability = 0f;
         foreach (var entry in itemsWithProbabilities)
-        {
             totalProbability += entry.Value;
-        }
 
         float randomPoint = UnityEngine.Random.Range(0f, totalProbability);
         float cumulativeProbability = 0f;
@@ -54,12 +52,9 @@ public class Room : MonoBehaviour
         {
             cumulativeProbability += entry.Value;
             if (randomPoint <= cumulativeProbability)
-            {
                 return entry.Key;
-            }
         }
-
-        return null;  // �� ��� �߻��� �� ������, null ��ȯ���� ���� ó��
+        return null;
     }
 
 
@@ -83,15 +78,11 @@ public class Room : MonoBehaviour
                 {
                     Scene scene = SceneManager.GetActiveScene();
                     CheckRoomName(scene.name);
-
                 }
                 else
-                {
                     SceneManager.LoadScene(roomName);
-                }
-            }else{
+            }else
                 MainManager.Instance.roomManager.ChangeRandomObject();
-            }
         }
     }
 
