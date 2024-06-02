@@ -54,8 +54,8 @@ public class PlayerInteraction : MonoBehaviour
     
     void Update()
     {
-        if(cameraObj.orthographicSize == 0.5f)
-            MovingCamera();
+       // if(cameraObj.orthographicSize == 0.5f)
+        ///    MovingCamera(); //일단 움직이는 것만 구현하기 위해서
     }
 
     private void OnEnable()
