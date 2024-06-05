@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -35,12 +34,12 @@ namespace ScaryEvents.ScaryEffects
 
         private IEnumerator ActivateEffect()
         {
-            // Weight¸¦ Á¡ÁøÀûÀ¸·Î Áõ°¡½ÃÄÑ È¿°ú È°¼ºÈ­
+            // Weightë¥¼ ì ì§„ì ìœ¼ë¡œ ì¦ê°€ì‹œì¼œ íš¨ê³¼ í™œì„±í™”
             targetVolume.gameObject.SetActive(true);
             DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, weight, onTransitionDuration).SetEase(Ease.InOutQuad);
-            yield return new WaitForSeconds(onTransitionDuration + duration); // È¿°ú°¡ ¿ÏÀüÈ÷ È°¼ºÈ­µÈ ÈÄ ÁöÁ¤µÈ ½Ã°£ µ¿¾È À¯Áö
+            yield return new WaitForSeconds(onTransitionDuration + duration); // íš¨ê³¼ê°€ ì™„ì „ížˆ í™œì„±í™”ëœ í›„ ì§€ì •ëœ ì‹œê°„ ë™ì•ˆ ìœ ì§€
 
-            // Weight¸¦ Á¡ÁøÀûÀ¸·Î °¨¼Ò½ÃÄÑ È¿°ú ºñÈ°¼ºÈ­
+            // Weightë¥¼ ì ì§„ì ìœ¼ë¡œ ê°ì†Œì‹œì¼œ íš¨ê³¼ ë¹„í™œì„±í™”
             DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, 0f, offTransitionDuration).SetEase(Ease.InOutQuad).OnComplete(StopEffect);
             targetVolume.gameObject.SetActive(false);
         }

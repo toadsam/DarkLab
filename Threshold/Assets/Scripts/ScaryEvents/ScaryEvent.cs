@@ -41,9 +41,6 @@ namespace ScaryEvents
         public void StartEvent()
         {
             onStart.Invoke();
-            onPlay.Invoke();
-            onUpdate.Invoke();
-            onComplete.Invoke();
         }
     }
 }

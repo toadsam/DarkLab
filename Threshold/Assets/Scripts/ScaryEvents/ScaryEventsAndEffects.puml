@@ -1,0 +1,72 @@
+@startuml
+class ScaryEvent {
+    currentEventTarget: ObjectInfoHolder
+    onStart: UnityEvent
+    onPlay: UnityEvent
+    onUpdate: UnityEvent
+    onComplete: UnityEvent
+}
+
+class ObjectInfoHolder {
+    lightTargets: List<Light>
+    transformTargets: List<Transform>
+    audioTargets: List<AudioSource>
+}
+
+abstract class ScaryEffect {
+    duration: float
+    delay: float
+    ease: Ease
+    onStart: UnityEvent
+    onPlay: UnityEvent
+    onUpdate: UnityEvent
+    onComplete: UnityEvent
+}
+
+class ScaryPostProcessingEffect {
+    effectType: PostProcessingEffectType
+    targetVolume: Volume
+}
+
+class ScaryLightEffect {
+    effectType: LightEffectType
+}
+
+class ScaryAudioEffect {
+    audioClip: AudioClip
+    audioEffectType: AudioEffectType
+    spatialBlend: float
+}
+
+class ScaryDoTweenEffect {
+    doTweenType: DoTweenType
+}
+
+class ScaryPostProcessingVolumeManager {
+    postProcessingVolumes: Dictionary<PostProcessingEffectType, Volume>
+}
+
+class ScaryPostProcessingSeperator {
+    effectType: PostProcessingEffectType
+}
+
+class ObjectEventHandler {
+    scaryEvents: ScaryEvent[]
+    startTargets: ObjectInfoHolder[]
+    target: ObjectInfoHolder
+}
+
+ScaryEffect <|-- ScaryPostProcessingEffect
+ScaryEffect <|-- ScaryLightEffect
+ScaryEffect <|-- ScaryAudioEffect
+ScaryEffect <|-- ScaryDoTweenEffect
+
+ScaryPostProcessingEffect <.. ScaryPostProcessingVolumeManager : <<use>>
+ScaryPostProcessingVolumeManager ..> ScaryPostProcessingSeperator : <<use>>
+ObjectEventHandler ..> ScaryEvent : <<use>>
+ScaryEvent ..> ObjectInfoHolder : <<use>>
+ObjectEventHandler ..> ObjectInfoHolder : <<use>>
+
+ScaryEffect --> ScaryEvent : <<subscribe>>
+
+@enduml

@@ -22,7 +22,7 @@ namespace ScaryEvents.ScaryEffects
         public int doTweenLoops = 1;
     
         // DoTween variables
-        // targetPosition and targetRotation is based on World Space. local Space ³ª Relative ÇÑ case ¶ÇÇÑ °í·ÁÇÏ¸é ÁÁÀ» µí.
+        // targetPosition and targetRotation is based on World Space. local Space ï¿½ï¿½ Relative ï¿½ï¿½ case ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
         public Vector3 targetPosition = Vector3.zero;
         public Vector3 targetRotation = Vector3.zero;
         public Vector3 targetScale = Vector3.one;
@@ -81,7 +81,7 @@ namespace ScaryEvents.ScaryEffects
                 .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
-        //¿ì¼± À§Ä¡·Î Èçµé¸®°Ô Çß´Âµ¥, rotate/scaleµµ ÀÖ¾î¼­ ÀÌ°Ç »óÀÇ ÇÏ¸é ÁÁÀ»µí!
+        //ï¿½ì¼± ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½é¸®ï¿½ï¿½ ï¿½ß´Âµï¿½, rotate/scaleï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!
         public void Shaking()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
@@ -92,7 +92,7 @@ namespace ScaryEvents.ScaryEffects
 
         public void Fade()
         {
-            //À½.. ¸ÓÅ×¸®¾ó °¡Á®¿Í¾ßÇÏ´Âµ¥,, ObjectInfoHolder¿¡ Ãß°¡ÇÒ±î,,,?
+            //ï¿½ï¿½.. ï¿½ï¿½ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¾ï¿½ï¿½Ï´Âµï¿½,, ObjectInfoHolderï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ò±ï¿½,,,?
         }
 
         #endregion
