@@ -27,10 +27,10 @@ namespace ScaryEvents
                 if (objectInfoHolder.ObjectTier == scaryEvents[i].scaryEventTier && eventWhen  == scaryEvents[i].scaryEventWhen)
                 {
                     scaryEvents[i].currentEventTarget = objectInfoHolder;
-                    //if (scaryEvents[i].currentEventTarget != null)
+                    if (scaryEvents[i].currentEventTarget != null)
                     Debug.Log(scaryEvents[i].currentEventTarget);
                     scaryEvents[i].ResetIndexForTargets();
-                    //  Debug.Log(objectInfoHolder.name);
+                    Debug.Log(objectInfoHolder.name);
                     scaryEvents[i].StartEvent();
                
                 }

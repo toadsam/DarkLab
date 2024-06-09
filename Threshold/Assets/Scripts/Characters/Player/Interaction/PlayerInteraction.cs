@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
     private Vector3 maxBound;
     private Vector3 originalCameraPosition;
     private RenderTexture renderTexture;
-   // private ObjectInfoHolder targrt;
+    //private ObjectInfoHolder targrt;
     
     public static bool isDetect;
 
@@ -43,19 +43,19 @@ public class PlayerInteraction : MonoBehaviour
         InputActions = new PlayerInputActions();
         InputActions.Player.Exit.performed += ctx => OnEscapePressed();
 
-     //   cameraObj = objectCamera.GetComponent<Camera>();  일단 여기 부분은 주석처리한다.
-      //  renderTexture = objectCamera.GetComponent<Camera>().targetTexture;
+        cameraObj = objectCamera.GetComponent<Camera>(); // 일단 여기 부분은 주석처리한다.
+        renderTexture = objectCamera.GetComponent<Camera>().targetTexture;
 
-       // interactionText.GetComponent<Button>().onClick.AddListener(OnInteraction);
-        //cameraUI.GetComponent<EventTrigger>().AddListener(EventTriggerType.PointerClick, OnClick);
+        interactionText.GetComponent<Button>().onClick.AddListener(OnInteraction);
+        cameraUI.GetComponent<EventTrigger>().AddListener(EventTriggerType.PointerClick, OnClick);
 
         isDetect = false;
     }
     
     void Update()
     {
-       // if(cameraObj.orthographicSize == 0.5f)
-        ///    MovingCamera(); //일단 움직이는 것만 구현하기 위해서
+        if(cameraObj.orthographicSize == 0.5f)
+           MovingCamera(); //일단 움직이는 것만 구현하기 위해서
     }
 
     private void OnEnable()
@@ -96,8 +96,8 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // 물체와의 충돌이 종료될 때 UI 텍스트 비활성화
-       // MainManager.Instance.objectEventHandler.targrt = null; 일단은 여기 부분 주석처리! 방생성 때 오류를 방지하기 위해서!
-       // interactionText.gameObject.SetActive(false);
+        MainManager.Instance.objectEventHandler.targrt = null; //일단은 여기 부분 주석처리! 방생성 때 오류를 방지하기 위해서!
+        interactionText.gameObject.SetActive(false);
     }
 
     
