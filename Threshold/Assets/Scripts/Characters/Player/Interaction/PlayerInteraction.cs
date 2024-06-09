@@ -164,7 +164,8 @@ public class PlayerInteraction : MonoBehaviour
     //Focus 상호작용 함수
     public void OnClick(PointerEventData eventData)  //일단 public으로 바꾸긴했는데....음...이러면 안될 것 
     {
-        if(!focusInteraction)
+        Debug.Log("지금 포커스 사용중입니다");
+        if (!focusInteraction)
         {
             Debug.Log("지금 포커스 사용중입니다");
             isDetect = true;
