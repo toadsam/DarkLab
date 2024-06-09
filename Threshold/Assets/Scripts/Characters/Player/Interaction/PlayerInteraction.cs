@@ -162,7 +162,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     //Focus 상호작용 함수
-    private void OnClick(PointerEventData eventData)
+    public void OnClick(PointerEventData eventData)  //일단 public으로 바꾸긴했는데....음...이러면 안될 것 
     {
         if(!focusInteraction)
         {
