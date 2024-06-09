@@ -4178,6 +4178,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 226979759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &231537332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231537333}
+  - component: {fileID: 231537334}
+  m_Layer: 0
+  m_Name: ScaryEvent2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &231537333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231537332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.8953767, y: 1.1816198, z: 5.54195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2123261106}
+  m_Father: {fileID: 348668633}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &231537334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231537332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaryEventTier: 1
+  scaryEventWhen: 0
+  currentEventTarget: {fileID: 0}
+  onStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2123261108}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Rotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &235521267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,6 +5985,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 347770580}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &348668631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348668633}
+  - component: {fileID: 348668632}
+  m_Layer: 0
+  m_Name: ScaryEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &348668632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348668631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9b61ce55cc5544eade7655e394e9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaryEvents: []
+  startTargets:
+  - {fileID: 0}
+  - {fileID: 0}
+  targrt: {fileID: 0}
+--- !u!4 &348668633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348668631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 554996352}
+  - {fileID: 231537333}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356814172
 GameObject:
   m_ObjectHideFlags: 0
@@ -9751,6 +9874,102 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 554060116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &554996351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554996352}
+  - component: {fileID: 554996353}
+  m_Layer: 0
+  m_Name: ScaryEvent1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554996352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554996351}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.8953767, y: 1.1816198, z: 5.54195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2006759586}
+  m_Father: {fileID: 348668633}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554996353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554996351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaryEventTier: 0
+  scaryEventWhen: 4
+  currentEventTarget: {fileID: 0}
+  onStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2006759587}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Scale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2006759587}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Scale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2006759587}
+        m_TargetAssemblyTypeName: ScaryDoTweenEffect, Assembly-CSharp
+        m_MethodName: Scale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &561512134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030976497, guid: abc00000000012901136820614307861,
@@ -12553,7 +12772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerEventWhen: 0
-  objectEventHandler: {fileID: 0}
+  objectEventHandler: {fileID: 348668632}
   player: {fileID: 1719494690}
   resetPos: {x: 0, y: 0, z: 0}
 --- !u!4 &738022984
@@ -27766,9 +27985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc513d56d11ea4f0d884a2fed58a8b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: {fileID: 283091174}
+  interactionText: {fileID: 356814172}
   objectCamera: {fileID: 1222544357}
-  cameraUI: {fileID: 117425350}
+  cameraUI: {fileID: 1475852657}
 --- !u!114 &1719494692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32269,6 +32488,108 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2005421548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2006759585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006759586}
+  - component: {fileID: 2006759588}
+  - component: {fileID: 2006759587}
+  m_Layer: 0
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2006759586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006759585}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 554996352}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2006759587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006759585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 1
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  doTweenType: 3
+  targetPosition: {x: 3, y: 3, z: 3}
+  targetRotation: {x: 3, y: 3, z: 3}
+  targetScale: {x: 3, y: 3, z: 3}
+  shakePosition: 0
+--- !u!114 &2006759588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006759585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ff8f31c183f714e88a26722e147d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 0
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  effectType: 2
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  targetIntensity: 0
+  targetIndirectMultiplier: 0
+  targetShadowType: 0
+  targetDrawHalo: 0
 --- !u!1001 &2007204406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34569,6 +34890,108 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2122603796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2123261105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123261106}
+  - component: {fileID: 2123261108}
+  - component: {fileID: 2123261107}
+  m_Layer: 0
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2123261106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123261105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 231537333}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123261107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123261105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ff8f31c183f714e88a26722e147d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 0
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  effectType: 0
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  targetIntensity: 0
+  targetIndirectMultiplier: 0
+  targetShadowType: 0
+  targetDrawHalo: 0
+--- !u!114 &2123261108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123261105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 1
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  doTweenType: 3
+  targetPosition: {x: 3, y: 3, z: 3}
+  targetRotation: {x: 0, y: 0, z: 0}
+  targetScale: {x: 3, y: 3, z: 3}
+  shakePosition: 0
 --- !u!1001 &2125313611
 PrefabInstance:
   m_ObjectHideFlags: 0
