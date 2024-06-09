@@ -54,8 +54,11 @@ public class PlayerInteraction : MonoBehaviour
     
     void Update()
     {
-        if(cameraObj.orthographicSize == 0.5f)
-           MovingCamera(); //일단 움직이는 것만 구현하기 위해서
+        if (cameraObj.orthographicSize == 0.5f)
+        {
+            MovingCamera(); //일단 움직이는 것만 구현하기 위해서
+            Debug.Log("여기 지금 들어왔어요");
+        }
     }
 
     private void OnEnable()
@@ -113,6 +116,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if(cameraPosition != null)
         {
+            cameraObj.orthographicSize = 0.5f; //일단 여기 부분 추가했는데 이거 맞는지는 한번 더 물어보고 추가하기
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnViewInteractionStart);
             objectCamera.transform.position = cameraPosition.position;
             objectCamera.transform.rotation = cameraPosition.rotation;
