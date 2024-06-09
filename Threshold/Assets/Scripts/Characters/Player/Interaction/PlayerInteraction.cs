@@ -166,6 +166,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if(!focusInteraction)
         {
+            Debug.Log("지금 포커스 사용중입니다");
             isDetect = true;
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
             Camera.main.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
