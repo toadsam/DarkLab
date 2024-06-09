@@ -6015,9 +6015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaryEvents: []
-  startTargets:
-  - {fileID: 0}
-  - {fileID: 0}
+  startTargets: []
   targrt: {fileID: 0}
 --- !u!4 &348668633
 Transform:
@@ -6073,7 +6071,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.51, y: 1.38}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 4000, y: 4000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356814174
 MonoBehaviour:
@@ -6119,7 +6117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1719494691}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: OnInteraction
         m_Mode: 1

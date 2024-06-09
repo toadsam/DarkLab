@@ -14,9 +14,11 @@ namespace ScaryEvents
             if (startTargets == null)
                 Debug.Log("����");
             else
-            {             
-                for (int i = 0; i <startTargets.Length; i++)              
-                    Match(startTargets[i], scaryEventWhen.OnAwake);
+            {
+                for (int i = 0; i < startTargets.Length; i++)
+                {
+                    // Match(startTargets[i], scaryEventWhen.OnAwake); 매치 부분은 이펙트 이펙트 부분을 위해 주석처리
+                }
             }
         }
    

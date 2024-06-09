@@ -90,6 +90,7 @@ public class PlayerInteraction : MonoBehaviour
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnProximity);
             // UI 텍스트를 활성화하여 상호작용 가능 문구를 표시
             interactionText.gameObject.SetActive(true);
+            OnInteraction();  //현재 돋보기가 클릭돼지 않는 문제가 생겨서 일단은 바로 시작되도록 만듬.
         }
     }
 
