@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
         if (cameraObj.orthographicSize == 0.5f)
         {
             MovingCamera(); //일단 움직이는 것만 구현하기 위해서
-            Debug.Log("여기 지금 들어왔어요");
+           // Debug.Log("여기 지금 들어왔어요");
         }
     }
 
@@ -93,7 +93,7 @@ public class PlayerInteraction : MonoBehaviour
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnProximity);
             // UI 텍스트를 활성화하여 상호작용 가능 문구를 표시
             interactionText.gameObject.SetActive(true);
-            OnInteraction();  //현재 돋보기가 클릭돼지 않는 문제가 생겨서 일단은 바로 시작되도록 만듬.
+           // OnInteraction();  //현재 돋보기가 클릭돼지 않는 문제가 생겨서 일단은 바로 시작되도록 만듬.
         }
     }
 
@@ -116,7 +116,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if(cameraPosition != null)
         {
-            cameraObj.orthographicSize = 0.5f; //일단 여기 부분 추가했는데 이거 맞는지는 한번 더 물어보고 추가하기
+            //cameraObj.orthographicSize = 0.5f; //일단 여기 부분 추가했는데 이거 맞는지는 한번 더 물어보고 추가하기
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnViewInteractionStart);
             objectCamera.transform.position = cameraPosition.position;
             objectCamera.transform.rotation = cameraPosition.rotation;
@@ -158,7 +158,7 @@ public class PlayerInteraction : MonoBehaviour
         newPosition.z = Mathf.Clamp(newPosition.z, minBound.z, maxBound.z);
 
         // 실제로 이동
-        objectCamera.transform.position = newPosition;
+        objectCamera.transform.position = newPosition ;
     }
 
     //Focus 상호작용 함수
