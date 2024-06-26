@@ -58,10 +58,16 @@ public class ObjectHidingCamera : MonoBehaviour
         for(int i = 0; i < hitCount; i++)
         {
             var hit = hitBuffer[i];
-            var hideableObj = HideableObject.GetRootHideableCollider(hit.collider);
 
-            if(hideableObj != null)
-                hiddenObjects.Add(hideableObj);
+            var hideableObjs = HideableObject.GetRootHideableCollider(hit.collider);
+
+            if(hideableObjs != null)
+                hiddenObjects.AddRange(hideableObjs);
+                
+            // var hideableObj = HideableObject.GetRootHideableCollider(hit.collider);
+
+            // if(hideableObj != null)
+            //     hiddenObjects.Add(hideableObj);
         }
 
         //이전에 숨겨진 오브젝트와 비교하여 숨겨야 할 오브젝트 숨기기
