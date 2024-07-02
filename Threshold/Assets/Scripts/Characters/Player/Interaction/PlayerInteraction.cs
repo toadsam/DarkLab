@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScaryEvents;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
     private Vector3 maxBound;
     private Vector3 originalCameraPosition;
     private RenderTexture renderTexture;
-   // private ObjectInfoHolder targrt;
+    //private ObjectInfoHolder targrt;
     
     public static bool isDetect;
 
@@ -42,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         InputActions = new PlayerInputActions();
         InputActions.Player.Exit.performed += ctx => OnEscapePressed();
 
-        cameraObj = objectCamera.GetComponent<Camera>();
+        cameraObj = objectCamera.GetComponent<Camera>(); // 일단 여기 부분은 주석처리한다.
         renderTexture = objectCamera.GetComponent<Camera>().targetTexture;
 
         interactionText.GetComponent<Button>().onClick.AddListener(OnInteraction);
@@ -53,8 +54,11 @@ public class PlayerInteraction : MonoBehaviour
     
     void Update()
     {
-        if(cameraObj.orthographicSize == 0.5f)
-            MovingCamera();
+        if (cameraObj.orthographicSize == 0.5f)
+        {
+            MovingCamera(); //일단 움직이는 것만 구현하기 위해서
+           // Debug.Log("여기 지금 들어왔어요");
+        }
     }
 
     private void OnEnable()
@@ -89,13 +93,14 @@ public class PlayerInteraction : MonoBehaviour
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnProximity);
             // UI 텍스트를 활성화하여 상호작용 가능 문구를 표시
             interactionText.gameObject.SetActive(true);
+           // OnInteraction();  //현재 돋보기가 클릭돼지 않는 문제가 생겨서 일단은 바로 시작되도록 만듬.
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         // 물체와의 충돌이 종료될 때 UI 텍스트 비활성화
-        MainManager.Instance.objectEventHandler.targrt = null;
+        MainManager.Instance.objectEventHandler.targrt = null; //일단은 여기 부분 주석처리! 방생성 때 오류를 방지하기 위해서!
         interactionText.gameObject.SetActive(false);
     }
 
@@ -111,6 +116,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if(cameraPosition != null)
         {
+            //cameraObj.orthographicSize = 0.5f; //일단 여기 부분 추가했는데 이거 맞는지는 한번 더 물어보고 추가하기
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnViewInteractionStart);
             objectCamera.transform.position = cameraPosition.position;
             objectCamera.transform.rotation = cameraPosition.rotation;
@@ -152,14 +158,16 @@ public class PlayerInteraction : MonoBehaviour
         newPosition.z = Mathf.Clamp(newPosition.z, minBound.z, maxBound.z);
 
         // 실제로 이동
-        objectCamera.transform.position = newPosition;
+        objectCamera.transform.position = newPosition ;
     }
 
     //Focus 상호작용 함수
-    private void OnClick(PointerEventData eventData)
+    public void OnClick(PointerEventData eventData)  //일단 public으로 바꾸긴했는데....음...이러면 안될 것 
     {
-        if(!focusInteraction)
+        Debug.Log("지금 포커스 사용중입니다");
+        if (!focusInteraction)
         {
+            Debug.Log("지금 포커스 사용중입니다");
             isDetect = true;
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
             Camera.main.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;

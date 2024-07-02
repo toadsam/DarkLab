@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class HideableObject : MonoBehaviour
 {
     private HideableObject hideObject;
-    private static Dictionary<Collider, HideableObject> hideableObjectsMap = new Dictionary<Collider, HideableObject>();
+    private static Dictionary<Collider, List<HideableObject>> hideableObjectsMap = new Dictionary<Collider, List<HideableObject>>();
 
     [SerializeField]
     private Collider Collider = null;
@@ -20,12 +20,15 @@ public class HideableObject : MonoBehaviour
     public static void InitHideObject()
     {
         //이전 정보가 있다면 오브젝트를 다시 보이게 해주고 초기화
-        foreach(var obj in hideableObjectsMap.Values)
+        foreach(var objList in hideableObjectsMap.Values)
         {
-            if(obj != null && obj.Collider != null)
+            foreach(var obj in objList)
             {
-                obj.SetVisible(true);
-                obj.hideObject = null;
+                if(obj != null && obj.Collider != null)
+                {
+                    obj.SetVisible(true);
+                    obj.hideObject = null;
+                }
             }
         }
 
@@ -34,20 +37,42 @@ public class HideableObject : MonoBehaviour
         foreach (var obj in FindObjectsOfType<HideableObject>())
         {
             if(obj.Collider != null)
-                hideableObjectsMap[obj.Collider] = obj;
+            {
+                if (!hideableObjectsMap.ContainsKey(obj.Collider))
+                    hideableObjectsMap[obj.Collider] = new List<HideableObject>();
+                    
+                hideableObjectsMap[obj.Collider].Add(obj);
+            }
         }
     }
 
-    //매개변수로 전달된 콜라이더에 대한 HideableObject 반환
-    public static HideableObject GetRootHideableCollider(Collider collider)
+    //매개변수로 전달된 콜라이더에 대한 HideableObject 리스트 반환
+    public static List<HideableObject> GetRootHideableCollider(Collider collider)
     {
-        HideableObject obj;
+        List<HideableObject> objList;
 
-        if(hideableObjectsMap.TryGetValue(collider, out obj))
-            return GetRoot(obj);
+        if(hideableObjectsMap.TryGetValue(collider, out objList))
+        {
+            List<HideableObject> rootObjects = new List<HideableObject>();
+            foreach(var obj in objList)
+                rootObjects.Add(GetRoot(obj));
+
+            return rootObjects;
+        }
         else
             return null;
     }
+
+    // //매개변수로 전달된 콜라이더에 대한 HideableObject 반환
+    // public static HideableObject GetRootHideableCollider(Collider collider)
+    // {
+    //     HideableObject obj;
+
+    //     if(hideableObjectsMap.TryGetValue(collider, out obj))
+    //         return GetRoot(obj);
+    //     else
+    //         return null;
+    // }
 
     //오브젝트의 루트 오브젝트 반환(계층구조 고려하여)
     private static HideableObject GetRoot(HideableObject obj)
@@ -62,8 +87,8 @@ public class HideableObject : MonoBehaviour
     public void SetVisible(bool visible)
     {
         Renderer rend = this.GetComponent<Renderer>();
-
-        if(rend != null && rend.gameObject.activeInHierarchy && hideableObjectsMap.ContainsKey(rend.GetComponent<Collider>()))
+        //&& hideableObjectsMap.ContainsKey(Collider)
+        if(rend != null && rend.gameObject.activeInHierarchy)
             rend.shadowCastingMode = visible ? ShadowCastingMode.On : ShadowCastingMode.ShadowsOnly;
     }
 }

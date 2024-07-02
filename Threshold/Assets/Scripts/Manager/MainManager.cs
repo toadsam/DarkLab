@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScaryEvents;
 using UnityEngine;
 
 public enum scaryEventTier { Low, Medium, High };
@@ -14,10 +15,12 @@ public class MainManager : MonoBehaviour
     //public UIManager uiManager;
     //public GameManager gameManager;
     public ObjectEventHandler objectEventHandler;
+    public GameObject player;
+    public Vector3 resetPos;
 
     private void Awake()
     {
-        // ½Ì±ÛÅæ ÆÐÅÏ ±¸Çö
+        resetPos = player.transform.position;
         if (Instance == null)
         {
             Instance = this;

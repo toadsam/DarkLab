@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         AnimationData.Initialize();
 
         Rigidbody = GetComponent<Rigidbody>();
