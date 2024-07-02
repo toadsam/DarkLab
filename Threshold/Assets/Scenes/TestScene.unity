@@ -3093,6 +3093,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rm: {fileID: 1865736197}
+--- !u!1 &184004859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030975662, guid: abc00000000016817239927984763558,
+    type: 3}
+  m_PrefabInstance: {fileID: 902741428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &184004863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184004859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7ec1e7d697467ca82997af4c73866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 110537746}
 --- !u!1001 &186059434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13649,7 +13668,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030975645, guid: abc00000000006324100530983762984, type: 3}
       propertyPath: m_Name
-      value: SM_Bed_Split_matress_8
+      value: SM_Bed_Split_matress_8_2
       objectReference: {fileID: 0}
     - target: {fileID: 1030975645, guid: abc00000000006324100530983762984, type: 3}
       propertyPath: m_Layer
@@ -13657,7 +13676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030975645, guid: abc00000000006324100530983762984, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030975646, guid: abc00000000006324100530983762984, type: 3}
       propertyPath: m_RootOrder
@@ -13710,7 +13729,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1030975648, guid: abc00000000006324100530983762984,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1749509601}
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000006324100530983762984, type: 3}
 --- !u!4 &664357933 stripped
 Transform:
@@ -17676,7 +17699,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030975659, guid: abc00000000016817239927984763558, type: 3}
       propertyPath: m_Name
-      value: SM_Bed_Split_blanket_14
+      value: SM_Bed_Split_blanket_14_2
       objectReference: {fileID: 0}
     - target: {fileID: 1030975659, guid: abc00000000016817239927984763558, type: 3}
       propertyPath: m_Layer
@@ -17684,7 +17707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030975659, guid: abc00000000016817239927984763558, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030975660, guid: abc00000000016817239927984763558, type: 3}
       propertyPath: m_RootOrder
@@ -17737,7 +17760,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1030975662, guid: abc00000000016817239927984763558,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 184004863}
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000016817239927984763558, type: 3}
 --- !u!4 &902741429 stripped
 Transform:
@@ -23687,6 +23714,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1229145721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1231395865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030975676, guid: abc00000000009212465612688620954,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845634592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1231395869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231395865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7ec1e7d697467ca82997af4c73866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 110537746}
 --- !u!1 &1232863347
 GameObject:
   m_ObjectHideFlags: 0
@@ -25003,7 +25049,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030975611, guid: abc00000000000603736372128231772, type: 3}
       propertyPath: m_Name
-      value: SM_Bed_Split_Frame_5
+      value: SM_Bed_Split_Frame_5_2
       objectReference: {fileID: 0}
     - target: {fileID: 1030975611, guid: abc00000000000603736372128231772, type: 3}
       propertyPath: m_Layer
@@ -25011,7 +25057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030975611, guid: abc00000000000603736372128231772, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030975612, guid: abc00000000000603736372128231772, type: 3}
       propertyPath: m_RootOrder
@@ -25100,7 +25146,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1030975641, guid: abc00000000000603736372128231772,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1850226257}
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000000603736372128231772, type: 3}
 --- !u!4 &1317188264 stripped
 Transform:
@@ -32114,6 +32164,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1336536749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1749509597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030975648, guid: abc00000000006324100530983762984,
+    type: 3}
+  m_PrefabInstance: {fileID: 664357932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1749509601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749509597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7ec1e7d697467ca82997af4c73866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 110537746}
 --- !u!1001 &1752322509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33303,7 +33372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030975666, guid: abc00000000009212465612688620954, type: 3}
       propertyPath: m_Name
-      value: SM_Bed_Split_bookshelf_03_17
+      value: SM_Bed_Split_bookshelf_03_17_2
       objectReference: {fileID: 0}
     - target: {fileID: 1030975666, guid: abc00000000009212465612688620954, type: 3}
       propertyPath: m_Layer
@@ -33311,7 +33380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030975666, guid: abc00000000009212465612688620954, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030975667, guid: abc00000000009212465612688620954, type: 3}
       propertyPath: m_RootOrder
@@ -33372,7 +33441,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1030975676, guid: abc00000000009212465612688620954,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1231395869}
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000009212465612688620954, type: 3}
 --- !u!4 &1845634593 stripped
 Transform:
@@ -33471,6 +33544,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1848246300}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1850226253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030975641, guid: abc00000000000603736372128231772,
+    type: 3}
+  m_PrefabInstance: {fileID: 1317188263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1850226257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850226253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7ec1e7d697467ca82997af4c73866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 110537746}
 --- !u!1001 &1851133354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34378,6 +34470,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1893278378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1893483734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030975655, guid: abc00000000018345601930753415414,
+    type: 3}
+  m_PrefabInstance: {fileID: 2061622457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893483738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893483734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7ec1e7d697467ca82997af4c73866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 110537746}
 --- !u!1001 &1906857372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37690,7 +37801,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030975652, guid: abc00000000018345601930753415414, type: 3}
       propertyPath: m_Name
-      value: SM_Bed_Split_Pillow_11
+      value: SM_Bed_Split_Pillow_11_2
       objectReference: {fileID: 0}
     - target: {fileID: 1030975652, guid: abc00000000018345601930753415414, type: 3}
       propertyPath: m_Layer
@@ -37698,7 +37809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030975652, guid: abc00000000018345601930753415414, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030975653, guid: abc00000000018345601930753415414, type: 3}
       propertyPath: m_RootOrder
@@ -37751,7 +37862,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1030975655, guid: abc00000000018345601930753415414,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1893483738}
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000018345601930753415414, type: 3}
 --- !u!4 &2061622458 stripped
 Transform:
