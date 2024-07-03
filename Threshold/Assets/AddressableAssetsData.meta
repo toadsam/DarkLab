@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Threshold/Assets/AddressableAssetsData.meta
 guid: 900012d5117a34b91bb9ed46702a8edb
+========
+guid: e0347d1089ad54ec3ba3ac0f63f91963
+>>>>>>>> main:Threshold/Assets/Scripts/Diary.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
