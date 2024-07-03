@@ -1943,7 +1943,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1523163650}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -18879,7 +18879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &985855584
 Transform:
   m_ObjectHideFlags: 0
@@ -18911,7 +18911,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 66302d1e139da4f96adbf090e84c3d20, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 7f5a4448b5f6f2249923912ebab23f10, type: 2}
 --- !u!1001 &993672428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28627,7 +28627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1536056347
 Transform:
   m_ObjectHideFlags: 0
