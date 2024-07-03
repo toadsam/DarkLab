@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -590,15 +590,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff8f31c183f714e88a26722e147d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 0
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   effectType: 0
-  lightComponent: {fileID: 0}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
   targetIntensity: 0
   targetIndirectMultiplier: 0
   targetShadowType: 0
   targetDrawHalo: 0
-  duration: 0
-  targetSource: {fileID: 0}
 --- !u!114 &381792780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,14 +625,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 1
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   doTweenType: 3
   targetPosition: {x: 3, y: 3, z: 3}
   targetRotation: {x: 0, y: 0, z: 0}
   targetScale: {x: 3, y: 3, z: 3}
   shakePosition: 0
-  ease: 0
-  duration: 1
-  targetSource: {fileID: 0}
 --- !u!1 &384896760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,7 +2411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1091316398}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 481249524}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: OnInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1091316398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3441,6 +3481,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerEventWhen: 0
   objectEventHandler: {fileID: 1378768785}
+  player: {fileID: 481249523}
+  resetPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1621277913
 Transform:
   m_ObjectHideFlags: 0
@@ -4656,14 +4698,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 1
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   doTweenType: 3
   targetPosition: {x: 3, y: 3, z: 3}
   targetRotation: {x: 3, y: 3, z: 3}
   targetScale: {x: 3, y: 3, z: 3}
   shakePosition: 0
-  ease: 0
-  duration: 1
-  targetSource: {fileID: 0}
 --- !u!114 &1996018276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4676,15 +4732,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff8f31c183f714e88a26722e147d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 0
+  delay: 0
+  ease: 0
+  loop: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   effectType: 2
-  lightComponent: {fileID: 0}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
   targetIntensity: 0
   targetIndirectMultiplier: 0
   targetShadowType: 0
   targetDrawHalo: 0
-  duration: 0
-  targetSource: {fileID: 0}
 --- !u!1001 &2011483440
 PrefabInstance:
   m_ObjectHideFlags: 0

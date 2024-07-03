@@ -24,26 +24,26 @@ public class CameraRays : MonoBehaviour
         if (PlayerInteraction.isDetect)
         {
 
-            ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // ī�޶� ����Ʈ�� �߽ɿ��� ���� ����
-            ratHits = Physics.RaycastAll(ray, MAX_RAY_DISTANCE); // ��� �浹 ������ ������
+            ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); 
+            ratHits = Physics.RaycastAll(ray, MAX_RAY_DISTANCE); 
             
 
             foreach (RaycastHit hit in ratHits)
             {
-                if (hit.collider.CompareTag("FocusObject") && (!hit.collider.gameObject.GetComponent<InteractionObject>().data.isComplete)) // �浹�� ������Ʈ�� �±װ� "add"�� ��쿡��
+                if (hit.collider.CompareTag("FocusObject") && (!hit.collider.gameObject.GetComponent<InteractionObject>().data.isComplete)) 
                 {
                   
-                    Debug.DrawLine(ray.origin, hit.point, Color.green); // ������ �浹 �������� �ʷϻ� ������ �׷��� (����׿�)
+                    Debug.DrawLine(ray.origin, hit.point, Color.green); 
                     
                     
                    
                     
-                        greenRayDuration += Time.deltaTime; // �ʷϻ� ����ĳ��Ʈ�� ���� �ð� ������Ʈ
+                        greenRayDuration += Time.deltaTime; 
                         if (greenRayDuration >= GREEN_RAY_THRESHOLD)
                         {
                     
-                            ExecuteFunction(ratHits[0].point,hit.collider.gameObject); // �ʷϻ� ����ĳ��Ʈ�� ���� �ð� �̻� ���ӵǸ� �Լ� ����
-                            greenRayDuration = 0.0f; // �ʷϻ� ����ĳ��Ʈ�� �������� �ʾ����Ƿ� ���� �ð� �ʱ�ȭ
+                            ExecuteFunction(ratHits[0].point,hit.collider.gameObject); 
+                            greenRayDuration = 0.0f; 
                           ;
                         
                         }
@@ -52,7 +52,7 @@ public class CameraRays : MonoBehaviour
                       
                     
 
-                    break; // ù ��°�� �߰��� "add" �±׸� ���� ������Ʈ�� ó���ϰ� ���� ����
+                    break;
                 }
                 else
                 {
@@ -65,14 +65,13 @@ public class CameraRays : MonoBehaviour
 
             void ExecuteFunction(Vector3 hitPoint, GameObject gameObject)
             {
-                  Debug.Log("�ʷϻ� ����ĳ��Ʈ�� 2�� �̻� ���ӵǾ����ϴ�!");
+                  
                 MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnSustainedFocusInteraction);
 
                 if (gameObject.GetComponent<InteractionObject>() != null)
                 {
                     if (gameObject.GetComponent<InteractionObject>().data.isChage == true)
                     {
-                        Debug.Log("�ٲ����");
                         MainManager.Instance.GetScore();
                         gameObject.GetComponent<InteractionObject>().data.isComplete = true;
                     }
