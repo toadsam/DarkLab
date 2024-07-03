@@ -26,4 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BathRoom.unity
     guid: aa9e5300b3af4254c9157720ca2a7378
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: f153397eeb781425ba2f0735f85bd62b,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: d95a6ed3aab1e4aa795c3f11bbfce6fb,
+      type: 2}
