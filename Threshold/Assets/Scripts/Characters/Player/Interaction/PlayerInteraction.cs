@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     private Camera cameraObj;
 
     //focus 상호작용 관련 변수
-    private bool focusInteraction;
+    public  static bool focusInteraction; //일단은 static처리해서 해결
     private Vector3 minBound;
     private Vector3 maxBound;
     private Vector3 originalCameraPosition;
@@ -158,6 +158,7 @@ public class PlayerInteraction : MonoBehaviour
         newPosition.z = Mathf.Clamp(newPosition.z, minBound.z, maxBound.z);
 
         // 실제로 이동
+        
         objectCamera.transform.position = newPosition ;
     }
 
@@ -196,6 +197,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void OnEscapePressed()
+    
     {
         Debug.Log("ESC 키가 눌렸습니다.");
         if(cameraPosition != null)

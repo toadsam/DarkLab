@@ -27,4 +27,4 @@ public class CameraChange : MonoBehaviour
 
         currentCameraIndex = newIndex;
     }
-}
+}//여기 코드에다가 focus mode가 되어 있을 때랑 아닐 때랑 구분해서 넣기
