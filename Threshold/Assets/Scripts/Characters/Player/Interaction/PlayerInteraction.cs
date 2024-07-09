@@ -5,6 +5,8 @@ using ScaryEvents;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.EventSystems;
 
 public static class ExtensionMethods
@@ -28,14 +30,20 @@ public class PlayerInteraction : MonoBehaviour
     private Camera cameraObj;
 
     //focus 상호작용 관련 변수
-    public  static bool focusInteraction; //일단은 static처리해서 해결
+    private bool focusInteraction;
     private Vector3 minBound;
     private Vector3 maxBound;
     private Vector3 originalCameraPosition;
     private RenderTexture renderTexture;
+    public GameObject VignetteVolume;
     //private ObjectInfoHolder targrt;
+
+    //눈감기 상호작용 관련 변수
+    private bool closeEyesInteraction;
+    private Vignette vignette;
     
     public static bool isDetect;
+    public static bool interaction;
 
     private void Awake()
     {
@@ -43,22 +51,23 @@ public class PlayerInteraction : MonoBehaviour
         InputActions = new PlayerInputActions();
         InputActions.Player.Exit.performed += ctx => OnEscapePressed();
 
-        cameraObj = objectCamera.GetComponent<Camera>(); // 일단 여기 부분은 주석처리한다.
+        cameraObj = objectCamera.GetComponent<Camera>();
         renderTexture = objectCamera.GetComponent<Camera>().targetTexture;
 
         interactionText.GetComponent<Button>().onClick.AddListener(OnInteraction);
         cameraUI.GetComponent<EventTrigger>().AddListener(EventTriggerType.PointerClick, OnClick);
 
         isDetect = false;
+        interaction = false;
     }
     
     void Update()
     {
         if (cameraObj.orthographicSize == 0.5f)
-        {
-            MovingCamera(); //일단 움직이는 것만 구현하기 위해서
-           // Debug.Log("여기 지금 들어왔어요");
-        }
+            MovingCamera();
+
+        if (Input.GetKeyDown(KeyCode.G))
+            CloseEyesMode();
     }
 
     private void OnEnable()
@@ -93,7 +102,6 @@ public class PlayerInteraction : MonoBehaviour
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnProximity);
             // UI 텍스트를 활성화하여 상호작용 가능 문구를 표시
             interactionText.gameObject.SetActive(true);
-           // OnInteraction();  //현재 돋보기가 클릭돼지 않는 문제가 생겨서 일단은 바로 시작되도록 만듬.
         }
     }
 
@@ -114,24 +122,64 @@ public class PlayerInteraction : MonoBehaviour
 
     private void StartInteraction()
     {
-        if(cameraPosition != null)
+        if (cameraPosition != null)
         {
-            //cameraObj.orthographicSize = 0.5f; //일단 여기 부분 추가했는데 이거 맞는지는 한번 더 물어보고 추가하기
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnViewInteractionStart);
+            Camera.main.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
             objectCamera.transform.position = cameraPosition.position;
             objectCamera.transform.rotation = cameraPosition.rotation;
             originalCameraPosition = objectCamera.transform.position;
             cameraUI.SetActive(true);
+            interaction = true;
             Player.isMoving = false;
 
             float halfOrthographicSize = cameraObj.orthographicSize / 2f;
             minBound = new Vector3(originalCameraPosition.x - halfOrthographicSize, originalCameraPosition.y - halfOrthographicSize, originalCameraPosition.z - halfOrthographicSize);
             maxBound = new Vector3(originalCameraPosition.x + halfOrthographicSize, originalCameraPosition.y + halfOrthographicSize, originalCameraPosition.z + halfOrthographicSize);
         }
-        
+    }
 
-        //여기 부분에 위치를 카메라의 위치를 받고 카메라를 옮긴다.
+    //Focus 상호작용 함수
+    private void OnClick(PointerEventData eventData)
+    {
+        if (!focusInteraction)
+        {
+            isDetect = true;
+            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
+            cameraObj.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
+            VignetteVolume.SetActive(true);
 
+            Vector2 screenPoint = eventData.position;
+
+            Vector2 normalizedPoint = new Vector2(screenPoint.x / Screen.width, screenPoint.y / Screen.height);
+            Vector2 renderTextureSize = new Vector2(renderTexture.width, renderTexture.height);
+            Vector2 renderTexturePoint = Vector2.Scale(normalizedPoint, renderTextureSize);
+
+            Ray ray = cameraObj.ScreenPointToRay(renderTexturePoint);
+
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                cameraObj.transform.position = hit.point;
+
+                cameraObj.orthographicSize = 0.5f;
+                focusInteraction = true;
+            }
+            else
+            {
+                Debug.Log("레이캐스트에 의한 충돌이 없습니다.");
+            }
+        }
+        else
+        {
+            cameraObj.orthographicSize = 1f;
+            VignetteVolume.SetActive(false);
+            focusInteraction = false;
+            Player.isMoving = true;
+            isDetect = false;
+
+            cameraObj.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = false;
+        }
     }
 
     private void MovingCamera()
@@ -162,54 +210,51 @@ public class PlayerInteraction : MonoBehaviour
         objectCamera.transform.position = newPosition ;
     }
 
-    //Focus 상호작용 함수
-    public void OnClick(PointerEventData eventData)  //일단 public으로 바꾸긴했는데....음...이러면 안될 것 
+    private void CloseEyesMode()
     {
-        Debug.Log("지금 포커스 사용중입니다");
-        if (!focusInteraction)
+        Volume volume = VignetteVolume.GetComponent<Volume>();
+
+        if (volume != null && volume.profile != null)
         {
-            Debug.Log("지금 포커스 사용중입니다");
-            isDetect = true;
-            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
-            Camera.main.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
-
-            Vector2 screenPoint = eventData.position;
-
-            Vector2 normalizedPoint = new Vector2(screenPoint.x / Screen.width, screenPoint.y / Screen.height);
-            Vector2 renderTextureSize = new Vector2(renderTexture.width, renderTexture.height);
-            Vector2 renderTexturePoint = Vector2.Scale(normalizedPoint, renderTextureSize);
-
-            Ray ray = cameraObj.ScreenPointToRay(renderTexturePoint);
-
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (!closeEyesInteraction)
             {
-                cameraObj.transform.position = hit.point;
+                if (volume.profile.TryGet(out vignette))
+                    SetVignetteIntensity(0.8f);
 
-                cameraObj.orthographicSize = 0.5f;
-                focusInteraction = true;
+                closeEyesInteraction = true;
             }
             else
             {
-                Debug.Log("레이캐스트에 의한 충돌이 없습니다.");
+                if (volume.profile.TryGet(out vignette))
+                    SetVignetteIntensity(0.5f);
+
+                closeEyesInteraction = false;
             }
         }
     }
 
+    private void SetVignetteIntensity(float intensity)
+    {
+        if (vignette != null)
+        {
+            vignette.intensity.value = Mathf.Clamp(intensity, 0f, 1f);
+        }
+    }
+
     private void OnEscapePressed()
-    
     {
         Debug.Log("ESC 키가 눌렸습니다.");
-        if(cameraPosition != null)
+        if (cameraPosition != null)
         {
             cameraUI.SetActive(false);
             cameraObj.orthographicSize = 1f;
+            VignetteVolume.SetActive(false);
             focusInteraction = false;
             Player.isMoving = true;
             isDetect = false;
+            interaction = false;
             Camera.main.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = false;
             cameraObj.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = false;
         }
-        // ESC 키가 눌렸을 때 수행되어야 하는 동작을 여기에 추가합니다.
     }
 }

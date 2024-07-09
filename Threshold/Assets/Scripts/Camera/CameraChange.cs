@@ -50,23 +50,16 @@ public class CameraChange : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerInteraction.interaction)
+        {
+            //Q 키를 누르면 왼쪽 카메라 활성화
+            if (Input.GetKeyDown(KeyCode.Q))
+                SwitchCamera((currentCameraIndex - 1 + cameras.Length) % cameras.Length);
 
-        //Q 키를 누르면 왼쪽 카메라 활성화
-        if (Input.GetKeyDown(KeyCode.Q))
-            SwitchCamera((currentCameraIndex - 1 + cameras.Length) % cameras.Length);
-
-        //E 키를 누르면 오른쪽 카메라 활성화
-        if (Input.GetKeyDown(KeyCode.E))
-            if (PlayerInteraction.focusInteraction)
-            {
-                CloseEyesMode();
-                Debug.Log("여기에 들어오면 눈감기");
-            }
-            else
-            {
+            //E 키를 누르면 오른쪽 카메라 활성화
+            if (Input.GetKeyDown(KeyCode.E))
                 SwitchCamera((currentCameraIndex + 1) % cameras.Length);
-            }
-
+        }
     }
 
     void SwitchCamera(int newIndex)
