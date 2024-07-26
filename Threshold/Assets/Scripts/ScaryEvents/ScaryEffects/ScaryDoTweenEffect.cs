@@ -15,15 +15,19 @@ namespace ScaryEvents.ScaryEffects
 
     public class ScaryDoTweenEffect : ScaryEffect
     {
+        [Header("DoTween Settings")]
         public DoTweenType doTweenType;
+        public bool isRelative;
+        public LoopType doTweenLoopType = LoopType.Restart;
+        public int doTweenLoops = 1;
     
         // DoTween variables
-        // targetPosition and targetRotation is based on World Space. local Space ³ª Relative ÇÑ case ¶ÇÇÑ °í·ÁÇÏ¸é ÁÁÀ» µí.
-        public Vector3 targetPosition;
-        public Vector3 targetRotation;
-        public Vector3 targetScale;
-        public float shakePosition;
-    
+        // targetPosition and targetRotation is based on World Space. local Space ï¿½ï¿½ Relative ï¿½ï¿½ case ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+        public Vector3 targetPosition = Vector3.zero;
+        public Vector3 targetRotation = Vector3.zero;
+        public Vector3 targetScale = Vector3.one;
+        public float shakePosition = 1;
+        
         public override void StartEffectInternal()
         {
             switch (doTweenType)
@@ -54,7 +58,9 @@ namespace ScaryEvents.ScaryEffects
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             a.DOMove(new Vector3(targetPosition.x,targetPosition.y,targetPosition.z), duration)
-                .SetEase(ease);
+                .SetEase(ease)
+                .SetRelative(isRelative)
+                .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
         public void Rotation()
@@ -62,7 +68,8 @@ namespace ScaryEvents.ScaryEffects
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             a.DORotate(new Vector3(targetRotation.x,targetRotation.y,targetRotation.z), duration, RotateMode.FastBeyond360)
                 .SetEase(ease)
-                .SetLoops(-1, LoopType.Restart); 
+                .SetRelative(isRelative)
+                .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
         public void Scale()
@@ -70,19 +77,22 @@ namespace ScaryEvents.ScaryEffects
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             a.DOScale(new Vector3(targetScale.x, targetScale.y, targetScale.z), duration)
                 .SetEase(ease)
-                .SetLoops(-1, LoopType.Yoyo);
+                .SetRelative(isRelative)
+                .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
-        //¿ì¼± À§Ä¡·Î Èçµé¸®°Ô Çß´Âµ¥, rotate/scaleµµ ÀÖ¾î¼­ ÀÌ°Ç »óÀÇ ÇÏ¸é ÁÁÀ»µí!
+        //ï¿½ì¼± ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½é¸®ï¿½ï¿½ ï¿½ß´Âµï¿½, rotate/scaleï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!
         public void Shaking()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
-            a.DOShakePosition(shakePosition, duration);
+            a.DOShakePosition(shakePosition, duration)
+                .SetRelative(isRelative)
+                .SetLoops(doTweenLoops, doTweenLoopType);;
         }
 
         public void Fade()
         {
-            //À½.. ¸ÓÅ×¸®¾ó °¡Á®¿Í¾ßÇÏ´Âµ¥,, ObjectInfoHolder¿¡ Ãß°¡ÇÒ±î,,,?
+            //ï¿½ï¿½.. ï¿½ï¿½ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¾ï¿½ï¿½Ï´Âµï¿½,, ObjectInfoHolderï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ò±ï¿½,,,?
         }
 
         #endregion

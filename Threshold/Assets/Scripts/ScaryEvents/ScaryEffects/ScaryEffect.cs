@@ -11,11 +11,11 @@ namespace ScaryEvents.ScaryEffects
         [HideInInspector] public ScaryEvent targetSource;
     
         // animation settings
-        public float duration;
-        public float delay;
-        public Ease ease;
-        public int loop = 1;
-        private int loopCount;
+        public float duration = 1;
+        public float delay = 0;
+        public Ease ease = Ease.Linear;
+        public int loops = 1;
+        private int loopCount = 1;
     
         // events
         public UnityEvent onStart;
@@ -25,8 +25,11 @@ namespace ScaryEvents.ScaryEffects
     
         // internal logics
         private bool isUpdating = false;
-        protected List<Coroutine> effectCoroutines; // lifecycle ¿¡ ÀÇÇØ °ü¸®µÇ´Â coroutine ÀÌ¹Ç·Î, sub class ¿¡¼­µµ »ç¿ë °¡´É.
+        protected List<Coroutine> effectCoroutines = new List<Coroutine>(); // lifecycle ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ coroutine ï¿½Ì¹Ç·ï¿½, sub class ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 
+        // Inspector UI
+        [HideInInspector] public bool showProperties = false;
+        
         #region Effect Functions
     
         /// <summary>
@@ -56,12 +59,12 @@ namespace ScaryEvents.ScaryEffects
         public abstract void StartEffectInternal();
     
         /// <summary>
-        /// »ó¼Ó ¹ÞÀº Å¬·¡½º¿¡¼­´Â °¢ Effects°¡ ³¡³­ ÈÄ, ÀÌ ÇÔ¼ö¸¦ ¹«Á¶°Ç È£ÃâÇÏ°Å³ª.
-        /// Effects¸¦ duration ÀÇ ½Ã°£ÀÌ Áö³­ ÈÄ Á¾·á½ÃÅ°°í ½ÍÀº °æ¿ì, DelayAndStopEffect ¸¦ È£ÃâÇØ¾ß ÇÔ.
+        /// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Effectsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï°Å³ï¿½.
+        /// Effectsï¿½ï¿½ duration ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, DelayAndStopEffect ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½.
         /// </summary>
-        public void StopEffect()
+        public virtual void StopEffect()
         {
-            if (loop > loopCount)
+            if (loops > loopCount)
             {
                 loopCount++;
                 StartEffectInternalWrapper();
@@ -71,15 +74,18 @@ namespace ScaryEvents.ScaryEffects
                 isUpdating = false;
                 onComplete.Invoke();
 
-                foreach (var effectCoroutine in effectCoroutines)
+                if (effectCoroutines != null)
                 {
-                    StopCoroutine(effectCoroutine);
+                    foreach (var effectCoroutine in effectCoroutines)
+                    {
+                        StopCoroutine(effectCoroutine);
+                    }
                 }
             }
         }
     
         /// <summary>
-        /// Effects¸¦ duration ÀÇ ½Ã°£ÀÌ Áö³­ ÈÄ Á¾·á½ÃÅ³ ¼ö ÀÖÀ½. effectCoroutines ¿Í Coroutine À» ½Å°æ¾²Áö ¾Ê°í »ç¿ëÇÒ ¼ö ÀÖµµ·Ï ÇÏ±â À§ÇÑ wrapper.
+        /// Effectsï¿½ï¿½ duration ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. effectCoroutines ï¿½ï¿½ Coroutine ï¿½ï¿½ ï¿½Å°æ¾²ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ wrapper.
         /// </summary>
         /// <returns></returns>
         protected void DelayAndStopEffect()
@@ -88,7 +94,7 @@ namespace ScaryEvents.ScaryEffects
         }
     
         /// <summary>
-        /// Effects¸¦ duration ÀÇ ½Ã°£ÀÌ Áö³­ ÈÄ Á¾·á½ÃÅ³ ¼ö ÀÖÀ½. effectCoroutines ¿Í Coroutine À» ½Å°æ¾²Áö ¾Ê°í »ç¿ëÇÒ ¼ö ÀÖµµ·Ï ÇÏ±â À§ÇÑ wrapper.
+        /// Effectsï¿½ï¿½ duration ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. effectCoroutines ï¿½ï¿½ Coroutine ï¿½ï¿½ ï¿½Å°æ¾²ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ wrapper.
         /// </summary>
         /// <returns></returns>
         protected void DelayAndStopEffect(float inputDuration)
