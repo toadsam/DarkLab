@@ -3,7 +3,17 @@ guid: b791cc7929d54424d91047950f8143c1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HandMirror_Glass
+    second: {fileID: 2100000, guid: 933aa04c902bf4d4b9efac0d1e157e68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HandMirror_Metalic
+    second: {fileID: 2100000, guid: 4abf5f540a8e3e4448e9ba0cf7143ca6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.25
+    globalScale: 25
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
