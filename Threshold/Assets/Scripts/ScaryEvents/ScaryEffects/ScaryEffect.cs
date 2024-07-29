@@ -29,6 +29,7 @@ namespace ScaryEvents.ScaryEffects
 
         // Inspector UI
         [HideInInspector] public bool showProperties = false;
+        protected bool eventDone = false;
         
         #region Effect Functions
     
@@ -37,6 +38,7 @@ namespace ScaryEvents.ScaryEffects
         /// </summary>
         public void StartEffect()
         {
+            eventDone = false;
             loopCount = 1;
             effectCoroutines.Add(StartCoroutine(StartEffectCoroutine()));
         }
@@ -64,6 +66,8 @@ namespace ScaryEvents.ScaryEffects
         /// </summary>
         public virtual void StopEffect()
         {
+            if (eventDone) return;
+            
             if (loops > loopCount)
             {
                 loopCount++;
@@ -73,6 +77,7 @@ namespace ScaryEvents.ScaryEffects
             {
                 isUpdating = false;
                 onComplete.Invoke();
+                eventDone = true;
 
                 if (effectCoroutines != null)
                 {
@@ -129,16 +134,6 @@ namespace ScaryEvents.ScaryEffects
             {
                 onUpdate.Invoke();
             }
-        }
-    
-        public void OnDestroy()
-        {
-            StopEffect();
-        }
-    
-        public void OnDisable()
-        {
-            StopEffect();
         }
 
         #endregion

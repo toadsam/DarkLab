@@ -21,6 +21,7 @@ namespace ScaryEvents.ScaryEffects
     {
         [Header("Audio Settings")]
         public AudioClip audioClip;
+        [Range(0, 1)] public float volume = 1.0f;
         public Vector3 soundRelativePositionFromListener = Vector3.zero;
         public float spatialBlend = 1.0f; // 0 is 2D sound, 1 is 3D sound.
 
@@ -87,6 +88,8 @@ namespace ScaryEvents.ScaryEffects
 
         public override void StopEffect()
         {
+            if (eventDone) return;
+            
             audioSource.Stop();
             ClearAudioEffects();
             base.StopEffect();
@@ -100,6 +103,7 @@ namespace ScaryEvents.ScaryEffects
                 audioSource = audioSourceObject.AddComponent<AudioSource>();
 
             audioSource.clip = audioClip;
+            audioSource.volume = volume;
             audioSource.spatialBlend = spatialBlend;
             audioSource.loop = loops == -1;
             
@@ -212,7 +216,12 @@ namespace ScaryEvents.ScaryEffects
                 filter.enabled = false;
             }
             audioFilters.Clear();
-            FindObjectOfType<AudioSourcePoolManager>().Pool.Release(audioSource.gameObject);
+            
+            if (audioSource != null)
+            {
+                FindObjectOfType<AudioSourcePoolManager>().Pool.Release(audioSource.gameObject);
+                audioSource = null;
+            }
         }
 
     }

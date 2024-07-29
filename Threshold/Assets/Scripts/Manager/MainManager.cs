@@ -5,7 +5,7 @@ using ScaryEvents;
 using UnityEngine;
 
 [Flags]
-public enum scaryEventTier { Low, Medium, High };
+public enum scaryEventTier { Tier1, Tier2, Tier3, Tier4, Tier5 };
 public enum scaryEventWhen { OnAwake, OnProximity, OnViewInteractionStart, OnFocusInteractionStart, OnSustainedFocusInteraction };
 public class MainManager : MonoBehaviour
 {

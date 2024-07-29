@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Metalic.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Metalic.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Common/Door.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Common/Door.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent/EventTestAndCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent/EventTestAndCreation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryAudioEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryAudioEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryEffect.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3c2c0d8b1b3a4f82a386dd1228359b8510000/41/f454a3fb/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac87b54e58ee4be198261fd5c8030d5293ee00/d2/3702c0a7/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryPostProcessingSeperator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,7 +112,7 @@
       <workItem from="1715778008493" duration="3864000" />
       <workItem from="1716028474223" duration="963000" />
       <workItem from="1722095894604" duration="3162000" />
-      <workItem from="1722218411990" duration="356000" />
+      <workItem from="1722218411990" duration="4035000" />
     </task>
     <servers />
   </component>

@@ -46,6 +46,7 @@ public class ScaryEffectEditor : Editor
     
     // ScaryAudioEffect properties
     SerializedProperty audioClip;
+    SerializedProperty audioVolume;
     SerializedProperty soundRelativePositionFromListener;
     SerializedProperty spatialBlend;
     SerializedProperty audioEffectType;
@@ -116,6 +117,7 @@ public class ScaryEffectEditor : Editor
         {
             // Common properties
             audioClip = serializedObject.FindProperty("audioClip");
+            audioVolume = serializedObject.FindProperty("volume");
             soundRelativePositionFromListener = serializedObject.FindProperty("soundRelativePositionFromListener");
             spatialBlend = serializedObject.FindProperty("spatialBlend");
             audioEffectType = serializedObject.FindProperty("audioEffectType");
@@ -279,6 +281,7 @@ public class ScaryEffectEditor : Editor
 {
     // General Audio Settings
     EditorGUILayout.PropertyField(audioClip, new GUIContent("Audio Clip"));
+    EditorGUILayout.PropertyField(audioVolume, new GUIContent("Volume"));
     EditorGUILayout.PropertyField(soundRelativePositionFromListener, new GUIContent("Sound Position Relative To Listener"));
     EditorGUILayout.PropertyField(spatialBlend, new GUIContent("Spatial Blend (0 = 2D, 1 = 3D)"));
 
