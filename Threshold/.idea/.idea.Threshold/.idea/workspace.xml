@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cyberpunk Apartment/Leartes Studios/URP/Art/Materials/MI_Window.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cyberpunk Apartment/Leartes Studios/URP/Art/Materials/MI_Window.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneExample/Cyberpunk_Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneExample/Cyberpunk_Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Metalic.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/HandMirror/HandMirror_Metalic.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Common/Door.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Common/Door.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent/EventTestAndCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent/EventTestAndCreation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +25,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryPostProcessingSeperator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryPostProcessingVolumeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEventTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/DoTweenLightExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -106,6 +110,8 @@
       <workItem from="1715484310431" duration="8302000" />
       <workItem from="1715778008493" duration="3864000" />
       <workItem from="1716028474223" duration="963000" />
+      <workItem from="1722095894604" duration="3162000" />
+      <workItem from="1722218411990" duration="356000" />
     </task>
     <servers />
   </component>
