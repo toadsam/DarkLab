@@ -98,6 +98,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnInteraction(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started) 
+        {
+            Debug.Log("아이템이 있다면 상호작용을 시작합니다");
+        }
+    }
+
     private bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
