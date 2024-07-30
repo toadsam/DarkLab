@@ -1,108 +1,59 @@
-Shader "Custom/URPWavyShader"
+Shader "Custom/WavyShader"
 {
     Properties
     {
-        _BaseMap("Base Map", 2D) = "white" {}
-        _BumpMap("Normal Map", 2D) = "bump" {}
-        _HeightMap("Height Map", 2D) = "black" {}
-        _OcclusionMap("Occlusion Map", 2D) = "white" {}
-        _MetallicGlossMap("Metallic", 2D) = "white" {}
-        _Frequency("Frequency", Float) = 1.0
-        _Amplitude("Amplitude", Float) = 0.1
-        _Speed("Speed", Float) = 1.0
-        _CustomTime("Custom Time", Float) = 0.0
+        _MainTex ("Texture", 2D) = "white" {}
+        _Frequency ("Frequency", Float) = 1.0
+        _Amplitude ("Amplitude", Float) = 0.1
+        _Speed ("Speed", Float) = 1.0
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 200
+        LOD 100
 
         Pass
         {
-            Name "ForwardLit"
-            Tags { "LightMode"="UniversalForward" }
-
-            HLSLPROGRAM
+            CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+            #include "UnityCG.cginc"
 
-            struct Attributes
+            struct appdata_t
             {
-                float4 positionOS : POSITION;
+                float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-                float3 normalOS : NORMAL;
-                float4 tangentOS : TANGENT;
             };
 
-            struct Varyings
+            struct v2f
             {
-                float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                float3 normalWS : TEXCOORD1;
-                float3 tangentWS : TEXCOORD2;
-                float3 bitangentWS : TEXCOORD3;
+                float4 vertex : SV_POSITION;
             };
 
-            TEXTURE2D(_BaseMap);
-            SAMPLER(sampler_BaseMap);
-            TEXTURE2D(_BumpMap);
-            SAMPLER(sampler_BumpMap);
-            TEXTURE2D(_HeightMap);
-            SAMPLER(sampler_HeightMap);
-            TEXTURE2D(_OcclusionMap);
-            SAMPLER(sampler_OcclusionMap);
-            TEXTURE2D(_MetallicGlossMap);
-            SAMPLER(sampler_MetallicGlossMap);
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
             float _Frequency;
             float _Amplitude;
             float _Speed;
-            float _CustomTime;
+            float _Time;
 
-            Varyings vert(Attributes IN)
+            v2f vert (appdata_t v)
             {
-                Varyings OUT;
-                OUT.positionHCS = TransformObjectToHClip(IN.positionOS);
-
-                // Apply wavy effect to UV coordinates
-                OUT.uv = IN.uv;
-                OUT.uv.y += sin(_CustomTime * _Speed + OUT.uv.x * _Frequency) * _Amplitude;
-
-                OUT.normalWS = TransformObjectToWorldNormal(IN.normalOS);
-                OUT.tangentWS = TransformObjectToWorldDir(IN.tangentOS.xyz);
-                OUT.bitangentWS = cross(OUT.normalWS, OUT.tangentWS) * IN.tangentOS.w;
-
-                return OUT;
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = v.uv;
+                return o;
             }
 
-            half4 frag(Varyings IN) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
-                // Sample textures
-                half4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv);
-                half3 normalMap = UnpackNormal(SAMPLE_TEXTURE2D(_BumpMap, sampler_BumpMap, IN.uv));
-                half occlusion = SAMPLE_TEXTURE2D(_OcclusionMap, sampler_OcclusionMap, IN.uv).r;
-                half4 metallicGloss = SAMPLE_TEXTURE2D(_MetallicGlossMap, sampler_MetallicGlossMap, IN.uv);
-
-                // Transform normal map to world space
-                half3 worldNormal = normalize(normalMap.x * IN.tangentWS + normalMap.y * IN.bitangentWS + normalMap.z * IN.normalWS);
-
-                // Create SurfaceData
-                SurfaceData surfaceData;
-                surfaceData.albedo = baseColor.rgb;
-                surfaceData.normalWS = worldNormal;
-                surfaceData.occlusion = occlusion;
-                surfaceData.metallic = metallicGloss.r;
-                surfaceData.smoothness = metallicGloss.a;
-
-                // Lighting calculation
-                half3 viewDirection = normalize(_WorldSpaceCameraPos - TransformObjectToWorld(IN.positionHCS).xyz);
-                half4 color = UniversalFragmentBlinnPhong(surfaceData, worldNormal, viewDirection);
-
-                color.a = baseColor.a;
-                return color;
+                float wave = sin(i.uv.y * _Frequency + _Time * _Speed) * _Amplitude;
+                float2 uv = i.uv + float2(wave, 0);
+                fixed4 col = tex2D(_MainTex, uv);
+                return col;
             }
-            ENDHLSL
+            ENDCG
         }
     }
     FallBack "Diffuse"

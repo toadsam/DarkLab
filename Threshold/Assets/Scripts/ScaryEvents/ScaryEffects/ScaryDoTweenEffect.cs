@@ -105,24 +105,33 @@ namespace ScaryEvents.ScaryEffects
 
         public void Fade()
         {
-            
+            var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
+            var material = renderer.material;
+
+            Color color = material.color;
+            color.a = 0;
+            material.color = color;
+
+            material.DOFade(1, duration)
+                .SetEase(ease)
+                .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
         public void WavyTexture()
         {
-            var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
-            originalMaterial = renderer.material;
+            // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
+            // originalMaterial = renderer.material;
 
-            renderer.material = material;
+            // renderer.material = material;
 
-            material.SetFloat("_Frequency", frequency);
-            material.SetFloat("_Amplitude", amplitude);
-            material.SetFloat("_Speed", speed);
+            // material.SetFloat("_Frequency", frequency);
+            // material.SetFloat("_Amplitude", amplitude);
+            // material.SetFloat("_Speed", speed);
 
-            DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
-                .SetEase(Ease.Linear)
-                .SetLoops(doTweenLoops, doTweenLoopType)
-                .OnComplete(() => renderer.material = originalMaterial);
+            // DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
+            //     .SetEase(Ease.Linear)
+            //     .SetLoops(doTweenLoops, doTweenLoopType)
+            //     .OnComplete(() => renderer.material = originalMaterial);
 
 
             // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
@@ -138,16 +147,13 @@ namespace ScaryEvents.ScaryEffects
             //     .SetEase(Ease.Linear)
             //     .SetLoops(doTweenLoops, doTweenLoopType);
 
+            var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
+            Vector2 originalOffset = material.mainTextureOffset;
 
-
-
-            // var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
-            // Vector2 originalOffset = material.mainTextureOffset;
-
-            // material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
-            //     .SetEase(ease)
-            //     .SetLoops(doTweenLoops, doTweenLoopType)
-            //     .OnStepComplete(() => material.mainTextureOffset = originalOffset);
+            material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
+                .SetEase(Ease.InOutSine)
+                .SetLoops(doTweenLoops, doTweenLoopType)
+                .OnStepComplete(() => material.mainTextureOffset = originalOffset);
         }
 
         public void MoveAllRoomObjectsUp()
@@ -159,6 +165,10 @@ namespace ScaryEvents.ScaryEffects
                 {
                     child.DOMove(child.position + targetPosition, duration)
                         .SetEase(ease)
+                        .SetRelative(isRelative)
+                        .SetLoops(doTweenLoops, doTweenLoopType);
+
+                    child.DOShakeRotation(duration, shakePosition)
                         .SetRelative(isRelative)
                         .SetLoops(doTweenLoops, doTweenLoopType);
                 }

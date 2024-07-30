@@ -69,7 +69,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 1.4, z: 0}
   targetRotation: {x: 0, y: 0, z: 0}
   targetScale: {x: 1, y: 1, z: 1}
-  shakePosition: 1
+  shakePosition: 10
   amplitude: 0.1
   frequency: 1
   speed: 1
