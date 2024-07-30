@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (canLook)
+        if (canLook && WakeUp.isWakeUp)
         {
             CameraLook();
         }
@@ -104,6 +104,27 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("아이템이 있다면 상호작용을 시작합니다");
         }
+    }
+
+    public void OnSensitivityIncrease(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            lookSensitivity += 0.05f;
+            Debug.Log("현재의 감도" + lookSensitivity);
+        }
+        
+
+    }
+
+    public void OnSensitivityDecrease(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            lookSensitivity -= 0.05f;
+            Debug.Log("현재의 감도" + lookSensitivity);
+        }
+
     }
 
     private bool IsGrounded()
