@@ -107,7 +107,7 @@ namespace ScaryEvents.ScaryEffects
         {
             var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
             var material = renderer.material;
-            
+
             Color color = material.color;
             color.a = 0;
             material.color = color;
@@ -119,19 +119,19 @@ namespace ScaryEvents.ScaryEffects
 
         public void WavyTexture()
         {
-            var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
-            originalMaterial = renderer.material;
+            // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
+            // originalMaterial = renderer.material;
 
-            renderer.material = material;
+            // renderer.material = material;
 
-            material.SetFloat("_Frequency", frequency);
-            material.SetFloat("_Amplitude", amplitude);
-            material.SetFloat("_Speed", speed);
+            // material.SetFloat("_Frequency", frequency);
+            // material.SetFloat("_Amplitude", amplitude);
+            // material.SetFloat("_Speed", speed);
 
-            DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
-                .SetEase(Ease.Linear)
-                .SetLoops(doTweenLoops, doTweenLoopType)
-                .OnComplete(() => renderer.material = originalMaterial);
+            // DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
+            //     .SetEase(Ease.Linear)
+            //     .SetLoops(doTweenLoops, doTweenLoopType)
+            //     .OnComplete(() => renderer.material = originalMaterial);
 
 
             // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
@@ -147,7 +147,13 @@ namespace ScaryEvents.ScaryEffects
             //     .SetEase(Ease.Linear)
             //     .SetLoops(doTweenLoops, doTweenLoopType);
 
+            var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
+            Vector2 originalOffset = material.mainTextureOffset;
 
+            material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
+                .SetEase(Ease.InOutSine)
+                .SetLoops(doTweenLoops, doTweenLoopType)
+                .OnStepComplete(() => material.mainTextureOffset = originalOffset);
 
 
             // var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;

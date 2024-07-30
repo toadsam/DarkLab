@@ -8,7 +8,8 @@ namespace ScaryEvents.ScaryEffects
     public enum PostProcessingEffectType
     {
         ChromaticAberration,
-        CloseEye
+        CloseEye,
+        CameraMove
     }
     
     public class ScaryPostProcessingEffect : ScaryEffect

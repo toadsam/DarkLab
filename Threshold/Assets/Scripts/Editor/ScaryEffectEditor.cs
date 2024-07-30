@@ -68,8 +68,8 @@ public class ScaryEffectEditor : Editor
     // Chorus properties
     SerializedProperty chorusDryMix, chorusWetMix1, chorusWetMix2, chorusWetMix3, chorusDelay, chorusRate, chorusDepth;
 
-    //ScaryObjectState properties
-    SerializedProperty objectStateType;
+    //ScaryState properties
+    SerializedProperty stateType;
 
     private void OnEnable()
     {
@@ -172,8 +172,8 @@ public class ScaryEffectEditor : Editor
             chorusDepth = serializedObject.FindProperty("chorusDepth");
         }
 
-        if (target is ScaryObjectStateEffect)
-            objectStateType = serializedObject.FindProperty("objectStateType");
+        if (target is ScaryStateEffect)
+            stateType = serializedObject.FindProperty("stateType");
     }
 
     public override void OnInspectorGUI()
@@ -222,9 +222,9 @@ public class ScaryEffectEditor : Editor
                 DrawAudioEffectProperties(effect as ScaryAudioEffect);
             }
 
-            if (effect is ScaryObjectStateEffect)
+            if (effect is ScaryStateEffect)
             {
-                DrawObjectStateEffectProperties();
+                DrawStateEffectProperties();
             }
         }
 
@@ -381,8 +381,8 @@ public class ScaryEffectEditor : Editor
         }
     }
 
-    private void DrawObjectStateEffectProperties()
+    private void DrawStateEffectProperties()
     {
-        EditorGUILayout.PropertyField(objectStateType);
+        EditorGUILayout.PropertyField(stateType);
     }
 }
