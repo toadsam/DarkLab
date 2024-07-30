@@ -10,6 +10,7 @@ TagManager:
   - Group2
   - Group3
   - Group4
+  - RoomObject
   layers:
   - Default
   - TransparentFX

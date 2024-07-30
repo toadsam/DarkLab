@@ -26,6 +26,10 @@ public class ScaryEffectEditor : Editor
     SerializedProperty isRelative;
     SerializedProperty doTweenLoopType;
     SerializedProperty doTweenLoops;
+    SerializedProperty amplitude;
+    SerializedProperty frequency;
+    SerializedProperty speed;
+    SerializedProperty material;
 
     // ScaryLightEffect properties
     SerializedProperty lightEffectType;
@@ -88,6 +92,10 @@ public class ScaryEffectEditor : Editor
             isRelative = serializedObject.FindProperty("isRelative");
             doTweenLoopType = serializedObject.FindProperty("doTweenLoopType");
             doTweenLoops = serializedObject.FindProperty("doTweenLoops");
+            amplitude = serializedObject.FindProperty("amplitude");
+            frequency = serializedObject.FindProperty("frequency");
+            speed = serializedObject.FindProperty("speed");
+            material = serializedObject.FindProperty("material");
         }
 
         // Find properties for ScaryLightEffect
@@ -225,6 +233,7 @@ public class ScaryEffectEditor : Editor
         switch (type)
         {
             case DoTweenType.Move:
+            case DoTweenType.MoveAllRoomObjectsUp:
                 EditorGUILayout.PropertyField(targetPosition);
                 break;
             case DoTweenType.Rotate:
@@ -235,6 +244,12 @@ public class ScaryEffectEditor : Editor
                 break;
             case DoTweenType.Shake:
                 EditorGUILayout.PropertyField(shakePosition);
+                break;
+            case DoTweenType.WavyTexture:
+                EditorGUILayout.PropertyField(amplitude);
+                EditorGUILayout.PropertyField(frequency);
+                EditorGUILayout.PropertyField(speed);
+                EditorGUILayout.PropertyField(material);
                 break;
         }
     }
