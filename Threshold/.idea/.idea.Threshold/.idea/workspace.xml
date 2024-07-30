@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent/EventTestAndCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ScaryEvent/EventTestAndCreation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/MainManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryAudioEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryAudioEffect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapCreation/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapCreation/Map.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +109,8 @@
       <workItem from="1715778008493" duration="3864000" />
       <workItem from="1716028474223" duration="963000" />
       <workItem from="1722095894604" duration="3162000" />
-      <workItem from="1722218411990" duration="4035000" />
+      <workItem from="1722218411990" duration="5232000" />
+      <workItem from="1722300624267" duration="2258000" />
     </task>
     <servers />
   </component>
