@@ -17,6 +17,7 @@ namespace ScaryEvents
         public List<Light> lightTargets = new List<Light>();
         public List<Transform> transformTargets = new List<Transform>();
         public List<AudioSource> audioTargets = new List<AudioSource>();
+        public List<Renderer> rendererTargets = new List<Renderer>(); 
         public scaryEventTier objectTier;
         
         // 실행 시점에 따른 이벤트 실행을 위한 Object 종속 이벤트. 외부 접근 방지를 위해 private + SerializeField로 선언
