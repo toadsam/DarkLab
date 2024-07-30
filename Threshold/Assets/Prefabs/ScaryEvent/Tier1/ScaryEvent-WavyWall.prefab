@@ -70,10 +70,10 @@ MonoBehaviour:
   targetRotation: {x: 0, y: 0, z: 0}
   targetScale: {x: 1, y: 1, z: 1}
   shakePosition: 1
-  amplitude: 0.1
-  frequency: 1
+  amplitude: 0.05
+  frequency: 10
   speed: 0.3
-  material: {fileID: 2100000, guid: ae75383580af64b4bbf5adb7c07e2096, type: 2}
+  material: {fileID: 0}
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
