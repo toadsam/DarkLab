@@ -33,7 +33,7 @@ namespace ScaryEvents
         {
             for (int i = 0; i < scaryEvents.Length; i++)
             {
-                if (objectInfoHolder.objectTier == scaryEvents[i].scaryEventTier && eventWhen  == scaryEvents[i].scaryEventWhen)
+                if (objectInfoHolder.objectTier.HasFlag(scaryEvents[i].scaryEventTier) && eventWhen  == scaryEvents[i].scaryEventWhen)
                 {
                     scaryEvents[i].currentEventTarget = objectInfoHolder;
                     //if (scaryEvents[i].currentEventTarget != null)
