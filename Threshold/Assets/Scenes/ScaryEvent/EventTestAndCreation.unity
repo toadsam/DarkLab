@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1072,6 +1072,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gamebase_for_unreal
       objectReference: {fileID: 0}
+    - target: {fileID: 2643858946905895390, guid: c427ab10c93794ed1b70f0120d05fb2f,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5133882422167762369, guid: c427ab10c93794ed1b70f0120d05fb2f,
         type: 3}
       propertyPath: m_IsActive
@@ -1354,8 +1359,6 @@ MonoBehaviour:
   - {fileID: 8473206825541720594}
   - {fileID: 5395610182173758675}
   - {fileID: 5395610182173758675}
-  audioTargets:
-  - {fileID: 0}
   rendererTargets:
   - {fileID: 3024195217541692000}
   objectTier: -1
