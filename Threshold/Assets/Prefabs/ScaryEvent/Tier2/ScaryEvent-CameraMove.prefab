@@ -48,7 +48,7 @@ MonoBehaviour:
   duration: 1
   delay: 0
   ease: 1
-  loops: 1
+  loops: 3
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -62,7 +62,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  effectType: 0
+  effectType: 2
   weight: 1
   onTransitionDuration: 1
   offTransitionDuration: 1

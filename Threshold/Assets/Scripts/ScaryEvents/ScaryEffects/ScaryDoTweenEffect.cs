@@ -154,15 +154,6 @@ namespace ScaryEvents.ScaryEffects
                 .SetEase(Ease.InOutSine)
                 .SetLoops(doTweenLoops, doTweenLoopType)
                 .OnStepComplete(() => material.mainTextureOffset = originalOffset);
-
-
-            // var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
-            // Vector2 originalOffset = material.mainTextureOffset;
-
-            // material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
-            //     .SetEase(ease)
-            //     .SetLoops(doTweenLoops, doTweenLoopType)
-            //     .OnStepComplete(() => material.mainTextureOffset = originalOffset);
         }
 
         public void MoveAllRoomObjectsUp()
