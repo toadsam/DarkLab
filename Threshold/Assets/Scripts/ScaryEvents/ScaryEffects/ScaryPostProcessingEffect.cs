@@ -16,9 +16,16 @@ namespace ScaryEvents.ScaryEffects
     {
         [Header("Post Processing Settings")]
         public PostProcessingEffectType effectType;
-        public float weight = 1f;
+        public float finalWeight = 1f;
         public float onTransitionDuration = 1f;
         public float offTransitionDuration = 1f;
+        
+        public bool useWobbleOnActivate = true;
+        public bool useWobbleOnDeactivate = false;
+        public float wobbleMinWeight = 0.2f;
+        public float wobbleMaxWeight = 0.4f;
+        public int wobbleCount = 3;
+        public float wobbleDuration = 0.5f;
         
         [HideInInspector] public Volume targetVolume;
 
@@ -29,18 +36,31 @@ namespace ScaryEvents.ScaryEffects
                 Debug.LogError("[ScaryPostProcessingEffect] Target Volume is not set for ScaryPostProcessingEffect");
                 return;
             }
-
             effectCoroutines.Add(StartCoroutine(ActivateEffect()));
         }
 
         private IEnumerator ActivateEffect()
         {
-            // Weight를 점진적으로 증가시켜 효과 활성화
             targetVolume.gameObject.SetActive(true);
-            DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, weight, onTransitionDuration).SetEase(Ease.InOutQuad);
-            yield return new WaitForSeconds(onTransitionDuration + duration); // 효과가 완전히 활성화된 후 지정된 시간 동안 유지
 
-            // Weight를 점진적으로 감소시켜 효과 비활성화
+            if (useWobbleOnActivate)
+            {
+                yield return StartCoroutine(WobbleEffect(wobbleMinWeight, wobbleMaxWeight, wobbleCount, true));
+            }
+
+            // 최종 weight로 부드럽게 전환
+            yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, finalWeight, onTransitionDuration)
+                .SetEase(Ease.InOutQuad)
+                .WaitForCompletion();
+
+            yield return new WaitForSeconds(duration);
+
+            if (useWobbleOnDeactivate)
+            {
+                yield return StartCoroutine(WobbleEffect(wobbleMinWeight, finalWeight, wobbleCount, false));
+            }
+
+            // 효과 비활성화
             yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, 0f, offTransitionDuration)
                 .SetEase(Ease.InOutQuad)
                 .OnComplete(() => {
@@ -48,6 +68,27 @@ namespace ScaryEvents.ScaryEffects
                     StopEffect();
                 })
                 .WaitForCompletion();
+        }
+
+        private IEnumerator WobbleEffect(float minWeight, float maxWeight, int count, bool finalIncrease)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, maxWeight, wobbleDuration / 2)
+                    .SetEase(Ease.InOutQuad)
+                    .WaitForCompletion();
+                
+                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, minWeight, wobbleDuration / 2)
+                    .SetEase(Ease.InOutQuad)
+                    .WaitForCompletion();
+            }
+
+            if (finalIncrease)
+            {
+                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, maxWeight, wobbleDuration / 2)
+                    .SetEase(Ease.InOutQuad)
+                    .WaitForCompletion();
+            }
         }
     }
 }
