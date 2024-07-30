@@ -41,21 +41,13 @@ namespace ScaryEvents.ScaryEffects
             yield return new WaitForSeconds(onTransitionDuration + duration); // 효과가 완전히 활성화된 후 지정된 시간 동안 유지
 
             // Weight를 점진적으로 감소시켜 효과 비활성화
-            DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, 0f, offTransitionDuration).SetEase(Ease.InOutQuad).OnComplete(StopEffect);
-            targetVolume.gameObject.SetActive(false);
+            yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, 0f, offTransitionDuration)
+                .SetEase(Ease.InOutQuad)
+                .OnComplete(() => {
+                    targetVolume.gameObject.SetActive(false);
+                    StopEffect();
+                })
+                .WaitForCompletion();
         }
-        
-#if UNITY_EDITOR // Test Code 
-        private void Start()
-        {
-            StartCoroutine(StartEffectForTest());
-        }
-        
-        private IEnumerator StartEffectForTest()
-        {
-            yield return new WaitForSeconds(3);
-            StartEffect();
-        }
-#endif
     }
 }
