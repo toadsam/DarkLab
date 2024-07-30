@@ -10,7 +10,9 @@ namespace ScaryEvents.ScaryEffects
         Rotate,
         Scale,
         Shake,
-        Fade
+        Fade,
+        WavyTexture,
+        MoveAllRoomObjectsUp
     }
 
     public class ScaryDoTweenEffect : ScaryEffect
@@ -27,6 +29,12 @@ namespace ScaryEvents.ScaryEffects
         public Vector3 targetRotation = Vector3.zero;
         public Vector3 targetScale = Vector3.one;
         public float shakePosition = 1;
+        public float amplitude = 0.1f;
+        public float frequency = 1.0f;
+        public float speed = 1.0f;
+        public Material material;
+
+        private Material originalMaterial;
         
         public override void StartEffectInternal()
         {
@@ -46,6 +54,12 @@ namespace ScaryEvents.ScaryEffects
                     break;
                 case DoTweenType.Fade:
                     Fade();
+                    break;
+                case DoTweenType.WavyTexture:
+                    WavyTexture();
+                    break;
+                case DoTweenType.MoveAllRoomObjectsUp:
+                    MoveAllRoomObjectsUp();
                     break;
             }
             
@@ -81,7 +95,6 @@ namespace ScaryEvents.ScaryEffects
                 .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
-        //�켱 ��ġ�� ��鸮�� �ߴµ�, rotate/scale�� �־ �̰� ���� �ϸ� ������!
         public void Shaking()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
@@ -92,7 +105,64 @@ namespace ScaryEvents.ScaryEffects
 
         public void Fade()
         {
-            //��.. ���׸��� �����;��ϴµ�,, ObjectInfoHolder�� �߰��ұ�,,,?
+            
+        }
+
+        public void WavyTexture()
+        {
+            var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
+            originalMaterial = renderer.material;
+
+            renderer.material = material;
+
+            material.SetFloat("_Frequency", frequency);
+            material.SetFloat("_Amplitude", amplitude);
+            material.SetFloat("_Speed", speed);
+
+            DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
+                .SetEase(Ease.Linear)
+                .SetLoops(doTweenLoops, doTweenLoopType)
+                .OnComplete(() => renderer.material = originalMaterial);
+
+
+            // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
+            // var material = renderer.material;
+
+            // // 쉐이더 파라미터 설정
+            // material.SetFloat("_Frequency", frequency);
+            // material.SetFloat("_Amplitude", amplitude);
+            // material.SetFloat("_Speed", speed);
+
+            // // DoTween을 사용하여 시간을 애니메이션
+            // DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
+            //     .SetEase(Ease.Linear)
+            //     .SetLoops(doTweenLoops, doTweenLoopType);
+
+
+
+
+            // var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
+            // Vector2 originalOffset = material.mainTextureOffset;
+
+            // material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
+            //     .SetEase(ease)
+            //     .SetLoops(doTweenLoops, doTweenLoopType)
+            //     .OnStepComplete(() => material.mainTextureOffset = originalOffset);
+        }
+
+        public void MoveAllRoomObjectsUp()
+        {
+            GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("RoomObject");
+            foreach (GameObject parentObject in roomObjects)
+            {
+                foreach (Transform child in parentObject.transform)
+                {
+                    child.DOMove(child.position + targetPosition, duration)
+                        .SetEase(ease)
+                        .SetRelative(isRelative)
+                        .SetLoops(doTweenLoops, doTweenLoopType);
+                }
+            }
         }
 
         #endregion

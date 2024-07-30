@@ -22,6 +22,7 @@ namespace ScaryEvents
             currentIndexForTargets.Add("light", 0);
             currentIndexForTargets.Add("audio", 0);
             currentIndexForTargets.Add("transform", 0);
+            currentIndexForTargets.Add("renderer", 0);
         }
 
         public T GetCurrentTarget<T>(string targetType) where T : UnityEngine.Object {
