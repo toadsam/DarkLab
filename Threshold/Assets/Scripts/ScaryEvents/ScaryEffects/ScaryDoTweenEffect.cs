@@ -105,7 +105,16 @@ namespace ScaryEvents.ScaryEffects
 
         public void Fade()
         {
+            var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
+            var material = renderer.material;
             
+            Color color = material.color;
+            color.a = 0;
+            material.color = color;
+
+            material.DOFade(1, duration)
+                .SetEase(ease)
+                .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
         public void WavyTexture()
@@ -159,6 +168,10 @@ namespace ScaryEvents.ScaryEffects
                 {
                     child.DOMove(child.position + targetPosition, duration)
                         .SetEase(ease)
+                        .SetRelative(isRelative)
+                        .SetLoops(doTweenLoops, doTweenLoopType);
+
+                    child.DOShakeRotation(duration, shakePosition)
                         .SetRelative(isRelative)
                         .SetLoops(doTweenLoops, doTweenLoopType);
                 }

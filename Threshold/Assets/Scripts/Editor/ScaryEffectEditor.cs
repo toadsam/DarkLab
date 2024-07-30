@@ -68,6 +68,8 @@ public class ScaryEffectEditor : Editor
     // Chorus properties
     SerializedProperty chorusDryMix, chorusWetMix1, chorusWetMix2, chorusWetMix3, chorusDelay, chorusRate, chorusDepth;
 
+    //ScaryObjectState properties
+    SerializedProperty objectStateType;
 
     private void OnEnable()
     {
@@ -169,6 +171,9 @@ public class ScaryEffectEditor : Editor
             chorusRate = serializedObject.FindProperty("chorusRate");
             chorusDepth = serializedObject.FindProperty("chorusDepth");
         }
+
+        if (target is ScaryObjectStateEffect)
+            objectStateType = serializedObject.FindProperty("objectStateType");
     }
 
     public override void OnInspectorGUI()
@@ -216,6 +221,11 @@ public class ScaryEffectEditor : Editor
             {
                 DrawAudioEffectProperties(effect as ScaryAudioEffect);
             }
+
+            if (effect is ScaryObjectStateEffect)
+            {
+                DrawObjectStateEffectProperties();
+            }
         }
 
         serializedObject.ApplyModifiedProperties();
@@ -233,7 +243,6 @@ public class ScaryEffectEditor : Editor
         switch (type)
         {
             case DoTweenType.Move:
-            case DoTweenType.MoveAllRoomObjectsUp:
                 EditorGUILayout.PropertyField(targetPosition);
                 break;
             case DoTweenType.Rotate:
@@ -250,6 +259,10 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(frequency);
                 EditorGUILayout.PropertyField(speed);
                 EditorGUILayout.PropertyField(material);
+                break;
+            case DoTweenType.MoveAllRoomObjectsUp:
+                EditorGUILayout.PropertyField(targetPosition);
+                EditorGUILayout.PropertyField(shakePosition);
                 break;
         }
     }
@@ -293,79 +306,83 @@ public class ScaryEffectEditor : Editor
     }
     
     private void DrawAudioEffectProperties(ScaryAudioEffect effect)
-{
-    // General Audio Settings
-    EditorGUILayout.PropertyField(audioClip, new GUIContent("Audio Clip"));
-    EditorGUILayout.PropertyField(audioVolume, new GUIContent("Volume"));
-    EditorGUILayout.PropertyField(soundRelativePositionFromListener, new GUIContent("Sound Position Relative To Listener"));
-    EditorGUILayout.PropertyField(spatialBlend, new GUIContent("Spatial Blend (0 = 2D, 1 = 3D)"));
-
-    // Audio Effects Configuration
-    EditorGUILayout.Space();
-    EditorGUILayout.PropertyField(audioEffectType, new GUIContent("Audio Effect Types"));
-
-    // Reverb Settings
-    if (effect.audioEffectType.HasFlag(AudioEffectType.Reverb))
     {
+        // General Audio Settings
+        EditorGUILayout.PropertyField(audioClip, new GUIContent("Audio Clip"));
+        EditorGUILayout.PropertyField(audioVolume, new GUIContent("Volume"));
+        EditorGUILayout.PropertyField(soundRelativePositionFromListener, new GUIContent("Sound Position Relative To Listener"));
+        EditorGUILayout.PropertyField(spatialBlend, new GUIContent("Spatial Blend (0 = 2D, 1 = 3D)"));
+
+        // Audio Effects Configuration
         EditorGUILayout.Space();
-        EditorGUILayout.PropertyField(reverbPreset, new GUIContent("Reverb Preset"));
-        EditorGUILayout.PropertyField(dryLevel, new GUIContent("Dry Level"));
-        EditorGUILayout.PropertyField(room, new GUIContent("Room"));
-        EditorGUILayout.PropertyField(roomHF, new GUIContent("Room HF"));
-        EditorGUILayout.PropertyField(decayTime, new GUIContent("Decay Time"));
-        EditorGUILayout.PropertyField(decayHFRatio, new GUIContent("Decay HF Ratio"));
-        EditorGUILayout.PropertyField(reflectionsLevel, new GUIContent("Reflections Level"));
-        EditorGUILayout.PropertyField(reflectionsDelay, new GUIContent("Reflections Delay"));
-        EditorGUILayout.PropertyField(reverbLevel, new GUIContent("Reverb Level"));
-        EditorGUILayout.PropertyField(reverbDelay, new GUIContent("Reverb Delay"));
-        EditorGUILayout.PropertyField(diffusion, new GUIContent("Diffusion"));
-        EditorGUILayout.PropertyField(density, new GUIContent("Density"));
+        EditorGUILayout.PropertyField(audioEffectType, new GUIContent("Audio Effect Types"));
+
+        // Reverb Settings
+        if (effect.audioEffectType.HasFlag(AudioEffectType.Reverb))
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(reverbPreset, new GUIContent("Reverb Preset"));
+            EditorGUILayout.PropertyField(dryLevel, new GUIContent("Dry Level"));
+            EditorGUILayout.PropertyField(room, new GUIContent("Room"));
+            EditorGUILayout.PropertyField(roomHF, new GUIContent("Room HF"));
+            EditorGUILayout.PropertyField(decayTime, new GUIContent("Decay Time"));
+            EditorGUILayout.PropertyField(decayHFRatio, new GUIContent("Decay HF Ratio"));
+            EditorGUILayout.PropertyField(reflectionsLevel, new GUIContent("Reflections Level"));
+            EditorGUILayout.PropertyField(reflectionsDelay, new GUIContent("Reflections Delay"));
+            EditorGUILayout.PropertyField(reverbLevel, new GUIContent("Reverb Level"));
+            EditorGUILayout.PropertyField(reverbDelay, new GUIContent("Reverb Delay"));
+            EditorGUILayout.PropertyField(diffusion, new GUIContent("Diffusion"));
+            EditorGUILayout.PropertyField(density, new GUIContent("Density"));
+        }
+
+        // Echo Settings
+        if (effect.audioEffectType.HasFlag(AudioEffectType.Echo))
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(echoDelay, new GUIContent("Echo Delay"));
+            EditorGUILayout.PropertyField(echoDecayRatio, new GUIContent("Echo Decay Ratio"));
+            EditorGUILayout.PropertyField(echoWetMix, new GUIContent("Echo Wet Mix"));
+        }
+
+        // LowPass Settings
+        if (effect.audioEffectType.HasFlag(AudioEffectType.LowPass))
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(lowPassCutoff, new GUIContent("Low Pass Cutoff"));
+            EditorGUILayout.PropertyField(lowPassResonance, new GUIContent("Low Pass Resonance"));
+        }
+
+        // HighPass Settings
+        if (effect.audioEffectType.HasFlag(AudioEffectType.HighPass))
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(highPassCutoff, new GUIContent("High Pass Cutoff"));
+            EditorGUILayout.PropertyField(highPassResonance, new GUIContent("High Pass Resonance"));
+        }
+
+        // Distortion Settings
+        if (effect.audioEffectType.HasFlag(AudioEffectType.Distortion))
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(distortionLevel, new GUIContent("Distortion Level"));
+        }
+
+        // Chorus Settings
+        if (effect.audioEffectType.HasFlag(AudioEffectType.Chorus))
+        {
+            EditorGUILayout.Space();
+            EditorGUILayout.PropertyField(chorusDryMix, new GUIContent("Chorus Dry Mix"));
+            EditorGUILayout.PropertyField(chorusWetMix1, new GUIContent("Chorus Wet Mix 1"));
+            EditorGUILayout.PropertyField(chorusWetMix2, new GUIContent("Chorus Wet Mix 2"));
+            EditorGUILayout.PropertyField(chorusWetMix3, new GUIContent("Chorus Wet Mix 3"));
+            EditorGUILayout.PropertyField(chorusDelay, new GUIContent("Chorus Delay"));
+            EditorGUILayout.PropertyField(chorusRate, new GUIContent("Chorus Rate"));
+            EditorGUILayout.PropertyField(chorusDepth, new GUIContent("Chorus Depth"));
+        }
     }
 
-    // Echo Settings
-    if (effect.audioEffectType.HasFlag(AudioEffectType.Echo))
+    private void DrawObjectStateEffectProperties()
     {
-        EditorGUILayout.Space();
-        EditorGUILayout.PropertyField(echoDelay, new GUIContent("Echo Delay"));
-        EditorGUILayout.PropertyField(echoDecayRatio, new GUIContent("Echo Decay Ratio"));
-        EditorGUILayout.PropertyField(echoWetMix, new GUIContent("Echo Wet Mix"));
+        EditorGUILayout.PropertyField(objectStateType);
     }
-
-    // LowPass Settings
-    if (effect.audioEffectType.HasFlag(AudioEffectType.LowPass))
-    {
-        EditorGUILayout.Space();
-        EditorGUILayout.PropertyField(lowPassCutoff, new GUIContent("Low Pass Cutoff"));
-        EditorGUILayout.PropertyField(lowPassResonance, new GUIContent("Low Pass Resonance"));
-    }
-
-    // HighPass Settings
-    if (effect.audioEffectType.HasFlag(AudioEffectType.HighPass))
-    {
-        EditorGUILayout.Space();
-        EditorGUILayout.PropertyField(highPassCutoff, new GUIContent("High Pass Cutoff"));
-        EditorGUILayout.PropertyField(highPassResonance, new GUIContent("High Pass Resonance"));
-    }
-
-    // Distortion Settings
-    if (effect.audioEffectType.HasFlag(AudioEffectType.Distortion))
-    {
-        EditorGUILayout.Space();
-        EditorGUILayout.PropertyField(distortionLevel, new GUIContent("Distortion Level"));
-    }
-
-    // Chorus Settings
-    if (effect.audioEffectType.HasFlag(AudioEffectType.Chorus))
-    {
-        EditorGUILayout.Space();
-        EditorGUILayout.PropertyField(chorusDryMix, new GUIContent("Chorus Dry Mix"));
-        EditorGUILayout.PropertyField(chorusWetMix1, new GUIContent("Chorus Wet Mix 1"));
-        EditorGUILayout.PropertyField(chorusWetMix2, new GUIContent("Chorus Wet Mix 2"));
-        EditorGUILayout.PropertyField(chorusWetMix3, new GUIContent("Chorus Wet Mix 3"));
-        EditorGUILayout.PropertyField(chorusDelay, new GUIContent("Chorus Delay"));
-        EditorGUILayout.PropertyField(chorusRate, new GUIContent("Chorus Rate"));
-        EditorGUILayout.PropertyField(chorusDepth, new GUIContent("Chorus Depth"));
-    }
-}
-
 }
