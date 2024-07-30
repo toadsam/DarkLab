@@ -11,6 +11,8 @@ TagManager:
   - Group3
   - Group4
   - RoomObject
+  - Proximity
+  - See
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
+  - NotSpecificLight
+  - NotCollideToOther
   - 
   - 
   - 
