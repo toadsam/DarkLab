@@ -47,5 +47,21 @@ namespace ScaryEvents
                 }
             }
         }
+        
+        public void DisableObjectDependentEvents()
+        {
+            if (GetComponent<Collider>() != null)
+            {
+                GetComponent<Collider>().enabled = false;
+            }
+        }
+        
+        public void EnableObjectDependentEvents()
+        {
+            if (GetComponent<Collider>() != null)
+            {
+                GetComponent<Collider>().enabled = true;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScaryEvents
@@ -8,6 +9,8 @@ namespace ScaryEvents
         public ScaryEvent[] scaryEvents;
         [SerializeField] private ObjectInfoHolder[] startTargets;
         public ObjectInfoHolder targrt;
+        
+        private List<ObjectInfoHolder> playedObjectInfoHolders = new List<ObjectInfoHolder>();
 
         // Setup for scary events
         private void Awake()
@@ -21,10 +24,20 @@ namespace ScaryEvents
         public void ChangeRoom(ObjectInfoHolder[] inputObjectInfoHolders)
         {
             startTargets = inputObjectInfoHolders;
+
+            foreach (var objectInfoHolder in playedObjectInfoHolders)
+            {
+                objectInfoHolder.EnableObjectDependentEvents();
+            }
         }
 
         public void AwakeRoom()
         {
+            foreach (var objectInfoHolder in playedObjectInfoHolders)
+            {
+                objectInfoHolder.EnableObjectDependentEvents();
+            }
+            
             for (int i = 0; i <startTargets.Length; i++)              
                 Match(startTargets[i], scaryEventWhen.OnAwake);
         }
@@ -44,7 +57,11 @@ namespace ScaryEvents
                     
                     // 모든 공포 이벤트 (Awake 포함) 은 Match 를 경유하므로, 공포 이벤트의 실행 시점을 공유하는 오브젝트 종속 공포 이벤트 또한 여기서 실행.
                     objectInfoHolder.eventDictionary[eventWhen].Invoke();
-               
+                    
+                    // 공포이벤트 비활성화
+                    playedObjectInfoHolders.Add(objectInfoHolder);
+                    objectInfoHolder.DisableObjectDependentEvents();
+                    
                     break;
                 }
             }
