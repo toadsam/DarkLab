@@ -25,7 +25,7 @@ public class WakeUp : MonoBehaviour
 
     void Start()
     {
-        isWakeUp = false;
+        isWakeUp = false;  
         if (rb != null)
         {
             rb.isKinematic = true; // 회전 중 물리적 상호작용 배제
