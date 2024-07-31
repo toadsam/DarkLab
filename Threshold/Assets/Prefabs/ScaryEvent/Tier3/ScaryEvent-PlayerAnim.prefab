@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5279288180160439576}
-  - component: {fileID: 6205557150591946821}
+  - component: {fileID: 5614752680074908444}
   m_Layer: 0
-  m_Name: PostProcessingEffect (1)
+  m_Name: DotweenEffect (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 3625437077308761784}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6205557150591946821
+--- !u!114 &5614752680074908444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2603600794247973493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96d2ae4569e4a9409c6ef1c9ba86d10, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e2700c6a4b3042e1aff5ec2416f3d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
   duration: 1
   delay: 0
   ease: 1
-  loops: 3
+  loops: 1
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -62,17 +62,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  effectType: 2
-  finalWeight: 1
-  onTransitionDuration: 1
-  offTransitionDuration: 1
-  useWobbleOnActivate: 1
-  useWobbleOnDeactivate: 0
-  wobbleMinWeight: 0.2
-  wobbleMaxWeight: 0.5
-  wobbleCount: 3
-  wobbleDuration: 0.3
-  targetVolume: {fileID: 0}
+  stateType: 4
+  deactiveDelay: 5
+  animationClips:
+  - {fileID: 7400000, guid: e0e86dc40195a46bb84f52248dabde8d, type: 2}
+  - {fileID: 7400000, guid: acb8c208ca8494086921f7fb65d51ff5, type: 2}
+  - {fileID: 7400000, guid: b5b2b317902b04f8cab85abb07a95312, type: 2}
+  - {fileID: 7400000, guid: afb579d75dcd44725880581fd9aed3ff, type: 2}
+  - {fileID: 7400000, guid: 97b5151d4bf814006a689f8733dfa188, type: 2}
+  - {fileID: 7400000, guid: fb0a24116c7d242dfb07314ed11bce49, type: 2}
+  objectToSpawn: {fileID: 3076443712502478793, guid: 9e0cb3434ce304214becd82242963998,
+    type: 3}
+  targetPosition: {x: 0, y: 0, z: 0}
+  isRelative: 0
+  doTweenLoopType: 0
+  doTweenLoops: 1
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +88,7 @@ GameObject:
   - component: {fileID: 3625437077308761784}
   - component: {fileID: 4843442024986794077}
   m_Layer: 0
-  m_Name: ScaryEvent-CameraMove
+  m_Name: ScaryEvent-PlayerAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +128,7 @@ MonoBehaviour:
   onStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6205557150591946821}
+      - m_Target: {fileID: 5614752680074908444}
         m_TargetAssemblyTypeName: ScaryEvents.ScaryEffects.ScaryEffect, Assembly-CSharp
         m_MethodName: StartEffect
         m_Mode: 1

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5279288180160439576}
-  - component: {fileID: 6205557150591946821}
+  - component: {fileID: 7076784822636059900}
   m_Layer: 0
-  m_Name: PostProcessingEffect (1)
+  m_Name: DotweenEffect (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 3625437077308761784}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6205557150591946821
+--- !u!114 &7076784822636059900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2603600794247973493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96d2ae4569e4a9409c6ef1c9ba86d10, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 1
+  duration: 5
   delay: 0
-  ease: 1
-  loops: 3
+  ease: 6
+  loops: 1
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -62,17 +62,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  effectType: 2
-  finalWeight: 1
-  onTransitionDuration: 1
-  offTransitionDuration: 1
-  useWobbleOnActivate: 1
-  useWobbleOnDeactivate: 0
-  wobbleMinWeight: 0.2
-  wobbleMaxWeight: 0.5
-  wobbleCount: 3
-  wobbleDuration: 0.3
-  targetVolume: {fileID: 0}
+  doTweenType: 7
+  isRelative: 0
+  doTweenLoopType: 0
+  doTweenLoops: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
+  targetScale: {x: 1, y: 1, z: 1}
+  shakePosition: 1
+  amplitude: 0.1
+  frequency: 1
+  speed: 1
+  material: {fileID: 0}
+  vertexOffset: 0.05
+  centerRadius: 0.05
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +87,7 @@ GameObject:
   - component: {fileID: 3625437077308761784}
   - component: {fileID: 4843442024986794077}
   m_Layer: 0
-  m_Name: ScaryEvent-CameraMove
+  m_Name: ScaryEvent-MeshDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +127,7 @@ MonoBehaviour:
   onStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6205557150591946821}
+      - m_Target: {fileID: 7076784822636059900}
         m_TargetAssemblyTypeName: ScaryEvents.ScaryEffects.ScaryEffect, Assembly-CSharp
         m_MethodName: StartEffect
         m_Mode: 1

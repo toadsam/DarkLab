@@ -31,6 +31,7 @@ public class ScaryEffectEditor : Editor
     SerializedProperty speed;
     SerializedProperty material;
     SerializedProperty vertexOffset;
+    SerializedProperty centerRadius;
 
     // ScaryLightEffect properties
     SerializedProperty lightEffectType;
@@ -76,7 +77,11 @@ public class ScaryEffectEditor : Editor
 
     //ScaryState properties
     SerializedProperty stateType;
+    SerializedProperty frontCreation;
+    SerializedProperty isDisappearance;
+    SerializedProperty animationClips;
     SerializedProperty objectToSpawn;
+    SerializedProperty deactiveDelay;
 
     private void OnEnable()
     {
@@ -106,6 +111,7 @@ public class ScaryEffectEditor : Editor
             speed = serializedObject.FindProperty("speed");
             material = serializedObject.FindProperty("material");
             vertexOffset = serializedObject.FindProperty("vertexOffset");
+            centerRadius = serializedObject.FindProperty("centerRadius");
         }
 
         // Find properties for ScaryLightEffect
@@ -189,6 +195,10 @@ public class ScaryEffectEditor : Editor
         if (target is ScaryStateEffect)
         {
             stateType = serializedObject.FindProperty("stateType");
+            frontCreation = serializedObject.FindProperty("frontCreation");
+            isDisappearance = serializedObject.FindProperty("isDisappearance");
+            deactiveDelay = serializedObject.FindProperty("deactiveDelay");
+            animationClips = serializedObject.FindProperty("animationClips");
             objectToSpawn = serializedObject.FindProperty("objectToSpawn");
             targetPosition = serializedObject.FindProperty("targetPosition");
             isRelative = serializedObject.FindProperty("isRelative");
@@ -283,6 +293,7 @@ public class ScaryEffectEditor : Editor
                 break;
             case DoTweenType.MoveMeshVertices:
                 EditorGUILayout.PropertyField(vertexOffset);
+                EditorGUILayout.PropertyField(centerRadius);
                 break;
             case DoTweenType.MoveAllRoomObjectsUp:
                 EditorGUILayout.PropertyField(targetPosition);
@@ -421,8 +432,19 @@ public class ScaryEffectEditor : Editor
 
         switch(type)
         {
-            case StateType.SpawnAndDestroy:
+            case StateType.Deactive:
+                EditorGUILayout.PropertyField(deactiveDelay);
+                break;
+            case StateType.SpawnAndDeactive:
                 EditorGUILayout.PropertyField(objectToSpawn);
+                EditorGUILayout.PropertyField(deactiveDelay);
+                break;
+            case StateType.SpawnAndPlayAnimation:
+                EditorGUILayout.PropertyField(objectToSpawn);
+                EditorGUILayout.PropertyField(frontCreation);
+                EditorGUILayout.PropertyField(isDisappearance);
+                EditorGUILayout.PropertyField(deactiveDelay);
+                EditorGUILayout.PropertyField(animationClips);
                 break;
             case StateType.MoveShadow:
                 EditorGUILayout.PropertyField(isRelative);

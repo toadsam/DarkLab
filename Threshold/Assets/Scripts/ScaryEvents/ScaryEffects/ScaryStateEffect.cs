@@ -10,7 +10,8 @@ namespace ScaryEvents.ScaryEffects
         None,
         Active,
         Deactive,
-        SpawnAndDestroy,
+        SpawnAndDeactive,
+        SpawnAndPlayAnimation,
         MoveShadow,
         FootstepDelay
     }
@@ -19,6 +20,10 @@ namespace ScaryEvents.ScaryEffects
     {
         [Header("State Settings")]
         public StateType stateType;
+        public bool frontCreation = true;
+        public bool isDisappearance = true;
+        public float deactiveDelay = 0;
+        public AnimationClip[] animationClips;
         public GameObject objectToSpawn;
         public Vector3 targetPosition = Vector3.zero;
         public bool isRelative;
@@ -35,8 +40,11 @@ namespace ScaryEvents.ScaryEffects
                 case StateType.Deactive:
                     StartCoroutine(Deactive());
                     break;
-                case StateType.SpawnAndDestroy:
-                    StartCoroutine(SpawnAndDestroy());
+                case StateType.SpawnAndDeactive:
+                    StartCoroutine(SpawnAndDeactive());
+                    break;
+                case StateType.SpawnAndPlayAnimation:
+                    StartCoroutine(SpawnAndPlayAnimation());
                     break;
                 case StateType.MoveShadow:
                     ShadowMove();
@@ -67,14 +75,53 @@ namespace ScaryEvents.ScaryEffects
             StopEffect();
         }
 
-        private IEnumerator SpawnAndDestroy()
+        private IEnumerator SpawnAndDeactive()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             GameObject targetObject = Instantiate(objectToSpawn, a.position, a.rotation);
             
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(deactiveDelay);
 
-            Destroy(targetObject);
+            targetObject.SetActive(false);
+        }
+
+        private IEnumerator SpawnAndPlayAnimation()
+        {
+            var a = targetSource.GetCurrentTarget<Transform>("transform");
+            if(frontCreation)
+            {
+                Camera mainCamera = a.GetComponentInChildren<Camera>();
+                if (mainCamera == null)
+                {
+                    Debug.LogError("메인 카메라가 타겟 오브젝트에 부착되어 있지 않습니다.");
+                    yield break;
+                }
+
+                Vector3 spawnPosition = a.position + mainCamera.transform.forward;
+
+                GameObject targetObject = Instantiate(objectToSpawn, spawnPosition, a.rotation * Quaternion.Euler(0, 180, 0));
+            }
+            else
+            {
+                GameObject targetObject = Instantiate(objectToSpawn, a.position, a.rotation);
+            }
+
+            Animator animator = targetObject.GetComponent<Animator>();
+
+            if (animator != null && animationClips.Length > 0)
+            {
+                int randomIndex = Random.Range(0, animationClips.Length);
+                AnimationClip selectedClip = animationClips[randomIndex];
+
+                animator.Play(selectedClip.name);
+            }
+
+            if(isDisappearance)
+            {
+                yield return new WaitForSeconds(deactiveDelay);
+
+                targetObject.SetActive(false);
+            }
         }
 
         private void ShadowMove()
@@ -88,7 +135,7 @@ namespace ScaryEvents.ScaryEffects
                 .SetEase(ease)
                 .SetRelative(isRelative)
                 .SetLoops(doTweenLoops, doTweenLoopType)
-                .OnComplete(() => Destroy(targetObject));
+                .OnComplete(() => targetObject.SetActive(false));
         }
 
         // private void FootstepDelay()
