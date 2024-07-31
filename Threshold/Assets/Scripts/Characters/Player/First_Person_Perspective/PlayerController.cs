@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     private Rigidbody _rigidbody;
+    private AudioSource _audioSource;
 
     public static PlayerController instance;
     private void Awake()
     {
         instance = this;
         _rigidbody = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -46,8 +48,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private void LateUpdate()
-    {
-        if (canLook && WakeUp.isWakeUp)
+    {   
+        //&& WakeUp.isWakeUp
+        if (canLook)
         {
             CameraLook();
         }
@@ -60,6 +63,12 @@ public class PlayerController : MonoBehaviour
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
+
+        if(curMovementInput != Vector2.zero)
+            if(!_audioSource.isPlaying)
+                _audioSource.Play();
+        else
+            _audioSource.Stop();
     }
 
     void CameraLook()
@@ -102,7 +111,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Started) 
         {
-            Debug.Log("¾ÆÀÌÅÛÀÌ ÀÖ´Ù¸é »óÈ£ÀÛ¿ëÀ» ½ÃÀÛÇÕ´Ï´Ù");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½");
         }
     }
 
@@ -111,7 +120,7 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started)
         {
             lookSensitivity += 0.05f;
-            Debug.Log("ÇöÀçÀÇ °¨µµ" + lookSensitivity);
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" + lookSensitivity);
         }
         
 
@@ -122,7 +131,7 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started)
         {
             lookSensitivity -= 0.05f;
-            Debug.Log("ÇöÀçÀÇ °¨µµ" + lookSensitivity);
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" + lookSensitivity);
         }
 
     }
@@ -161,7 +170,7 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
 
-        // ³× °³ÀÇ ·¹ÀÌ ½ÃÀÛ À§Ä¡
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
         Vector3[] rayOrigins = new Vector3[4]
         {
         transform.position + (transform.forward * 0.2f) + (Vector3.up * 0.01f),
@@ -170,7 +179,7 @@ public class PlayerController : MonoBehaviour
         transform.position + (-transform.right * 0.2f) + (Vector3.up * 0.01f)
         };
 
-        // ·¹ÀÌ ±×¸®±â
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½
         for (int i = 0; i < rayOrigins.Length; i++)
         {
             Gizmos.DrawRay(rayOrigins[i], Vector3.down * 0.1f);
