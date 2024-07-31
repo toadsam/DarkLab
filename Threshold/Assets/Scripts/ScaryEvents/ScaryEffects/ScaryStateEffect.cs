@@ -88,7 +88,7 @@ namespace ScaryEvents.ScaryEffects
                 .SetEase(ease)
                 .SetRelative(isRelative)
                 .SetLoops(doTweenLoops, doTweenLoopType)
-                .OnComplete(() => Destroy(targetObject));
+                .OnComplete(() => targetObject.SetActive(false));
         }
 
         // private void FootstepDelay()

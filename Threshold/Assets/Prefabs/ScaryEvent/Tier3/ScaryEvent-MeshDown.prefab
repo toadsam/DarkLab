@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 6
+  duration: 5
   delay: 0
   ease: 6
   loops: 1
@@ -74,8 +74,8 @@ MonoBehaviour:
   frequency: 1
   speed: 1
   material: {fileID: 0}
-  vertexOffset: 0.1
-  vertexCenterThreshold: 0.3
+  vertexOffset: 0.05
+  centerRadius: 0.05
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
