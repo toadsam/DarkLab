@@ -74,7 +74,7 @@ namespace ScaryEvents.ScaryEffects
             
             yield return new WaitForSeconds(delay);
 
-            Destroy(targetObject);
+            targetObject.SetActive(false);
         }
 
         private void ShadowMove()
