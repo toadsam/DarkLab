@@ -12,6 +12,7 @@ namespace ScaryEvents.ScaryEffects
         Shake,
         Fade,
         WavyTexture,
+        MoveMeshVertices,
         MoveAllRoomObjectsUp
     }
 
@@ -33,6 +34,7 @@ namespace ScaryEvents.ScaryEffects
         public float frequency = 1.0f;
         public float speed = 1.0f;
         public Material material;
+        public float vertexOffset = 0.1f;
 
         private Material originalMaterial;
         
@@ -57,6 +59,9 @@ namespace ScaryEvents.ScaryEffects
                     break;
                 case DoTweenType.WavyTexture:
                     WavyTexture();
+                    break;
+                case DoTweenType.MoveMeshVertices:
+                    MoveMeshVertices();
                     break;
                 case DoTweenType.MoveAllRoomObjectsUp:
                     MoveAllRoomObjectsUp();
@@ -119,34 +124,6 @@ namespace ScaryEvents.ScaryEffects
 
         public void WavyTexture()
         {
-            // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
-            // originalMaterial = renderer.material;
-
-            // renderer.material = material;
-
-            // material.SetFloat("_Frequency", frequency);
-            // material.SetFloat("_Amplitude", amplitude);
-            // material.SetFloat("_Speed", speed);
-
-            // DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
-            //     .SetEase(Ease.Linear)
-            //     .SetLoops(doTweenLoops, doTweenLoopType)
-            //     .OnComplete(() => renderer.material = originalMaterial);
-
-
-            // var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
-            // var material = renderer.material;
-
-            // // 쉐이더 파라미터 설정
-            // material.SetFloat("_Frequency", frequency);
-            // material.SetFloat("_Amplitude", amplitude);
-            // material.SetFloat("_Speed", speed);
-
-            // // DoTween을 사용하여 시간을 애니메이션
-            // DOTween.To(() => material.GetFloat("_CustomTime"), x => material.SetFloat("_CustomTime", x), 100f, duration)
-            //     .SetEase(Ease.Linear)
-            //     .SetLoops(doTweenLoops, doTweenLoopType);
-
             var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
             Vector2 originalOffset = material.mainTextureOffset;
 
@@ -154,6 +131,48 @@ namespace ScaryEvents.ScaryEffects
                 .SetEase(Ease.InOutSine)
                 .SetLoops(doTweenLoops, doTweenLoopType)
                 .OnStepComplete(() => material.mainTextureOffset = originalOffset);
+        }
+
+        public void MoveMeshVertices()
+        {
+            var targetTransform = targetSource.GetCurrentTarget<Transform>("transform");
+            var meshFilter = targetTransform.GetComponent<MeshFilter>();
+            if (meshFilter == null) return;
+
+            Mesh mesh = meshFilter.mesh;
+            Vector3[] originalVertices = mesh.vertices;
+            Vector3[] movedVertices = new Vector3[originalVertices.Length];
+            float[] randomOffsets = new float[originalVertices.Length];
+
+            // 각 버텍스의 임의의 오프셋 생성
+            for (int i = 0; i < originalVertices.Length; i++)
+            {
+                randomOffsets[i] = Random.Range(0.0f, vertexOffset);
+                movedVertices[i] = originalVertices[i] + Vector3.down * randomOffsets[i];
+            }
+
+            // 원래 위치로 돌아오는 애니메이션
+            Sequence vertexSequence = DOTween.Sequence();
+            vertexSequence.Append(DOVirtual.Float(0, 1, duration, value =>
+            {
+                for (int i = 0; i < originalVertices.Length; i++)
+                {
+                    movedVertices[i] = Vector3.Lerp(originalVertices[i], originalVertices[i] + Vector3.down * randomOffsets[i], value);
+                }
+                mesh.vertices = movedVertices;
+                mesh.RecalculateBounds();
+            }))
+            .Append(DOVirtual.Float(1, 0, duration, value =>
+            {
+                for (int i = 0; i < originalVertices.Length; i++)
+                {
+                    movedVertices[i] = Vector3.Lerp(originalVertices[i] + Vector3.down * randomOffsets[i], originalVertices[i], value);
+                }
+                mesh.vertices = movedVertices;
+                mesh.RecalculateBounds();
+            }))
+            .SetEase(ease)
+            .SetLoops(doTweenLoops, doTweenLoopType);
         }
 
         public void MoveAllRoomObjectsUp()
