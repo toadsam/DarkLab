@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/GrandMaRoomA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/GrandMaRoomA.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/StudentRoomA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/StudentRoomA.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapCreation/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapCreation/Map.unity" afterDir="false" />
     </list>
@@ -115,7 +115,7 @@
       <workItem from="1722300624267" duration="6311000" />
       <workItem from="1722333811499" duration="1575000" />
       <workItem from="1722339108290" duration="4777000" />
-      <workItem from="1722387547059" duration="5423000" />
+      <workItem from="1722387547059" duration="5716000" />
     </task>
     <servers />
   </component>
