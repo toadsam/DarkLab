@@ -159,7 +159,7 @@ Transform:
   - {fileID: 447725041510493304}
   - {fileID: 3183736914255881779}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3725300939759692702
 MonoBehaviour:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 9b740245ca3a94f9196eaa348a31e73f, type: 2}
 --- !u!114 &4504062397351108188
 MonoBehaviour:
