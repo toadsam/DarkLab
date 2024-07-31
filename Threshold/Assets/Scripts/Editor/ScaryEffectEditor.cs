@@ -70,11 +70,12 @@ public class ScaryEffectEditor : Editor
 
     //ScaryState properties
     SerializedProperty stateType;
+    SerializedProperty objectToSpawn;
 
     private void OnEnable()
     {
         duration = serializedObject.FindProperty("duration");
-        delay = serializedObject.FindProperty("delay"); 
+        delay = serializedObject.FindProperty("delay");
         ease = serializedObject.FindProperty("ease");
         loops = serializedObject.FindProperty("loops");
         showProperties = serializedObject.FindProperty("showProperties");
@@ -173,7 +174,14 @@ public class ScaryEffectEditor : Editor
         }
 
         if (target is ScaryStateEffect)
+        {
             stateType = serializedObject.FindProperty("stateType");
+            objectToSpawn = serializedObject.FindProperty("objectToSpawn");
+            targetPosition = serializedObject.FindProperty("targetPosition");
+            isRelative = serializedObject.FindProperty("isRelative");
+            doTweenLoopType = serializedObject.FindProperty("doTweenLoopType");
+            doTweenLoops = serializedObject.FindProperty("doTweenLoops");
+        }
     }
 
     public override void OnInspectorGUI()
@@ -384,5 +392,20 @@ public class ScaryEffectEditor : Editor
     private void DrawStateEffectProperties()
     {
         EditorGUILayout.PropertyField(stateType);
+        StateType type = (StateType)stateType.enumValueIndex;
+
+        switch(type)
+        {
+            case StateType.SpawnAndDestroy:
+                EditorGUILayout.PropertyField(objectToSpawn);
+                break;
+            case StateType.MoveShadow:
+                EditorGUILayout.PropertyField(isRelative);
+                EditorGUILayout.PropertyField(doTweenLoopType);
+                EditorGUILayout.PropertyField(doTweenLoops);
+                EditorGUILayout.PropertyField(objectToSpawn);
+                EditorGUILayout.PropertyField(targetPosition);
+                break;
+        }
     }
 }
