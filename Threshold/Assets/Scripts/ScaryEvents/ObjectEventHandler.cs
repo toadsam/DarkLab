@@ -44,6 +44,7 @@ namespace ScaryEvents
    
         public void Match(ObjectInfoHolder objectInfoHolder,scaryEventWhen eventWhen) 
         {
+
             for (int i = 0; i < scaryEvents.Length; i++)
             {
                 if (objectInfoHolder.objectTier.HasFlag(scaryEvents[i].scaryEventTier) && eventWhen  == scaryEvents[i].scaryEventWhen)

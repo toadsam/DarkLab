@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Debug.Log(IsGrounded());
+      
     }
 
     private void LateUpdate()
@@ -109,9 +109,26 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteraction(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Started) 
+        if (context.phase == InputActionPhase.Started && SeeDetector.isInteraction)
         {
-            Debug.Log("�������� �ִٸ� ��ȣ�ۿ��� �����մϴ�");
+           
+            if (MainManager.Instance != null && MainManager.Instance.objectEventHandler != null)
+            {
+                var target = MainManager.Instance.objectEventHandler.targrt;
+                if (target != null)
+                {
+                    Debug.Log("여기는 들어오니");
+                    MainManager.Instance.objectEventHandler.Match(target, scaryEventWhen.OnFocusInteractionStart);
+                }
+                else
+                {
+                    Debug.LogWarning("Target is null in OnInteraction.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("MainManager or objectEventHandler is null in OnInteraction.");
+            }
         }
     }
 
