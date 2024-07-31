@@ -35,6 +35,7 @@ namespace ScaryEvents.ScaryEffects
         public float speed = 1.0f;
         public Material material;
         public float vertexOffset = 0.1f;
+        public float centerRadius = 1.0f;
 
         private Material originalMaterial;
         
@@ -128,17 +129,32 @@ namespace ScaryEvents.ScaryEffects
             Vector2 originalOffset = material.mainTextureOffset;
 
             material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
-                .SetEase(Ease.InOutSine)
+                .SetEase(ease)
                 .SetLoops(doTweenLoops, doTweenLoopType)
                 .OnStepComplete(() => material.mainTextureOffset = originalOffset);
         }
 
         public void MoveMeshVertices()
         {
-            var targetTransform = targetSource.GetCurrentTarget<Transform>("transform");
-            var meshFilter = targetTransform.GetComponent<MeshFilter>();
-            if (meshFilter == null) return;
+            var a = targetSource.GetCurrentTarget<Transform>("transform");
+            if (a == null) return;
 
+            var meshFilter = a.GetComponent<MeshFilter>();
+            if (meshFilter != null)
+            {
+                ApplyMeshEffect(meshFilter);
+                return;
+            }
+
+            var meshFilters = a.GetComponentsInChildren<MeshFilter>();
+            foreach (var mf in meshFilters)
+            {
+                ApplyMeshEffect(mf);
+            }
+        }
+
+        private void ApplyMeshEffect(MeshFilter meshFilter)
+        {
             Mesh mesh = meshFilter.mesh;
             Vector3[] originalVertices = mesh.vertices;
             Vector3[] movedVertices = new Vector3[originalVertices.Length];
@@ -148,29 +164,37 @@ namespace ScaryEvents.ScaryEffects
             for (int i = 0; i < originalVertices.Length; i++)
             {
                 randomOffsets[i] = Random.Range(0.0f, vertexOffset);
-                movedVertices[i] = originalVertices[i] + Vector3.down * randomOffsets[i];
             }
 
-            // 원래 위치로 돌아오는 애니메이션
-            Sequence vertexSequence = DOTween.Sequence();
-            vertexSequence.Append(DOVirtual.Float(0, 1, duration, value =>
+            // 버텍스를 자연스럽게 흘러내리게 하는 애니메이션
+            DOVirtual.Float(0, 1, duration, value =>
             {
                 for (int i = 0; i < originalVertices.Length; i++)
                 {
-                    movedVertices[i] = Vector3.Lerp(originalVertices[i], originalVertices[i] + Vector3.down * randomOffsets[i], value);
+                    float offset = Mathf.Lerp(0, randomOffsets[i], value);
+                    movedVertices[i] = originalVertices[i] + Vector3.down * offset;
                 }
                 mesh.vertices = movedVertices;
+                mesh.RecalculateNormals();
                 mesh.RecalculateBounds();
-            }))
-            .Append(DOVirtual.Float(1, 0, duration, value =>
-            {
-                for (int i = 0; i < originalVertices.Length; i++)
-                {
-                    movedVertices[i] = Vector3.Lerp(originalVertices[i] + Vector3.down * randomOffsets[i], originalVertices[i], value);
-                }
-                mesh.vertices = movedVertices;
-                mesh.RecalculateBounds();
-            }))
+                // for (int i = 0; i < originalVertices.Length; i++)
+                // {
+                //     // Perlin Noise를 여러 번 중첩
+                //     float noiseValue1 = Mathf.PerlinNoise(originalVertices[i].x * 0.1f + value, originalVertices[i].z * 0.1f + value);
+                //     float noiseValue2 = Mathf.PerlinNoise(originalVertices[i].x * 0.2f + value, originalVertices[i].z * 0.2f + value);
+                //     float noiseValue3 = Mathf.PerlinNoise(originalVertices[i].x * 0.4f + value, originalVertices[i].z * 0.4f + value);
+                    
+                //     float combinedNoise = (noiseValue1 + noiseValue2 + noiseValue3) / 3.0f;
+
+                //     float offset = Mathf.Lerp(0, randomOffsets[i], value);
+                //     movedVertices[i] = originalVertices[i] + Vector3.down * offset * combinedNoise;
+                //     // float noiseValue = Mathf.PerlinNoise(originalVertices[i].x * 0.1f + value, originalVertices[i].z * 0.1f + value);
+                //     // float offset = Mathf.Lerp(0, randomOffsets[i], value);
+                //     // movedVertices[i] = originalVertices[i] + Vector3.down * offset * noiseValue;
+                // }
+                // mesh.vertices = movedVertices;
+                // mesh.RecalculateBounds();
+            })
             .SetEase(ease)
             .SetLoops(doTweenLoops, doTweenLoopType);
         }
@@ -195,6 +219,5 @@ namespace ScaryEvents.ScaryEffects
         }
 
         #endregion
-    
     }
 }
