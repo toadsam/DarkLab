@@ -35,6 +35,7 @@ namespace ScaryEvents.ScaryEffects
         public float speed = 1.0f;
         public Material material;
         public float vertexOffset = 0.1f;
+        public float vertexCenterThreshold = 0.1f;
 
         private Material originalMaterial;
         
@@ -136,9 +137,26 @@ namespace ScaryEvents.ScaryEffects
         public void MoveMeshVertices()
         {
             var targetTransform = targetSource.GetCurrentTarget<Transform>("transform");
-            var meshFilter = targetTransform.GetComponent<MeshFilter>();
-            if (meshFilter == null) return;
+            if (targetTransform == null) return;
 
+            // 상위 오브젝트에서 MeshFilter를 찾음
+            var meshFilter = targetTransform.GetComponent<MeshFilter>();
+            if (meshFilter != null)
+            {
+                ApplyMeshEffect(meshFilter);
+                return;
+            }
+
+            // 상위 오브젝트에 MeshFilter가 없으면 하위 오브젝트에서 찾음
+            var meshFilters = targetTransform.GetComponentsInChildren<MeshFilter>();
+            foreach (var mf in meshFilters)
+            {
+                ApplyMeshEffect(mf);
+            }
+        }
+
+        private void ApplyMeshEffect(MeshFilter meshFilter)
+        {
             Mesh mesh = meshFilter.mesh;
             Vector3[] originalVertices = mesh.vertices;
             Vector3[] movedVertices = new Vector3[originalVertices.Length];
@@ -148,32 +166,85 @@ namespace ScaryEvents.ScaryEffects
             for (int i = 0; i < originalVertices.Length; i++)
             {
                 randomOffsets[i] = Random.Range(0.0f, vertexOffset);
-                movedVertices[i] = originalVertices[i] + Vector3.down * randomOffsets[i];
             }
 
-            // 원래 위치로 돌아오는 애니메이션
-            Sequence vertexSequence = DOTween.Sequence();
-            vertexSequence.Append(DOVirtual.Float(0, 1, duration, value =>
+            // 버텍스를 자연스럽게 흘러내리게 하는 애니메이션
+            DOVirtual.Float(0, 1, duration, value =>
             {
                 for (int i = 0; i < originalVertices.Length; i++)
                 {
-                    movedVertices[i] = Vector3.Lerp(originalVertices[i], originalVertices[i] + Vector3.down * randomOffsets[i], value);
+                    float offset = Mathf.Lerp(0, randomOffsets[i], value);
+                    movedVertices[i] = originalVertices[i] + Vector3.down * offset * Mathf.PerlinNoise(originalVertices[i].x * 0.1f, originalVertices[i].z * 0.1f);
                 }
                 mesh.vertices = movedVertices;
                 mesh.RecalculateBounds();
-            }))
-            .Append(DOVirtual.Float(1, 0, duration, value =>
-            {
-                for (int i = 0; i < originalVertices.Length; i++)
-                {
-                    movedVertices[i] = Vector3.Lerp(originalVertices[i] + Vector3.down * randomOffsets[i], originalVertices[i], value);
-                }
-                mesh.vertices = movedVertices;
-                mesh.RecalculateBounds();
-            }))
+            })
             .SetEase(ease)
             .SetLoops(doTweenLoops, doTweenLoopType);
         }
+
+        // public void MoveMeshVertices()
+        // {
+        //     var targetTransform = targetSource.GetCurrentTarget<Transform>("transform");
+        //     var meshFilter = targetTransform.GetComponent<MeshFilter>();
+        //     if (meshFilter == null) return;
+
+        //     Mesh mesh = meshFilter.mesh;
+        //     Vector3[] originalVertices = mesh.vertices;
+        //     Vector3[] movedVertices = new Vector3[originalVertices.Length];
+        //     float[] randomOffsets = new float[originalVertices.Length];
+
+        //     // 각 버텍스의 임의의 오프셋 생성
+        //     for (int i = 0; i < originalVertices.Length; i++)
+        //     {
+        //         randomOffsets[i] = Random.Range(0.0f, vertexOffset);
+        //     }
+
+        //     // 버텍스를 자연스럽게 흘러내리게 하는 애니메이션
+        //     DOVirtual.Float(0, 1, duration, value =>
+        //     {
+        //         for (int i = 0; i < originalVertices.Length; i++)
+        //         {
+        //             float offset = Mathf.Lerp(0, randomOffsets[i], value);
+        //             movedVertices[i] = originalVertices[i] + Vector3.down * offset * Mathf.PerlinNoise(originalVertices[i].x * 0.1f, originalVertices[i].z * 0.1f);
+        //         }
+        //         mesh.vertices = movedVertices;
+        //         mesh.RecalculateBounds();
+        //     })
+        //     .SetEase(ease)
+        //     .SetLoops(doTweenLoops, doTweenLoopType);
+        // }
+        // {
+        //     var targetTransform = targetSource.GetCurrentTarget<Transform>("transform");
+        //     var meshFilter = targetTransform.GetComponent<MeshFilter>();
+        //     if (meshFilter == null) return;
+
+        //     Mesh mesh = meshFilter.mesh;
+        //     Vector3[] originalVertices = mesh.vertices;
+        //     Vector3[] movedVertices = new Vector3[originalVertices.Length];
+        //     float[] randomOffsets = new float[originalVertices.Length];
+
+        //     // 각 버텍스의 임의의 오프셋 생성
+        //     for (int i = 0; i < originalVertices.Length; i++)
+        //     {
+        //         randomOffsets[i] = Random.Range(0.0f, vertexOffset);
+        //         movedVertices[i] = originalVertices[i] + Vector3.down * randomOffsets[i];
+        //     }
+
+        //     // 원래 위치로 돌아오는 애니메이션
+        //     DOVirtual.Float(0, 1, duration, value =>
+        //     {
+        //         for (int i = 0; i < originalVertices.Length; i++)
+        //         {
+        //             if (randomOffsets[i] > 0)
+        //                 movedVertices[i] = Vector3.Lerp(originalVertices[i], originalVertices[i] + Vector3.down * randomOffsets[i], value);
+        //         }
+        //         mesh.vertices = movedVertices;
+        //         mesh.RecalculateBounds();
+        //     })
+        //     .SetEase(ease)
+        //     .SetLoops(doTweenLoops, doTweenLoopType);
+        // }
 
         public void MoveAllRoomObjectsUp()
         {
@@ -195,6 +266,5 @@ namespace ScaryEvents.ScaryEffects
         }
 
         #endregion
-    
     }
 }

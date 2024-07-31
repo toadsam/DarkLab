@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 1
+  duration: 6
   delay: 0
-  ease: 1
+  ease: 6
   loops: 1
   onStart:
     m_PersistentCalls:
@@ -74,7 +74,8 @@ MonoBehaviour:
   frequency: 1
   speed: 1
   material: {fileID: 0}
-  vertexOffset: 0.03
+  vertexOffset: 0.1
+  vertexCenterThreshold: 0.3
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +87,7 @@ GameObject:
   - component: {fileID: 3625437077308761784}
   - component: {fileID: 4843442024986794077}
   m_Layer: 0
-  m_Name: ScaryEvent-Mesh
+  m_Name: ScaryEvent-MeshDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

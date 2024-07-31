@@ -31,6 +31,7 @@ public class ScaryEffectEditor : Editor
     SerializedProperty speed;
     SerializedProperty material;
     SerializedProperty vertexOffset;
+    SerializedProperty vertexCenterThreshold;
 
     // ScaryLightEffect properties
     SerializedProperty lightEffectType;
@@ -106,6 +107,7 @@ public class ScaryEffectEditor : Editor
             speed = serializedObject.FindProperty("speed");
             material = serializedObject.FindProperty("material");
             vertexOffset = serializedObject.FindProperty("vertexOffset");
+            vertexCenterThreshold = serializedObject.FindProperty("vertexCenterThreshold");
         }
 
         // Find properties for ScaryLightEffect
@@ -283,6 +285,7 @@ public class ScaryEffectEditor : Editor
                 break;
             case DoTweenType.MoveMeshVertices:
                 EditorGUILayout.PropertyField(vertexOffset);
+                EditorGUILayout.PropertyField(vertexCenterThreshold);
                 break;
             case DoTweenType.MoveAllRoomObjectsUp:
                 EditorGUILayout.PropertyField(targetPosition);
