@@ -104,7 +104,7 @@ namespace ScaryEvents.ScaryEffects
             }
             else
             {
-                targetObject = Instantiate(objectToSpawn, a.position, a.rotation);
+                targetObject = Instantiate(objectToSpawn, new Vector3(a.position.x, a.position.y + 0.15f, a.position.z), a.rotation);
             }
 
             Animator animator = targetObject.GetComponent<Animator>();

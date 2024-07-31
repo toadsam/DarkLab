@@ -1467,25 +1467,13 @@ PrefabInstance:
     - target: {fileID: 5502443407714586536, guid: ff41fe5d467154cbd873b766f4a974b6,
         type: 3}
       propertyPath: m_Name
-      value: ScaryEvent-PlayerAnim
+      value: layerAnimt-PlayerAnim
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff41fe5d467154cbd873b766f4a974b6, type: 3}
---- !u!114 &1147905492 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4843442024986794077, guid: ff41fe5d467154cbd873b766f4a974b6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1147905491}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1149952684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2994357607998892120, guid: 88948a6d1880526488847c3a28a99850,
@@ -1898,6 +1886,164 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1416217224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4843442024986794077, guid: bf43b76dcdde64f06832422644624147,
+    type: 3}
+  m_PrefabInstance: {fileID: 1511806023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1511806023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502443407714586536, guid: bf43b76dcdde64f06832422644624147,
+        type: 3}
+      propertyPath: m_Name
+      value: ScaryEvent-HPDownPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf43b76dcdde64f06832422644624147, type: 3}
+--- !u!1001 &1568572233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502443407714586536, guid: d1dc898d105c54cb3b76939752fa7479,
+        type: 3}
+      propertyPath: m_Name
+      value: ScaryEvent-WakeUpPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1dc898d105c54cb3b76939752fa7479, type: 3}
 --- !u!1001 &1572398937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2474,7 +2620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exampleObjectInfoHolder: {fileID: 1600406904}
-  testedScaryEvent: {fileID: 1147905492}
+  testedScaryEvent: {fileID: 1416217224}
 --- !u!4 &2017881689
 Transform:
   m_ObjectHideFlags: 0
