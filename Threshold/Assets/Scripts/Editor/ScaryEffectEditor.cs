@@ -43,10 +43,15 @@ public class ScaryEffectEditor : Editor
     
     // ScaryPostProcessingEffect properties
     SerializedProperty postProcessingEffectType;
-    SerializedProperty weight;
+    SerializedProperty finalWeight;
     SerializedProperty onTransitionDuration;
     SerializedProperty offTransitionDuration;
-    SerializedProperty targetVolume;
+    SerializedProperty useWobbleOnActivate;
+    SerializedProperty useWobbleOnDeactivate;
+    SerializedProperty wobbleMinWeight;
+    SerializedProperty wobbleMaxWeight;
+    SerializedProperty wobbleCount;
+    SerializedProperty wobbleDuration;
     
     // ScaryAudioEffect properties
     SerializedProperty audioClip;
@@ -118,9 +123,15 @@ public class ScaryEffectEditor : Editor
         if (target is ScaryPostProcessingEffect)
         {
             postProcessingEffectType = serializedObject.FindProperty("effectType");
-            weight = serializedObject.FindProperty("weight");
+            finalWeight = serializedObject.FindProperty("finalWeight");
             onTransitionDuration = serializedObject.FindProperty("onTransitionDuration");
             offTransitionDuration = serializedObject.FindProperty("offTransitionDuration");
+            useWobbleOnActivate = serializedObject.FindProperty("useWobbleOnActivate");
+            useWobbleOnDeactivate = serializedObject.FindProperty("useWobbleOnDeactivate");
+            wobbleMinWeight = serializedObject.FindProperty("wobbleMinWeight");
+            wobbleMaxWeight = serializedObject.FindProperty("wobbleMaxWeight");
+            wobbleCount = serializedObject.FindProperty("wobbleCount");
+            wobbleDuration = serializedObject.FindProperty("wobbleDuration");
         }
         
         // Initialize properties for ScaryAudioEffect
@@ -308,9 +319,18 @@ public class ScaryEffectEditor : Editor
     private void DrawPostProcessingEffectProperties()
     {
         EditorGUILayout.PropertyField(postProcessingEffectType);
-        EditorGUILayout.PropertyField(weight);
+        EditorGUILayout.PropertyField(finalWeight);
         EditorGUILayout.PropertyField(onTransitionDuration);
         EditorGUILayout.PropertyField(offTransitionDuration);
+
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Wobble Settings", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(useWobbleOnActivate);
+        EditorGUILayout.PropertyField(useWobbleOnDeactivate);
+        EditorGUILayout.PropertyField(wobbleMinWeight);
+        EditorGUILayout.PropertyField(wobbleMaxWeight);
+        EditorGUILayout.PropertyField(wobbleCount);
+        EditorGUILayout.PropertyField(wobbleDuration);
     }
     
     private void DrawAudioEffectProperties(ScaryAudioEffect effect)
