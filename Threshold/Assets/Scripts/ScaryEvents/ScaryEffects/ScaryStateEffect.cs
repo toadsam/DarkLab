@@ -88,6 +88,7 @@ namespace ScaryEvents.ScaryEffects
         private IEnumerator SpawnAndPlayAnimation()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
+            GameObject targetObject;
             if(frontCreation)
             {
                 Camera mainCamera = a.GetComponentInChildren<Camera>();
@@ -99,11 +100,11 @@ namespace ScaryEvents.ScaryEffects
 
                 Vector3 spawnPosition = a.position + mainCamera.transform.forward;
 
-                GameObject targetObject = Instantiate(objectToSpawn, spawnPosition, a.rotation * Quaternion.Euler(0, 180, 0));
+                targetObject = Instantiate(objectToSpawn, spawnPosition, a.rotation * Quaternion.Euler(0, 180, 0));
             }
             else
             {
-                GameObject targetObject = Instantiate(objectToSpawn, a.position, a.rotation);
+                targetObject = Instantiate(objectToSpawn, a.position, a.rotation);
             }
 
             Animator animator = targetObject.GetComponent<Animator>();
