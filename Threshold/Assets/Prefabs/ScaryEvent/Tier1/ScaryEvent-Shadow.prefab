@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 1
+  duration: 5
   delay: 0
   ease: 1
   loops: 1
@@ -60,21 +60,15 @@ MonoBehaviour:
       m_Calls: []
   onComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3666507506215728838}
-        m_TargetAssemblyTypeName: ScaryEvents.ScaryEffects.ScaryEffect, Assembly-CSharp
-        m_MethodName: StartEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   showProperties: 1
-  stateType: 1
+  stateType: 4
+  objectToSpawn: {fileID: 4510356346872246768, guid: d03ca684b746246fc9e076253f73d8ba,
+    type: 3}
+  targetPosition: {x: 0.5, y: 0, z: 0}
+  isRelative: 0
+  doTweenLoopType: 0
+  doTweenLoops: 1
 --- !u!1 &3125081220771302713
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3227238260552334410
 Transform:
   m_ObjectHideFlags: 0
@@ -177,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2381492277538700538
 Transform:
   m_ObjectHideFlags: 0
@@ -224,6 +218,11 @@ MonoBehaviour:
       m_Calls: []
   showProperties: 0
   stateType: 2
+  objectToSpawn: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  isRelative: 0
+  doTweenLoopType: 0
+  doTweenLoops: 1
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
