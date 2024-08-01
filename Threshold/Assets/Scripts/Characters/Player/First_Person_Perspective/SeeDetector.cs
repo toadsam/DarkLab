@@ -2,23 +2,23 @@ using ScaryEvents;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // TextMeshPro ³×ÀÓ½ºÆäÀÌ½º Ãß°¡
+using TMPro; // TextMeshPro ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ß°ï¿½
 public class SeeDetector : MonoBehaviour
 {
-    public float rayDistance = 1f;  // ·¹ÀÌÀÇ °Å¸®
-    public LayerMask layerMask;     // ·¹ÀÌÄ³½ºÆ®¿¡ ¿µÇâÀ» ¹Þ´Â ·¹ÀÌ¾î
-    public float detectionTime = 2f; // °¨Áö ½Ã°£
-    public LayerMask ignoreLayerMask; // ¹«½ÃÇÒ ·¹ÀÌ¾î
+    public float rayDistance = 1f;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+    public LayerMask layerMask;     // ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½
+    public float detectionTime = 2f; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+    public LayerMask ignoreLayerMask; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½
 
     private float detectionTimer = 0f;
     private bool isSeeing = false;
 
     public static bool isInteraction;
 
-    public GameObject interactionUI; // »óÈ£ÀÛ¿ë UI
+    public GameObject interactionUI; // ï¿½ï¿½È£ï¿½Û¿ï¿½ UI
     public Transform CameraTransform;
 
-    public TextMeshProUGUI infoText; // ¿ÀºêÁ§Æ® Á¤º¸¸¦ Ç¥½ÃÇÒ UI ÅØ½ºÆ®
+    public TextMeshProUGUI infoText; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ UI ï¿½Ø½ï¿½Æ®
 
     private void Start()
     {
@@ -26,18 +26,18 @@ public class SeeDetector : MonoBehaviour
 
         if (infoText != null)
         {
-            infoText.text = ""; // ÃÊ±â ÅØ½ºÆ®¸¦ ºó ¹®ÀÚ¿­·Î ¼³Á¤
+            infoText.text = ""; // ï¿½Ê±ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     void Update()
     {
-        // Ä«¸Þ¶óÀÇ ¾Õ ¹æÇâÀ¸·Î ·¹ÀÌÄ³½ºÆ®¸¦ ½ô
+        // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½
         Ray ray = new Ray(CameraTransform.position, CameraTransform.forward);
         RaycastHit[] hits;
-        Color rayColor = Color.green; // ±âº» ·¹ÀÌ »ö»óÀº ÃÊ·Ï»ö
+        Color rayColor = Color.green; // ï¿½âº» ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê·Ï»ï¿½
 
-        // ¸ðµç Ãæµ¹ °¨Áö
+        // ï¿½ï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½
         hits = Physics.RaycastAll(ray, rayDistance, layerMask);
 
         bool interactionDetected = false;
@@ -45,7 +45,7 @@ public class SeeDetector : MonoBehaviour
 
         foreach (RaycastHit hit in hits)
         {
-            // "See" ÅÂ±× °¨Áö
+            // "See" ï¿½Â±ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (hit.collider.CompareTag("See"))
             {
                 if (!isSeeing)
@@ -71,7 +71,7 @@ public class SeeDetector : MonoBehaviour
                 seeDetected = true;
             }
 
-            // "Interaction" ÅÂ±× °¨Áö
+            // "Interaction" ï¿½Â±ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (hit.collider.CompareTag("Interaction"))
             {
                 interactionUI.SetActive(true);
@@ -82,7 +82,7 @@ public class SeeDetector : MonoBehaviour
             }
         }
 
-        // °¨ÁöµÇÁö ¾ÊÀ¸¸é ÃÊ±âÈ­
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         if (!seeDetected)
         {
             isSeeing = false;
@@ -97,14 +97,14 @@ public class SeeDetector : MonoBehaviour
            // MainManager.Instance.objectEventHandler.targrt = null;
         }
 
-        // µð¹ö±× ¶óÀÎ ±×¸®±â (ÃÊ·Ï»ö ¶Ç´Â »¡°£»ö)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ (ï¿½Ê·Ï»ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
         Debug.DrawRay(CameraTransform.position, CameraTransform.forward * rayDistance, rayColor);
     }
 
     void TriggerSeeEvent()
     {
-        MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
-        Debug.Log("See ÅÂ±×ÀÇ ¿ÀºêÁ§Æ®¸¦ 2ÃÊ µ¿¾È °¨ÁöÇß½À´Ï´Ù!");
+        MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
+        Debug.Log("See ï¿½Â±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½!");
         MainManager.Instance.objectEventHandler.targrt = null;
     }
 
@@ -113,8 +113,8 @@ public class SeeDetector : MonoBehaviour
         if (other.CompareTag("Proximity"))
         {
             MainManager.Instance.objectEventHandler.targrt = other.GetComponent<ObjectInfoHolder>();
-            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
-            Debug.Log("Proximity ¿ÀºêÁ§Æ®¿¡ °¡±îÀÌ °¨ÁöµÊ: " + other.gameObject.name);
+            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
+            Debug.Log("Proximity ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: " + other.gameObject.name);
         }
     }
 
@@ -122,7 +122,7 @@ public class SeeDetector : MonoBehaviour
     {
         if (other.CompareTag("Proximity"))
         {
-            Debug.Log("Proximity ¿ÀºêÁ§Æ®¿¡¼­ ¸Ö¾îÁü: " + other.gameObject.name);
+            Debug.Log("Proximity ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½: " + other.gameObject.name);
         }
     }
 

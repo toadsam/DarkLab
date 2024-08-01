@@ -1,13 +1,19 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace ScaryEvents
 {
+    [Serializable]
+    public class ScaryEventMetaData
+    {
+        public scaryEventTier tier;
+    }
+    
     public class ScaryEvent : MonoBehaviour
     {
-        public scaryEventTier scaryEventTier;
-        public scaryEventWhen scaryEventWhen;
+        public ScaryEventMetaData metaData;
     
         public ObjectInfoHolder currentEventTarget;
         private Dictionary <string, int> currentIndexForTargets = new Dictionary<string, int>();

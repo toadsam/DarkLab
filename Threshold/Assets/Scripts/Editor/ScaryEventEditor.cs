@@ -15,8 +15,7 @@ public class ScaryEventEditor : Editor
         serializedObject.Update();
 
         
-        script.scaryEventTier = (scaryEventTier)EditorGUILayout.EnumPopup("Scary Event Tier", script.scaryEventTier);
-        script.scaryEventWhen = (scaryEventWhen)EditorGUILayout.EnumPopup("Scary Event When", script.scaryEventWhen);
+        script.metaData.tier = (scaryEventTier)EditorGUILayout.EnumPopup("Scary Event Tier", script.metaData.tier);
 
         
         EditorGUILayout.ObjectField("Current Event Target", script.currentEventTarget, typeof(ObjectInfoHolder), true);

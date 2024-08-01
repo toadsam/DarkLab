@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
                 if (target != null)
                 {
                     Debug.Log("여기는 들어오니");
-                    MainManager.Instance.objectEventHandler.Match(target, scaryEventWhen.OnFocusInteractionStart);
+                    MainManager.Instance.objectEventHandler.Match(target);
                 }
                 else
                 {

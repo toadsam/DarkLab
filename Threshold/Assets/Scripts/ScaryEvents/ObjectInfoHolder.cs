@@ -5,13 +5,6 @@ using UnityEngine.Events;
 
 namespace ScaryEvents
 {
-    [Serializable]
-    public class ObjectDependentEventWithWhen
-    {
-        public UnityEvent eventToTrigger;
-        public scaryEventWhen whenToTrigger;
-    }
-    
     public class ObjectInfoHolder : MonoBehaviour
     {
         public List<Light> lightTargets = new List<Light>();
@@ -22,9 +15,9 @@ namespace ScaryEvents
         public scaryEventTier objectTier;
         
         // 실행 시점에 따른 이벤트 실행을 위한 Object 종속 이벤트. 외부 접근 방지를 위해 private + SerializeField로 선언
-        [SerializeField] private List<ObjectDependentEventWithWhen> objectDependentEvents = new List<ObjectDependentEventWithWhen>();
+        public bool isObjectDependentEvent = false;
+        public UnityEvent objectDependentEvents = new UnityEvent();
         // 실행 시점 순회 방지를 위한 Dictionary (+ Dict 는 Inspector에 노출되지 않아, HideInInspector 필요 없음.)
-        public Dictionary<scaryEventWhen, UnityEvent> eventDictionary = new Dictionary<scaryEventWhen, UnityEvent>();
         
         private void Awake()
         {
@@ -32,19 +25,6 @@ namespace ScaryEvents
             if (gameObject.CompareTag("Proximity") && GetComponent<Collider>() != null)
             {
                 GetComponent<Collider>().isTrigger = true;
-            }
-            
-            foreach (var objectDependentEvent in objectDependentEvents)
-            {
-                if (eventDictionary.ContainsKey(objectDependentEvent.whenToTrigger))
-                {
-                    UnityEvent unityEvent = eventDictionary[objectDependentEvent.whenToTrigger];
-                    eventDictionary[objectDependentEvent.whenToTrigger] = unityEvent;
-                }
-                else
-                {
-                    eventDictionary[objectDependentEvent.whenToTrigger].AddListener(objectDependentEvent.eventToTrigger.Invoke);
-                }
             }
         }
         

@@ -90,7 +90,7 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
             MainManager.Instance.objectEventHandler.targrt = other.GetComponent<ObjectInfoHolder>();
-            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnProximity);
+            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
             // UI 텍스트를 활성화하여 상호작용 가능 문구를 표시
             interactionText.gameObject.SetActive(true);
            // OnInteraction();  //현재 돋보기가 클릭돼지 않는 문제가 생겨서 일단은 바로 시작되도록 만듬.
@@ -117,7 +117,7 @@ public class PlayerInteraction : MonoBehaviour
         if(cameraPosition != null)
         {
             //cameraObj.orthographicSize = 0.5f; //일단 여기 부분 추가했는데 이거 맞는지는 한번 더 물어보고 추가하기
-            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnViewInteractionStart);
+            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
             objectCamera.transform.position = cameraPosition.position;
             objectCamera.transform.rotation = cameraPosition.rotation;
             originalCameraPosition = objectCamera.transform.position;
@@ -169,7 +169,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             Debug.Log("지금 포커스 사용중입니다");
             isDetect = true;
-            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnFocusInteractionStart);
+            MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
             Camera.main.GetComponent<Camera>().GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>().renderPostProcessing = true;
             
             Vector2 screenPoint = eventData.position;
