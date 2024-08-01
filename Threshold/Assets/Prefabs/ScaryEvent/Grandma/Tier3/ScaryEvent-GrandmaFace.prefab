@@ -65,10 +65,11 @@ MonoBehaviour:
   stateType: 4
   frontCreation: 1
   isDisappearance: 1
+  createBigObject: 1
   deactiveDelay: 4
   animationClips:
   - {fileID: 7400000, guid: c4261d3f8d0a3427cb2d35b93aa55054, type: 2}
-  objectToSpawn: {fileID: 4510356346872246768, guid: e37afcb31d9ca432780df47db04d76ac,
+  objectToSpawn: {fileID: 4510356346872246768, guid: 8602b6507273e4ab79f9eff0f1fc8608,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
   isRelative: 0
