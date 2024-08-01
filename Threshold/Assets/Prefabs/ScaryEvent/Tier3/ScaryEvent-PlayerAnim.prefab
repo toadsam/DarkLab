@@ -63,6 +63,8 @@ MonoBehaviour:
       m_Calls: []
   showProperties: 1
   stateType: 4
+  frontCreation: 1
+  isDisappearance: 1
   deactiveDelay: 5
   animationClips:
   - {fileID: 7400000, guid: e0e86dc40195a46bb84f52248dabde8d, type: 2}
@@ -71,6 +73,8 @@ MonoBehaviour:
   - {fileID: 7400000, guid: afb579d75dcd44725880581fd9aed3ff, type: 2}
   - {fileID: 7400000, guid: 97b5151d4bf814006a689f8733dfa188, type: 2}
   - {fileID: 7400000, guid: fb0a24116c7d242dfb07314ed11bce49, type: 2}
+  - {fileID: 7400000, guid: 3f4e32b17350f407385354d083840585, type: 2}
+  - {fileID: 7400000, guid: 61e70c08a94a246eeb6757a7c360845b, type: 2}
   objectToSpawn: {fileID: 3076443712502478793, guid: 9e0cb3434ce304214becd82242963998,
     type: 3}
   targetPosition: {x: 0, y: 0, z: 0}

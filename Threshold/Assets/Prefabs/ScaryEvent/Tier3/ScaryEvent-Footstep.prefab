@@ -62,11 +62,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  audioClip: {fileID: 8300000, guid: 59c6fe439293e4363906cea3c0041dc3, type: 3}
+  audioClip: {fileID: 8300000, guid: fb095a58edec241fea1cddfd82052a1e, type: 3}
   volume: 1
   soundRelativePositionFromListener: {x: 0, y: -2, z: -1}
   spatialBlend: 1
-  audioEffectType: 16
+  audioEffectType: 48
   reverbPreset: 24
   dryLevel: 0
   room: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   lowPassResonance: 1
   highPassCutoff: 5000
   highPassResonance: 1
-  distortionLevel: 0.598
+  distortionLevel: 0.767
   chorusDryMix: 0.5
   chorusWetMix1: 0.25
   chorusWetMix2: 0.25
