@@ -26,6 +26,7 @@ public class ScaryEffectEditor : Editor
     SerializedProperty isRelative;
     SerializedProperty doTweenLoopType;
     SerializedProperty doTweenLoops;
+    SerializedProperty isFadeOut;
     SerializedProperty amplitude;
     SerializedProperty frequency;
     SerializedProperty speed;
@@ -106,6 +107,7 @@ public class ScaryEffectEditor : Editor
             isRelative = serializedObject.FindProperty("isRelative");
             doTweenLoopType = serializedObject.FindProperty("doTweenLoopType");
             doTweenLoops = serializedObject.FindProperty("doTweenLoops");
+            isFadeOut = serializedObject.FindProperty("isFadeOut");
             amplitude = serializedObject.FindProperty("amplitude");
             frequency = serializedObject.FindProperty("frequency");
             speed = serializedObject.FindProperty("speed");
@@ -284,6 +286,7 @@ public class ScaryEffectEditor : Editor
                 break;
             case DoTweenType.Shake:
                 EditorGUILayout.PropertyField(shakePosition);
+                EditorGUILayout.PropertyField(isFadeOut);
                 break;
             case DoTweenType.WavyTexture:
                 EditorGUILayout.PropertyField(amplitude);

@@ -30,6 +30,7 @@ namespace ScaryEvents.ScaryEffects
         public Vector3 targetRotation = Vector3.zero;
         public Vector3 targetScale = Vector3.one;
         public float shakePosition = 1;
+        public bool isFadeOut = false;
         public float amplitude = 0.1f;
         public float frequency = 1.0f;
         public float speed = 1.0f;
@@ -104,7 +105,7 @@ namespace ScaryEvents.ScaryEffects
         public void Shaking()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
-            a.DOShakePosition(shakePosition, duration)
+            a.DOShakePosition(duration, shakePosition, doTweenLoops, 90, false, isFadeOut)
                 .SetRelative(isRelative)
                 .SetLoops(doTweenLoops, doTweenLoopType);;
         }
