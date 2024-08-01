@@ -7,8 +7,6 @@
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene_KHN.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene_KHN.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryDoTweenEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryDoTweenEffect.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ScaryEffectEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Room/InteractableDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Room/RoomController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ObjectDependent/VideoScaryEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryPostProcessingSeperator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEffects/ScaryPostProcessingVolumeManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEventTester.cs" root0="FORCE_HIGHLIGHTING" />
