@@ -80,6 +80,7 @@ public class ScaryEffectEditor : Editor
     SerializedProperty stateType;
     SerializedProperty frontCreation;
     SerializedProperty isDisappearance;
+    SerializedProperty createBigObject;
     SerializedProperty animationClips;
     SerializedProperty objectToSpawn;
     SerializedProperty deactiveDelay;
@@ -199,6 +200,7 @@ public class ScaryEffectEditor : Editor
             stateType = serializedObject.FindProperty("stateType");
             frontCreation = serializedObject.FindProperty("frontCreation");
             isDisappearance = serializedObject.FindProperty("isDisappearance");
+            createBigObject = serializedObject.FindProperty("createBigObject");
             deactiveDelay = serializedObject.FindProperty("deactiveDelay");
             animationClips = serializedObject.FindProperty("animationClips");
             objectToSpawn = serializedObject.FindProperty("objectToSpawn");
@@ -447,6 +449,7 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(objectToSpawn);
                 EditorGUILayout.PropertyField(frontCreation);
                 EditorGUILayout.PropertyField(isDisappearance);
+                EditorGUILayout.PropertyField(createBigObject);
                 EditorGUILayout.PropertyField(deactiveDelay);
                 EditorGUILayout.PropertyField(animationClips);
                 break;

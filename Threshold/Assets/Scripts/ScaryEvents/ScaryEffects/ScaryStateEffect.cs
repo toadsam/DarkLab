@@ -22,6 +22,7 @@ namespace ScaryEvents.ScaryEffects
         public StateType stateType;
         public bool frontCreation = true;
         public bool isDisappearance = true;
+        public bool createBigObject = false;
         public float deactiveDelay = 0;
         public AnimationClip[] animationClips;
         public GameObject objectToSpawn;
@@ -104,6 +105,11 @@ namespace ScaryEvents.ScaryEffects
                 Vector3 spawnPosition = a.position + mainCamera.transform.forward;
 
                 targetObject = Instantiate(objectToSpawn, spawnPosition, a.rotation * Quaternion.Euler(0, 180, 0));
+
+                if(createBigObject)
+                {
+                    targetObject.transform.position -= new Vector3(0, 1.4f, 0);
+                }
             }
             else
             {
