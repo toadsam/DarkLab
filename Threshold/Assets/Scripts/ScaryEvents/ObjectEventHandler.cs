@@ -39,15 +39,20 @@ namespace ScaryEvents
             }
             
             for (int i = 0; i <startTargets.Length; i++)              
-                Match(startTargets[i], scaryEventWhen.OnAwake);
+                Match(startTargets[i]);
         }
    
-        public void Match(ObjectInfoHolder objectInfoHolder,scaryEventWhen eventWhen) 
+        public void Match(ObjectInfoHolder objectInfoHolder) 
         {
+            if (objectInfoHolder.isObjectDependentEvent)
+            {
+                objectInfoHolder.objectDependentEvents.Invoke();
+                return;
+            }
 
             for (int i = 0; i < scaryEvents.Length; i++)
             {
-                if (objectInfoHolder.objectTier.HasFlag(scaryEvents[i].scaryEventTier) && eventWhen  == scaryEvents[i].scaryEventWhen)
+                if (objectInfoHolder.objectTier.HasFlag(scaryEvents[i].metaData.tier))
                 {
                     scaryEvents[i].currentEventTarget = objectInfoHolder;
                     //if (scaryEvents[i].currentEventTarget != null)
@@ -57,7 +62,7 @@ namespace ScaryEvents
                     scaryEvents[i].StartEvent();
                     
                     // 모든 공포 이벤트 (Awake 포함) 은 Match 를 경유하므로, 공포 이벤트의 실행 시점을 공유하는 오브젝트 종속 공포 이벤트 또한 여기서 실행.
-                    objectInfoHolder.eventDictionary[eventWhen].Invoke();
+                    objectInfoHolder.objectDependentEvents.Invoke();
                     
                     // 공포이벤트 비활성화
                     playedObjectInfoHolders.Add(objectInfoHolder);

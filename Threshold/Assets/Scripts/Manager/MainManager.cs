@@ -6,11 +6,8 @@ using UnityEngine;
 
 [Flags]
 public enum scaryEventTier { None = 0, Tier1 = 1, Tier2 = 2, Tier3 = 4, Tier4 = 8, Tier5 = 16 };
-public enum scaryEventWhen { OnAwake, OnProximity, OnViewInteractionStart, OnFocusInteractionStart, OnSustainedFocusInteraction };
 public class MainManager : MonoBehaviour
 {
-
-    public scaryEventWhen PlayerEventWhen;
     public static MainManager Instance { get; private set; }
 
   //  public AudioManager audioManager;

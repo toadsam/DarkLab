@@ -9,7 +9,8 @@ namespace ScaryEvents.ScaryEffects
     {
         ChromaticAberration,
         CloseEye,
-        CameraMove
+        CameraMove,
+        WobbleSpace
     }
     
     public class ScaryPostProcessingEffect : ScaryEffect
@@ -74,18 +75,18 @@ namespace ScaryEvents.ScaryEffects
         {
             for (int i = 0; i < count; i++)
             {
-                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, maxWeight, wobbleDuration / 2)
+                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, maxWeight, wobbleDuration / wobbleCount)
                     .SetEase(Ease.InOutQuad)
                     .WaitForCompletion();
                 
-                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, minWeight, wobbleDuration / 2)
+                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, minWeight, wobbleDuration / wobbleCount)
                     .SetEase(Ease.InOutQuad)
                     .WaitForCompletion();
             }
 
             if (finalIncrease)
             {
-                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, maxWeight, wobbleDuration / 2)
+                yield return DOTween.To(() => targetVolume.weight, x => targetVolume.weight = x, maxWeight, wobbleDuration / wobbleCount)
                     .SetEase(Ease.InOutQuad)
                     .WaitForCompletion();
             }

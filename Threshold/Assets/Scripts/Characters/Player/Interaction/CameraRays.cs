@@ -66,7 +66,7 @@ public class CameraRays : MonoBehaviour
             void ExecuteFunction(Vector3 hitPoint, GameObject gameObject)
             {
                   
-                MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt, scaryEventWhen.OnSustainedFocusInteraction);
+                MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
 
                 if (gameObject.GetComponent<InteractionObject>() != null)
                 {
