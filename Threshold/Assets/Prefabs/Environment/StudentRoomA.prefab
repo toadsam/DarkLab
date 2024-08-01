@@ -29055,6 +29055,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2853395229998012685}
+    - targetCorrespondingSourceObject: {fileID: 7165736137289742700, guid: 837808592fe3cb6488eb2650e64fc5ea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1366524281259122223}
   m_SourcePrefab: {fileID: 100100000, guid: 837808592fe3cb6488eb2650e64fc5ea, type: 3}
 --- !u!1 &1621710611436644904 stripped
 GameObject:
@@ -29078,7 +29082,7 @@ MonoBehaviour:
   onDoorOpen:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3797963044083266457}
         m_TargetAssemblyTypeName: RoomController, Assembly-CSharp
         m_MethodName: ChangeRandomSectionSequence
         m_Mode: 1
@@ -29299,6 +29303,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1366524281259122223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621710611436644904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.85750604, y: 2.6726694, z: 1.213681}
+  m_Center: {x: 0.07124704, y: -0.012368691, z: 0.01375468}
 --- !u!4 &2146714650775515282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7510350107156800470, guid: 837808592fe3cb6488eb2650e64fc5ea,

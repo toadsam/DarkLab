@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Dress 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Dress 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Female_Angled_Base_Transparency 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Female_Angled_Base_Transparency 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Female_Angled_Transparency 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Female_Angled_Transparency 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Frame 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Frame 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Frame_0_ 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Frame_0_ 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Ga_Skin_Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Ga_Skin_Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/High_polytail_Transparency 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/High_polytail_Transparency 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Material_Cardigan02 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Material_Cardigan02 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Scalp_High_polytail_Transparency 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Scalp_High_polytail_Transparency 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Cornea_L 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Cornea_L 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Cornea_R 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Cornea_R 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Eye_L 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Eye_L 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Eye_R 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Eye_R 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Lower_Teeth 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Lower_Teeth 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Upper_Teeth 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/Std_Upper_Teeth 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/_3___Default 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Grandma/Opaque/_3___Default 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/StudentHouse/Cello_All.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/StudentHouse/Cello_All.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/StudentRoomA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/StudentRoomA.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene_KHN.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene_KHN.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Cello/Cello_blinn1_Normal.1001.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Cello/Cello_blinn1_Normal.1001.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/RoomController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/RoomController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScaryEvents;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,8 @@ public class RoomController : MonoBehaviour
     // 현재 선택된 room 안의 section 중 하나를 비활성화하고, 다른 section을 활성화. 단, sectionIndices 들이 서로 2 이상 차이나면 안 됨. 
     public void ChangeRandomSectionSequence()
     {
+        FindObjectOfType<ObjectEventHandler>().ChangeRoom(Array.Empty<ObjectInfoHolder>());
+        
         int minIndex = int.MaxValue;
         List<Section> minIndexSections = new List<Section>();
         
