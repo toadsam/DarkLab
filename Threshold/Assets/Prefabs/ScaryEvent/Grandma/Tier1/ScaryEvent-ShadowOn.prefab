@@ -62,7 +62,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  stateType: 4
+  stateType: 3
+  frontCreation: 1
+  isDisappearance: 1
+  deactiveDelay: 3
+  animationClips: []
   objectToSpawn: {fileID: 4510356346872246768, guid: d03ca684b746246fc9e076253f73d8ba,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
@@ -155,6 +159,8 @@ MonoBehaviour:
   frequency: 1
   speed: 0.3
   material: {fileID: 2100000, guid: ae75383580af64b4bbf5adb7c07e2096, type: 2}
+  vertexOffset: 0.1
+  centerRadius: 1
 --- !u!1 &5027274106385822964
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +224,10 @@ MonoBehaviour:
       m_Calls: []
   showProperties: 0
   stateType: 2
+  frontCreation: 1
+  isDisappearance: 1
+  deactiveDelay: 0
+  animationClips: []
   objectToSpawn: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   isRelative: 0
@@ -234,7 +244,7 @@ GameObject:
   - component: {fileID: 3625437077308761784}
   - component: {fileID: 4843442024986794077}
   m_Layer: 0
-  m_Name: ScaryEvent-Shadow
+  m_Name: ScaryEvent-ShadowOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
