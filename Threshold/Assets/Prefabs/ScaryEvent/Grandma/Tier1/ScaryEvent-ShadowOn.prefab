@@ -62,12 +62,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  stateType: 3
-  frontCreation: 1
+  stateType: 4
+  frontCreation: 0
   isDisappearance: 1
   deactiveDelay: 4
-  animationClips: []
-  objectToSpawn: {fileID: 4510356346872246768, guid: d2ba6d746c5064e15bbe8dfa9229e392,
+  animationClips:
+  - {fileID: 7400000, guid: 7686651f02a3741b892e0129d5642698, type: 2}
+  objectToSpawn: {fileID: 4510356346872246768, guid: d03ca684b746246fc9e076253f73d8ba,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
   isRelative: 0
