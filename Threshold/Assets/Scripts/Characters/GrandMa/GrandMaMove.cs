@@ -174,7 +174,7 @@ public class GrandMaMove : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
             {
                 moving = false; // 이동 완료
-                moveSound.Stop(); // 이동 사운드 정지
+              //  moveSound.Stop(); // 이동 사운드 정지
                 StartCoroutine(FaceAndChasePlayer());
             }
         }
