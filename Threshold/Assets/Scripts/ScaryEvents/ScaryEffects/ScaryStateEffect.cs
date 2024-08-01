@@ -31,6 +31,13 @@ namespace ScaryEvents.ScaryEffects
         public LoopType doTweenLoopType = LoopType.Restart;
         public int doTweenLoops = 1;
 
+        private GameObject playerTransform;
+
+        void Awake()
+        {
+
+        }
+
         public override void StartEffectInternal()
         {
             switch (stateType)
@@ -91,29 +98,34 @@ namespace ScaryEvents.ScaryEffects
 
         private IEnumerator SpawnAndPlayAnimation()
         {
-            var a = targetSource.GetCurrentTarget<Transform>("transform");
+            // var a = targetSource.GetCurrentTarget<Transform>("transform");
+            Debug.Log("안녕");
+            Transform playerTransform = MainManager.Instance.player.transform;
             GameObject targetObject;
             if(frontCreation)
             {
-                Camera mainCamera = a.GetComponentInChildren<Camera>();
+                Camera mainCamera = playerTransform.GetComponentInChildren<Camera>();
                 if (mainCamera == null)
                 {
                     Debug.LogError("메인 카메라가 타겟 오브젝트에 부착되어 있지 않습니다.");
                     yield break;
                 }
+                // new Vector3(player.position.x, currentPosition.y, player.position.z) +
+                Debug.Log(playerTransform.position);
+                Vector3 spawnPosition = new Vector3(playerTransform.forward.x, playerTransform.position.y, playerTransform.forward.z);
 
-                Vector3 spawnPosition = a.position + mainCamera.transform.forward;
+                Debug.Log(spawnPosition);
 
-                targetObject = Instantiate(objectToSpawn, spawnPosition, a.rotation * Quaternion.Euler(0, 180, 0));
+                targetObject = Instantiate(objectToSpawn, spawnPosition, playerTransform.rotation * Quaternion.Euler(0, 180, 0));
 
                 if(createBigObject)
                 {
                     targetObject.transform.position -= new Vector3(0, 1.4f, 0);
                 }
             }
-            else
+            else 
             {
-                targetObject = Instantiate(objectToSpawn, new Vector3(a.position.x, a.position.y + 0.15f, a.position.z), a.rotation);
+                targetObject = Instantiate(objectToSpawn, new Vector3(playerTransform.position.x, playerTransform.position.y + 0.15f, playerTransform.position.z), playerTransform.rotation);
             }
 
             Animator animator = targetObject.GetComponent<Animator>();
