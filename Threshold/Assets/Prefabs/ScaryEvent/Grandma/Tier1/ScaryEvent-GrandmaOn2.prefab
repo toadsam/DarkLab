@@ -68,7 +68,7 @@ MonoBehaviour:
   deactiveDelay: 4
   animationClips:
   - {fileID: 7400000, guid: 7686651f02a3741b892e0129d5642698, type: 2}
-  objectToSpawn: {fileID: 4510356346872246768, guid: d03ca684b746246fc9e076253f73d8ba,
+  objectToSpawn: {fileID: 4510356346872246768, guid: fd1506e6e01274c9586aa9ebd4a593e3,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
   isRelative: 0
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 3625437077308761784}
   - component: {fileID: 4843442024986794077}
   m_Layer: 0
-  m_Name: ScaryEvent-ShadowOn2
+  m_Name: ScaryEvent-GrandmaOn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
