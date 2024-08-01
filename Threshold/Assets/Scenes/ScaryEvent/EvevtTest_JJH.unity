@@ -4025,10 +4025,11 @@ MonoBehaviour:
   fadeDelay: 3
   fadeDuration: 6
   playerTransform: {fileID: 345610184}
-  chaseSpeed: 5
+  chaseSpeed: 8
   rotationSpeed: 360
-  moveSound: {fileID: 0}
-  chaseSound: {fileID: 0}
+  audioSource: {fileID: 1503078605}
+  moveSoundClip: {fileID: 8300000, guid: 2df5308de137b40aab57cef90d8de4fb, type: 3}
+  chaseSoundClip: {fileID: 8300000, guid: 1f596c508a00f4238acf8b2041e3c6c1, type: 3}
   soundDelay: 1
 --- !u!4 &1503078604
 Transform:
