@@ -76,7 +76,10 @@ MonoBehaviour:
   - {fileID: 7480210555835783780}
   rendererTargets: []
   objectTier: 2
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &150070235470820370
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +331,10 @@ MonoBehaviour:
   transformTargets: []
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1044771838100602035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -350,6 +356,184 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3119049, y: 1.5957248, z: 0.88216937}
   m_Center: {x: 0.4193387, y: 0.82746804, z: 0.058915317}
+--- !u!1 &413914273317006422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486789651777901014}
+  - component: {fileID: 7501710595513781187}
+  m_Layer: 5
+  m_Name: VideoPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1486789651777901014
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413914273317006422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 775592327625973355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &7501710595513781187
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413914273317006422}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 9b5f312445e90e84b85736beee6baf95, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 5816ca6f909ee8b4abe7d2b60887968b, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!1 &577654686653057894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 775592327625973355}
+  - component: {fileID: 8316129684641605203}
+  - component: {fileID: 4530090428179748296}
+  - component: {fileID: 94346213160212325}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &775592327625973355
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577654686653057894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.010522369}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7141427907791088545}
+  - {fileID: 1486789651777901014}
+  - {fileID: 5509220756043438408}
+  m_Father: {fileID: 7089077343365946745}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0040006638, y: 0.059999943}
+  m_SizeDelta: {x: 2, y: 2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &8316129684641605203
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577654686653057894}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &4530090428179748296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577654686653057894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!114 &94346213160212325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577654686653057894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &594871441927083388
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +642,10 @@ MonoBehaviour:
   - {fileID: 1469357135381175611}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &726090668961354417
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +717,10 @@ MonoBehaviour:
   - {fileID: 4517468402454338798}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &792122241131227223
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +792,10 @@ MonoBehaviour:
   - {fileID: 5025194701484639867}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &810883356357445972
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +870,10 @@ MonoBehaviour:
   - {fileID: 8792844708166602982}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &936559516325533423
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +1116,10 @@ MonoBehaviour:
   - {fileID: 8494603118919770295}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1265985251176717446
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +1170,10 @@ MonoBehaviour:
   - {fileID: 1342575563788476683}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1167107585501910270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1097,7 +1299,10 @@ MonoBehaviour:
   - {fileID: 7463481004300714714}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1370954904065046015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,7 +1376,10 @@ MonoBehaviour:
   - {fileID: 6822396032288455664}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1388193820811453914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1486,10 @@ MonoBehaviour:
   - {fileID: 8340898113008318652}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1611323863335389074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1596,10 @@ MonoBehaviour:
   - {fileID: 3150432455713194280}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1682329013577923898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1765,10 @@ MonoBehaviour:
   - {fileID: 1885295298963899521}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &6957965859781994633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1919,7 +2136,10 @@ MonoBehaviour:
   - {fileID: 3798253334817367713}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2273122948524901715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2317,10 @@ MonoBehaviour:
   - {fileID: 4902574511602077260}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2494637980882515969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2376,10 @@ MonoBehaviour:
   - {fileID: 6622857479133410082}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1836227659373888540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2246,7 +2472,10 @@ MonoBehaviour:
   - {fileID: 6131219295017777370}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2507010860824091119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,7 +2589,10 @@ MonoBehaviour:
   - {fileID: 4372604047417074602}
   rendererTargets: []
   objectTier: 28
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2746428899402433376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,7 +2702,10 @@ MonoBehaviour:
   - {fileID: 7463481004300714714}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2871251705034737755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,7 +2761,10 @@ MonoBehaviour:
   - {fileID: 7058420025320723477}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &4923927108156803504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2598,7 +2836,10 @@ MonoBehaviour:
   - {fileID: 6820113065840111709}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &3291951913797494178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2669,7 +2910,10 @@ MonoBehaviour:
   transformTargets: []
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &7950037952217468661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2762,7 +3006,10 @@ MonoBehaviour:
   - {fileID: 6887478297910478765}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3388403685051817489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,7 +3081,10 @@ MonoBehaviour:
   - {fileID: 8622936515255964286}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3464919865725720134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3352,10 @@ MonoBehaviour:
   - {fileID: 1342575563788476683}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &7177382256940510799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3173,7 +3426,10 @@ MonoBehaviour:
   transformTargets: []
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &4663737738915975241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3274,7 +3530,10 @@ MonoBehaviour:
   - {fileID: 9142840717586677532}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4353384996550204869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,7 +3605,10 @@ MonoBehaviour:
   - {fileID: 4902574511602077260}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4368350862144375713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,7 +3693,10 @@ MonoBehaviour:
   - {fileID: 4453499251599380439}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &7200277660876525567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3562,7 +3827,10 @@ MonoBehaviour:
   - {fileID: 8760699364959170779}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4985750319403033099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3888,10 @@ MonoBehaviour:
   - {fileID: 3202785204687605833}
   rendererTargets: []
   objectTier: 14
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &5832560470110489334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3713,7 +3984,10 @@ MonoBehaviour:
   - {fileID: 6562403207952218567}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5081987401528383064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,6 +4022,79 @@ Transform:
   m_Father: {fileID: 3825132295754520498}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5127520372204729060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7141427907791088545}
+  - component: {fileID: 7186996649172752798}
+  - component: {fileID: 8928525416267791792}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7141427907791088545
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127520372204729060}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 775592327625973355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1.22, y: 0.73}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7186996649172752798
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127520372204729060}
+  m_CullTransparentMesh: 1
+--- !u!114 &8928525416267791792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127520372204729060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 5816ca6f909ee8b4abe7d2b60887968b, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &5199762689229036919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,7 +4166,10 @@ MonoBehaviour:
   - {fileID: 6887478297910478765}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5299648706827256557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,7 +4246,10 @@ MonoBehaviour:
   - {fileID: 7480210555835783780}
   rendererTargets: []
   objectTier: 2
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5313383992665689187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,7 +4333,10 @@ MonoBehaviour:
   - {fileID: 5898378732297182717}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1008663253767548053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4074,7 +4430,10 @@ MonoBehaviour:
   - {fileID: 1932461977772632951}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5355296687910472645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,7 +4507,10 @@ MonoBehaviour:
   - {fileID: 1037681839078132933}
   rendererTargets: []
   objectTier: 2
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5401420245624129193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,7 +4721,10 @@ MonoBehaviour:
   - {fileID: 7058420025320723477}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2750115827515208833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4460,7 +4825,10 @@ MonoBehaviour:
   - {fileID: 9142840717586677532}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5720079647291638696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,7 +4900,10 @@ MonoBehaviour:
   - {fileID: 6562403207952218567}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5758150604073869786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,7 +4954,10 @@ MonoBehaviour:
   - {fileID: 5074821261619064960}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2016794015318659349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4693,7 +5067,10 @@ MonoBehaviour:
   - {fileID: 8991055073702826201}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &689589431876608284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4835,7 +5212,10 @@ MonoBehaviour:
   - {fileID: 9217813680166373617}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6624878917598542722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4930,7 +5310,10 @@ MonoBehaviour:
   - {fileID: 4675793624439048365}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &6637634428168835712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5002,7 +5385,10 @@ MonoBehaviour:
   - {fileID: 5074821261619064960}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &8378850621701923400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5097,7 +5483,10 @@ MonoBehaviour:
   - {fileID: 6593618444650105343}
   rendererTargets: []
   objectTier: 2
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6824345043119499209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,7 +5725,10 @@ MonoBehaviour:
   - {fileID: 8156749594178830382}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &3395658712739819110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5408,7 +5800,10 @@ MonoBehaviour:
   - {fileID: 7466299107055808056}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &6239084323770178372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5480,7 +5875,10 @@ MonoBehaviour:
   - {fileID: 4323722811606490927}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &949500650417285352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5731,7 +6129,10 @@ MonoBehaviour:
   - {fileID: 359720605857050407}
   rendererTargets: []
   objectTier: 2
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7357232202888220596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,7 +6241,10 @@ MonoBehaviour:
   - {fileID: 5862858597976141074}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7463188582173836500
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,7 +6351,10 @@ MonoBehaviour:
   - {fileID: 1456314989778678406}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7547463852004478101
 GameObject:
   m_ObjectHideFlags: 0
@@ -6019,7 +6426,10 @@ MonoBehaviour:
   - {fileID: 6539823289860169361}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7711959172992666377
 GameObject:
   m_ObjectHideFlags: 0
@@ -6103,6 +6513,161 @@ Transform:
   m_Father: {fileID: 3825132295754520498}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8097444075271939527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5509220756043438408}
+  - component: {fileID: 2760387886058837499}
+  - component: {fileID: 4981035919122434009}
+  m_Layer: 5
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5509220756043438408
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097444075271939527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 775592327625973355}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2760387886058837499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097444075271939527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79adc6eb505a6f4cab5bddd069af6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasForVideo: {fileID: 577654686653057894}
+  videoPlayer: {fileID: 7501710595513781187}
+  videoClips:
+  - {fileID: 32900000, guid: e6c9ef3d0e5af014788848b4d3998cc7, type: 3}
+  - {fileID: 32900000, guid: 9b5f312445e90e84b85736beee6baf95, type: 3}
+  - {fileID: 32900000, guid: 6b273482ed1d7ac4bb8171ac39cb15dd, type: 3}
+  - {fileID: 32900000, guid: aac1e1e49c5535040afe9ac029e9c6db, type: 3}
+  duration: 5
+  audioSource: {fileID: 4981035919122434009}
+--- !u!82 &4981035919122434009
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097444075271939527}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9fe3007c7592f8c44bd43b9e08bc91d6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8135730897766058563
 GameObject:
   m_ObjectHideFlags: 0
@@ -6153,7 +6718,10 @@ MonoBehaviour:
   - {fileID: 1635861623685725005}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2630831060753014887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6247,7 +6815,10 @@ MonoBehaviour:
   - {fileID: 6814614682267332344}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8470761997678233367
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,7 +6869,10 @@ MonoBehaviour:
   - {fileID: 2980162975619963173}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &8962531227512168562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6394,7 +6968,10 @@ MonoBehaviour:
   - {fileID: 7503045906863564645}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8768639474164714808
 GameObject:
   m_ObjectHideFlags: 0
@@ -6465,7 +7042,10 @@ MonoBehaviour:
   - {fileID: 9142840717586677532}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8775635694093068124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,7 +7143,10 @@ MonoBehaviour:
   - {fileID: 6622857479133410082}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &5092837823007003906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6642,7 +7225,22 @@ MonoBehaviour:
   - {fileID: 5753698886322956438}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 1
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2760387886058837499}
+        m_TargetAssemblyTypeName: VideoScaryEvent, Assembly-CSharp
+        m_MethodName: PlayRandomVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &7462321097700224832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6714,7 +7312,10 @@ MonoBehaviour:
   - {fileID: 7466299107055808056}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1265807987226212160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6839,7 +7440,10 @@ MonoBehaviour:
   - {fileID: 4323722811606490927}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &4118845041716288919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6931,7 +7535,10 @@ MonoBehaviour:
   - {fileID: 9142840717586677532}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9155402291507671864
 GameObject:
   m_ObjectHideFlags: 0
@@ -7110,7 +7717,10 @@ MonoBehaviour:
   - {fileID: 359720605857050407}
   rendererTargets: []
   objectTier: 2
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &10509429851486009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7278,7 +7888,10 @@ MonoBehaviour:
   - {fileID: 5862858597976141074}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9107358815755899506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7298,7 +7911,10 @@ MonoBehaviour:
   - {fileID: 5862858597976141074}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &119553859957792575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7354,6 +7970,14 @@ PrefabInstance:
     - target: {fileID: 1030979588, guid: abc00000000007358048397847160412, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030979592, guid: abc00000000007358048397847160412, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030979596, guid: abc00000000007358048397847160412, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7462,7 +8086,10 @@ MonoBehaviour:
   - {fileID: 203365059970541479}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &203365059970541479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030978943, guid: abc00000000005093604162616536148,
@@ -7747,6 +8374,10 @@ PrefabInstance:
     - target: {fileID: 1030974919, guid: abc00000000011124777017148793818, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030974923, guid: abc00000000011124777017148793818, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.069
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8214,11 +8845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030977323, guid: abc00000000000886186004324646596, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.547
+      value: 0.979
       objectReference: {fileID: 0}
     - target: {fileID: 1030977323, guid: abc00000000000886186004324646596, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.695
+      value: -2.129
       objectReference: {fileID: 0}
     - target: {fileID: 1030977323, guid: abc00000000000886186004324646596, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8251,6 +8882,10 @@ PrefabInstance:
     - target: {fileID: 1030977323, guid: abc00000000000886186004324646596, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030977335, guid: abc00000000000886186004324646596, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.328
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8298,7 +8933,10 @@ MonoBehaviour:
   - {fileID: 493900783405890242}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &481267932728190723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8320,7 +8958,10 @@ MonoBehaviour:
   - {fileID: 493900783405890242}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &494272055081944665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8494,7 +9135,10 @@ MonoBehaviour:
   - {fileID: 8680180658365480065}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6621683658909131856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8514,7 +9158,10 @@ MonoBehaviour:
   - {fileID: 8680180658365480065}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &512678106023064215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030980982, guid: abc00000000014931866566506394167,
@@ -8613,7 +9260,10 @@ MonoBehaviour:
   - {fileID: 515911070195342417}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &515911070195342417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1031000605, guid: abc00000000013371733138811369632,
@@ -8971,7 +9621,10 @@ MonoBehaviour:
   - {fileID: 627573330471566050}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &663108106030891116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9088,7 +9741,10 @@ MonoBehaviour:
   - {fileID: 4100324176591853861}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &4792071678660011213
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9975,7 +10631,10 @@ MonoBehaviour:
   - {fileID: 2521389382227681470}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2089921828954950432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10234,7 +10893,10 @@ MonoBehaviour:
   - {fileID: 1444736000939354623}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1444736000939354623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030977096, guid: abc00000000009610324350026645063,
@@ -10942,7 +11604,10 @@ MonoBehaviour:
   - {fileID: 1841619509244197250}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9140814695534782126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10960,7 +11625,10 @@ MonoBehaviour:
   - {fileID: 1841619509244197250}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1898250322008330993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11063,7 +11731,10 @@ MonoBehaviour:
   - {fileID: 1898250322768346250}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1932461977828194736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11316,7 +11987,10 @@ MonoBehaviour:
   - {fileID: 1937386027082605674}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7719826104543292556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11334,7 +12008,10 @@ MonoBehaviour:
   - {fileID: 1937386027082605674}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1952724429765331121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11390,6 +12067,14 @@ PrefabInstance:
     - target: {fileID: 1030974939, guid: abc00000000017537242698519611521, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030974943, guid: abc00000000017537242698519611521, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030974943, guid: abc00000000017537242698519611521, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11692,7 +12377,10 @@ MonoBehaviour:
   - {fileID: 2024349717690289872}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4927942362274062140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11714,7 +12402,10 @@ MonoBehaviour:
   - {fileID: 2024349717690289872}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2073124421533925426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13250,7 +13941,10 @@ MonoBehaviour:
   transformTargets: []
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2757832532000111851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13743,7 +14437,10 @@ MonoBehaviour:
   - {fileID: 3422741996903730675}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4170943353997563450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13762,7 +14459,10 @@ MonoBehaviour:
   - {fileID: 3422741996903730675}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2940246491562631999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030980146, guid: abc00000000011552248225109455268,
@@ -13944,7 +14644,10 @@ MonoBehaviour:
   - {fileID: 2987729766387600862}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2493084918856181756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13962,7 +14665,10 @@ MonoBehaviour:
   - {fileID: 2987729766387600862}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2987729766387600862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030976916, guid: abc00000000010575955636738218955,
@@ -14285,7 +14991,10 @@ MonoBehaviour:
   - {fileID: 3046818683708883204}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3068842224589080630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14540,7 +15249,10 @@ MonoBehaviour:
   - {fileID: 5688157888744018128}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &3091901629732423043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030974638, guid: abc00000000011254977182557325100,
@@ -15011,7 +15723,10 @@ MonoBehaviour:
   - {fileID: 3359400979789603728}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3402520062116608577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15251,7 +15966,10 @@ MonoBehaviour:
   - {fileID: 3534554672931311997}
   rendererTargets: []
   objectTier: 13
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &3534554672931311997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030974939, guid: abc00000000017537242698519611521,
@@ -15776,7 +16494,10 @@ MonoBehaviour:
   - {fileID: 3744763723903681958}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &3744763723903681958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030975626, guid: abc00000000005376421810735002258,
@@ -16029,7 +16750,10 @@ MonoBehaviour:
   - {fileID: 850725989173613344}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5943881138458662532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16048,7 +16772,10 @@ MonoBehaviour:
   - {fileID: 850725989173613344}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &3777023887407833403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030980146, guid: abc00000000011552248225109455268,
@@ -16459,6 +17186,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2891109897282105737}
+    - targetCorrespondingSourceObject: {fileID: 6184567593581593422, guid: d1d8e0f9eea7d8a49915440a8851e0e7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 775592327625973355}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d8e0f9eea7d8a49915440a8851e0e7, type: 3}
 --- !u!4 &7089077343365946745 stripped
@@ -16543,6 +17274,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1030977335, guid: abc00000000000886186004324646596, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.046
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030977339, guid: abc00000000000886186004324646596, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.514
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16589,7 +17328,10 @@ MonoBehaviour:
   - {fileID: 4045001458277887210}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6452839853525101282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16611,7 +17353,10 @@ MonoBehaviour:
   - {fileID: 4045001458277887210}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4102867348995113119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17140,7 +17885,10 @@ MonoBehaviour:
   - {fileID: 4284543625548017852}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4349999141897615288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18253,6 +19001,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1030996408, guid: abc00000000005439908989545125105, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030996408, guid: abc00000000005439908989545125105, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.076
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18378,7 +19134,10 @@ MonoBehaviour:
   - {fileID: 5939474156098168610}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4841404431429026697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18473,7 +19232,10 @@ MonoBehaviour:
   - {fileID: 119553859637747515}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4807039489013140631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18493,7 +19255,10 @@ MonoBehaviour:
   - {fileID: 119553859637747515}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &4841404430671136511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030980982, guid: abc00000000014931866566506394167,
@@ -18756,7 +19521,10 @@ MonoBehaviour:
   - {fileID: 5005570830000265928}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5017056292746553098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18926,7 +19694,10 @@ MonoBehaviour:
   - {fileID: 5035266467345498790}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3712958273981923853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18944,7 +19715,10 @@ MonoBehaviour:
   - {fileID: 5035266467345498790}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5074821262469235690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19118,7 +19892,10 @@ MonoBehaviour:
   - {fileID: 5080962793004394186}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5474506695649028617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19136,7 +19913,10 @@ MonoBehaviour:
   - {fileID: 5080962793004394186}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5106087022839243830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19240,7 +20020,10 @@ MonoBehaviour:
   - {fileID: 4372604047417074602}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &759763707630295143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19259,7 +20042,10 @@ MonoBehaviour:
   - {fileID: 4372604047417074602}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5111097430896925298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19429,7 +20215,10 @@ MonoBehaviour:
   - {fileID: 5115085145778483028}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7628318320238608331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19447,7 +20236,10 @@ MonoBehaviour:
   - {fileID: 5115085145778483028}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5149763854554464061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19700,7 +20492,10 @@ MonoBehaviour:
   - {fileID: 5197768097834596801}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7132319149756462219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19718,7 +20513,10 @@ MonoBehaviour:
   - {fileID: 5197768097834596801}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &5197768097834596801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030975849, guid: abc00000000010343157979195375533,
@@ -19937,6 +20735,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030975414, guid: abc00000000018113285516279593206, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.867
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030975418, guid: abc00000000018113285516279593206, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.674
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030975418, guid: abc00000000018113285516279593206, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.704
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20125,7 +20935,10 @@ MonoBehaviour:
   - {fileID: 7301105881732013469}
   rendererTargets: []
   objectTier: 4
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7301105881732013469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914047807698728016, guid: 8d1bb0c79aee028419c008b7000d676e,
@@ -20577,7 +21390,10 @@ MonoBehaviour:
   - {fileID: 5771403441756733154}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5813859773612922198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20747,7 +21563,10 @@ MonoBehaviour:
   - {fileID: 5820902338097087552}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2040631354639696349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20765,7 +21584,10 @@ MonoBehaviour:
   - {fileID: 5820902338097087552}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5833851655569110090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20951,7 +21773,10 @@ MonoBehaviour:
   - {fileID: 5836834886870786308}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2343171874413522292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20969,7 +21794,10 @@ MonoBehaviour:
   - {fileID: 5836834886870786308}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5862858598866349334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21451,7 +22279,10 @@ MonoBehaviour:
   - {fileID: 5971256688014071922}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6003155446532974096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22077,7 +22908,10 @@ MonoBehaviour:
   - {fileID: 6220475455598176586}
   rendererTargets: []
   objectTier: 6
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6220475455598176586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030975666, guid: abc00000000000554702258557586754,
@@ -22247,7 +23081,10 @@ MonoBehaviour:
   - {fileID: 6339642755220552998}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2011357031329922443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22265,7 +23102,10 @@ MonoBehaviour:
   - {fileID: 6339642755220552998}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6339642755220552998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030997152, guid: abc00000000009664300622092199715,
@@ -23329,7 +24169,10 @@ MonoBehaviour:
   - {fileID: 6827110343276727707}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6827110343276727707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030977296, guid: abc00000000003207762126968679149,
@@ -23428,7 +24271,10 @@ MonoBehaviour:
   - {fileID: 6830074176482158037}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6830074176482158037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030977296, guid: abc00000000003207762126968679149,
@@ -23537,7 +24383,10 @@ MonoBehaviour:
   - {fileID: 6945399811086099138}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6971626595065301457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23772,6 +24621,10 @@ PrefabInstance:
     - target: {fileID: 1030996356, guid: abc00000000018385370038736773798, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030996364, guid: abc00000000018385370038736773798, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.095
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24091,7 +24944,10 @@ MonoBehaviour:
   - {fileID: 8792844708166602982}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3487880520315686701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24111,7 +24967,10 @@ MonoBehaviour:
   - {fileID: 8792844708166602982}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7167677079897100998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030980982, guid: abc00000000014931866566506394167,
@@ -24506,7 +25365,10 @@ MonoBehaviour:
   - {fileID: 7291803666834374013}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7291803666834374013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030977096, guid: abc00000000009610324350026645063,
@@ -25307,7 +26169,10 @@ MonoBehaviour:
   - {fileID: 7487975233300514164}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2343920504019035840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25325,7 +26190,10 @@ MonoBehaviour:
   - {fileID: 7487975233300514164}
   rendererTargets: []
   objectTier: 15
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7503045906954904495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25491,7 +26359,10 @@ MonoBehaviour:
   - {fileID: 7590602824309541330}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7686085730555636015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25924,7 +26795,10 @@ MonoBehaviour:
   - {fileID: 7758296300237950311}
   rendererTargets: []
   objectTier: 3
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7758296300237950311 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030978943, guid: abc00000000005093604162616536148,
@@ -26197,7 +27071,10 @@ MonoBehaviour:
   - {fileID: 7852518077627562022}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2053557000562575424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26215,7 +27092,10 @@ MonoBehaviour:
   - {fileID: 7852518077627562022}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7852518077627562022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030976916, guid: abc00000000010575955636738218955,
@@ -26917,7 +27797,10 @@ MonoBehaviour:
   - {fileID: 4730450550529594820}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &7944906556464214646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27037,7 +27920,10 @@ MonoBehaviour:
   - {fileID: 8118489404743231505}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &8118489404743231505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030977296, guid: abc00000000003207762126968679149,
@@ -29285,7 +30171,10 @@ MonoBehaviour:
   - {fileID: 1939314878482398543}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &9215169865249416442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29651,7 +30540,10 @@ MonoBehaviour:
   - {fileID: 8834257847281958033}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3014124817024107438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29669,7 +30561,10 @@ MonoBehaviour:
   - {fileID: 8834257847281958033}
   rendererTargets: []
   objectTier: 0
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8852126686212419237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29780,6 +30675,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interaction
       objectReference: {fileID: 0}
+    - target: {fileID: 1030976915, guid: abc00000000010575955636738218955, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1030976916, guid: abc00000000010575955636738218955, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -29824,6 +30723,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030976919, guid: abc00000000010575955636738218955, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030976923, guid: abc00000000010575955636738218955, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030976927, guid: abc00000000010575955636738218955, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030976931, guid: abc00000000010575955636738218955, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29860,7 +30775,10 @@ MonoBehaviour:
   - {fileID: 8852236525876131039}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3713208362807306901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29878,7 +30796,10 @@ MonoBehaviour:
   - {fileID: 8852236525876131039}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 1
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &8852236525876131039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030976916, guid: abc00000000010575955636738218955,
@@ -29999,7 +30920,10 @@ MonoBehaviour:
   - {fileID: 1976263372819182627}
   rendererTargets: []
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &9119912584593673742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30518,7 +31442,10 @@ MonoBehaviour:
   - {fileID: 9203099955660660777}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &356464671151688923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30536,7 +31463,10 @@ MonoBehaviour:
   - {fileID: 9203099955660660777}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &9203099955660660777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030975849, guid: abc00000000010343157979195375533,
@@ -30653,4 +31583,7 @@ MonoBehaviour:
   - {fileID: 9217813680166373617}
   rendererTargets: []
   objectTier: 7
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
