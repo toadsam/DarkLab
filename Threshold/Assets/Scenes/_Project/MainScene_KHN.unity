@@ -1859,6 +1859,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 183295372214021285, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 994796273673686603, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1083210287664865488, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
       propertyPath: m_Name
@@ -1919,44 +1929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5657880647610687000, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      propertyPath: onDoorOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5657880647610687000, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      propertyPath: onDoorOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1845954863}
-    - target: {fileID: 5657880647610687000, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      propertyPath: onDoorOpen.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeRandomSectionSequence
-      objectReference: {fileID: 0}
-    - target: {fileID: 5657880647610687000, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      propertyPath: onDoorOpen.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RoomController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133734499409300595, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      propertyPath: transformTargets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133734499409300595, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      propertyPath: transformTargets.Array.data[1]
-      value: 
-      objectReference: {fileID: 1845954864}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1621710611436644904, guid: 8bae5eda1d117cd4090733b2dfea7781,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1845954866}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
 --- !u!114 &1845954862 stripped
 MonoBehaviour:
@@ -1970,51 +1946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d84a6524c4c0e4c840457511857ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1845954863 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3797963044083266457, guid: 8bae5eda1d117cd4090733b2dfea7781,
-    type: 3}
-  m_PrefabInstance: {fileID: 1845954861}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457402d9b2c8f8b4a94376324a032027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1845954864 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8852236525876131039, guid: 8bae5eda1d117cd4090733b2dfea7781,
-    type: 3}
-  m_PrefabInstance: {fileID: 1845954861}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1845954865 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1621710611436644904, guid: 8bae5eda1d117cd4090733b2dfea7781,
-    type: 3}
-  m_PrefabInstance: {fileID: 1845954861}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1845954866
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845954865}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.85750604, y: 2.6726694, z: 1.213681}
-  m_Center: {x: 0.07124704, y: -0.012368691, z: 0.01375468}
 --- !u!1 &1987200992
 GameObject:
   m_ObjectHideFlags: 0
