@@ -1473,6 +1473,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1149952695 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4041897909341949181, guid: 88948a6d1880526488847c3a28a99850,
+    type: 3}
+  m_PrefabInstance: {fileID: 1001374208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1162442940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2222,7 +2228,7 @@ MonoBehaviour:
   - {fileID: 1591874489}
   - {fileID: 526319495}
   transformTargets:
-  - {fileID: 2058062259}
+  - {fileID: 1149952695}
   - {fileID: 8473206825541720594}
   - {fileID: 8473206825541720594}
   - {fileID: 5395610182173758675}
@@ -2230,7 +2236,10 @@ MonoBehaviour:
   rendererTargets:
   - {fileID: 3024195217541692000}
   objectTier: -1
-  objectDependentEvents: []
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1600406905
 Transform:
   m_ObjectHideFlags: 0

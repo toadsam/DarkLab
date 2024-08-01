@@ -68,7 +68,7 @@ MonoBehaviour:
   deactiveDelay: 4
   animationClips:
   - {fileID: 7400000, guid: c4261d3f8d0a3427cb2d35b93aa55054, type: 2}
-  objectToSpawn: {fileID: 4510356346872246768, guid: d03ca684b746246fc9e076253f73d8ba,
+  objectToSpawn: {fileID: 4510356346872246768, guid: e37afcb31d9ca432780df47db04d76ac,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
   isRelative: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaryEventTier: 0
-  scaryEventWhen: 0
+  metaData:
+    tier: 0
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
