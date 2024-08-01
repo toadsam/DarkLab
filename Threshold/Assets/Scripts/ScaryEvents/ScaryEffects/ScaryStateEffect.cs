@@ -10,7 +10,7 @@ namespace ScaryEvents.ScaryEffects
         None,
         Active,
         Deactive,
-        SpawnAndDeactive,
+        Spawn,
         SpawnAndPlayAnimation,
         MoveShadow,
         FootstepDelay
@@ -40,8 +40,8 @@ namespace ScaryEvents.ScaryEffects
                 case StateType.Deactive:
                     StartCoroutine(Deactive());
                     break;
-                case StateType.SpawnAndDeactive:
-                    StartCoroutine(SpawnAndDeactive());
+                case StateType.Spawn:
+                    StartCoroutine(Spawn());
                     break;
                 case StateType.SpawnAndPlayAnimation:
                     StartCoroutine(SpawnAndPlayAnimation());
@@ -75,14 +75,17 @@ namespace ScaryEvents.ScaryEffects
             StopEffect();
         }
 
-        private IEnumerator SpawnAndDeactive()
+        private IEnumerator Spawn()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             GameObject targetObject = Instantiate(objectToSpawn, a.position, a.rotation);
             
-            yield return new WaitForSeconds(deactiveDelay);
+            if(isDisappearance)
+            {
+                yield return new WaitForSeconds(deactiveDelay);
 
-            targetObject.SetActive(false);
+                targetObject.SetActive(false);
+            }
         }
 
         private IEnumerator SpawnAndPlayAnimation()

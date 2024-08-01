@@ -435,7 +435,8 @@ public class ScaryEffectEditor : Editor
             case StateType.Deactive:
                 EditorGUILayout.PropertyField(deactiveDelay);
                 break;
-            case StateType.SpawnAndDeactive:
+            case StateType.Spawn:
+                EditorGUILayout.PropertyField(isDisappearance);
                 EditorGUILayout.PropertyField(objectToSpawn);
                 EditorGUILayout.PropertyField(deactiveDelay);
                 break;

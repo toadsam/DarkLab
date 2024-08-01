@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5279288180160439576}
-  - component: {fileID: 3766289984706624913}
+  - component: {fileID: 5111561832010767236}
   m_Layer: 0
-  m_Name: DotweenEffect (1)
+  m_Name: AudioEffect (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 3625437077308761784}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3766289984706624913
+--- !u!114 &5111561832010767236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2603600794247973493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5ef1f16fe073e46a927d5e61e01e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: d14c39a70d92a214d83e93d17ae6ed0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 3
+  duration: 1
   delay: 0
   ease: 1
   loops: 1
@@ -62,20 +62,38 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  doTweenType: 8
-  isRelative: 0
-  doTweenLoopType: 0
-  doTweenLoops: 1
-  targetPosition: {x: 0, y: 1.4, z: 0}
-  targetRotation: {x: 0, y: 0, z: 0}
-  targetScale: {x: 1, y: 1, z: 1}
-  shakePosition: 10
-  amplitude: 0.1
-  frequency: 1
-  speed: 1
-  material: {fileID: 0}
-  vertexOffset: 0.1
-  centerRadius: 1
+  audioClip: {fileID: 8300000, guid: 59c6fe439293e4363906cea3c0041dc3, type: 3}
+  volume: 1
+  soundRelativePositionFromListener: {x: 0, y: -2, z: -1}
+  spatialBlend: 1
+  audioEffectType: 16
+  reverbPreset: 24
+  dryLevel: 0
+  room: 0
+  roomHF: 0
+  decayTime: 1
+  decayHFRatio: 0.5
+  reflectionsLevel: -10000
+  reflectionsDelay: 0
+  reverbLevel: 0
+  reverbDelay: 0.04
+  diffusion: 100
+  density: 100
+  echoDelay: 500
+  echoDecayRatio: 0.5
+  echoWetMix: 1
+  lowPassCutoff: 11189
+  lowPassResonance: 1
+  highPassCutoff: 5000
+  highPassResonance: 1
+  distortionLevel: 0.598
+  chorusDryMix: 0.5
+  chorusWetMix1: 0.25
+  chorusWetMix2: 0.25
+  chorusWetMix3: 0.25
+  chorusDelay: 40
+  chorusRate: 1.5
+  chorusDepth: 0.7
 --- !u!1 &5502443407714586536
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +105,7 @@ GameObject:
   - component: {fileID: 3625437077308761784}
   - component: {fileID: 4843442024986794077}
   m_Layer: 0
-  m_Name: ScaryEvent-MoveAllObject
+  m_Name: ScaryEvent-Footstep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,13 +139,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaryEventTier: 3
+  scaryEventTier: 0
   scaryEventWhen: 0
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3766289984706624913}
+      - m_Target: {fileID: 5111561832010767236}
         m_TargetAssemblyTypeName: ScaryEvents.ScaryEffects.ScaryEffect, Assembly-CSharp
         m_MethodName: StartEffect
         m_Mode: 1
