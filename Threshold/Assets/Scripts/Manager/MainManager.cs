@@ -16,6 +16,8 @@ public class MainManager : MonoBehaviour
     public ObjectEventHandler objectEventHandler;
     public GameObject player;
     public Vector3 resetPos;
+    public RandomObjectSelector randomObjectSelector;
+    public InteractableDoor interactableDoor;
 
     private void Awake()
     {

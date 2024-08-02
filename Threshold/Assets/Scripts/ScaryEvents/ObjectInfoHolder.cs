@@ -33,6 +33,7 @@ namespace ScaryEvents
             if (GetComponent<Collider>() != null)
             {
                 GetComponent<Collider>().enabled = false;
+               MainManager.Instance.randomObjectSelector.CheckAndExecuteEvent();
             }
         }
         
