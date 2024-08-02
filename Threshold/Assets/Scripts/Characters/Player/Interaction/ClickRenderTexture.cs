@@ -4,19 +4,19 @@ using UnityEngine.EventSystems;
 
 public class ClickRenderTexture : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private RectTransform renderTextureUI; // Render Texture¸¦ °¡Áö°í ÀÖ´Â UI ¿ä¼ÒÀÇ RectTransform
+    [SerializeField] private RectTransform renderTextureUI; // Render Textureë¥¼ ê°€ì§€ê³  ìˆëŠ” UI ìš”ì†Œì˜ RectTransform
 
-    [SerializeField]private Camera renderTextureCamera; // Render Texture¸¦ ·»´õ¸µÇÏ´Â Ä«¸Ş¶ó
+    [SerializeField]private Camera renderTextureCamera; // Render Textureë¥¼ ë Œë”ë§í•˜ëŠ” ì¹´ë©”ë¼
     [SerializeField]private RenderTexture renderTexture; // Render Texture
     [SerializeField] private GameObject FocusCamera;
 
     void Start()
     {
-        // Render Texture¸¦ ·»´õ¸µÇÏ´Â Ä«¸Ş¶ó¸¦ °¡Á®¿É´Ï´Ù.
+        // Render Textureë¥¼ ë Œë”ë§í•˜ëŠ” ì¹´ë©”ë¼ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
         renderTextureCamera = GetComponentInChildren<Camera>();
         if (renderTextureCamera == null)
         {
-            Debug.LogError("Ä«¸Ş¶ó ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError("ì¹´ë©”ë¼ ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
     }
 
@@ -25,50 +25,50 @@ public class ClickRenderTexture : MonoBehaviour, IPointerClickHandler
         renderTextureCamera = GetComponentInChildren<Camera>();
         if (renderTextureCamera == null)
         {
-            Debug.LogError("Ä«¸Ş¶ó ÄÄÆ÷³ÍÆ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError("ì¹´ë©”ë¼ ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Å¬¸¯µÈ UI ¿ä¼ÒÀÇ ½ºÅ©¸° ÁÂÇ¥¸¦ °¡Á®¿É´Ï´Ù.
+        // í´ë¦­ëœ UI ìš”ì†Œì˜ ìŠ¤í¬ë¦° ì¢Œí‘œë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
         Vector2 screenPoint = eventData.position;
 
-        // ½ºÅ©¸° ÁÂÇ¥¸¦ ·»´õ ÅØ½ºÃ³ ÁÂÇ¥·Î º¯È¯ÇÕ´Ï´Ù.
+        // ìŠ¤í¬ë¦° ì¢Œí‘œë¥¼ ë Œë” í…ìŠ¤ì²˜ ì¢Œí‘œë¡œ ë³€í™˜í•©ë‹ˆë‹¤.
         Vector2 normalizedPoint = new Vector2(screenPoint.x / Screen.width, screenPoint.y / Screen.height);
         Vector2 renderTextureSize = new Vector2(renderTexture.width, renderTexture.height);
         Vector2 renderTexturePoint = Vector2.Scale(normalizedPoint, renderTextureSize);
 
-        // ½ºÅ©¸° ÁÂÇ¥¸¦ ·»´õ ÅØ½ºÃ³ ÁÂÇ¥·Î º¯È¯ÇÑ ·¹ÀÌ¸¦ »ı¼ºÇÕ´Ï´Ù.
+        // ìŠ¤í¬ë¦° ì¢Œí‘œë¥¼ ë Œë” í…ìŠ¤ì²˜ ì¢Œí‘œë¡œ ë³€í™˜í•œ ë ˆì´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
         Ray ray = renderTextureCamera.ScreenPointToRay(renderTexturePoint);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            // Å¬¸¯µÈ ÁöÁ¡ÀÇ ¿ùµå ÁÂÇ¥¸¦ Ãâ·ÂÇÕ´Ï´Ù.
-            Debug.Log("Å¬¸¯µÈ À§Ä¡ÀÇ ¿ùµå ÁÂÇ¥: " + hit.point);
+            // í´ë¦­ëœ ì§€ì ì˜ ì›”ë“œ ì¢Œí‘œë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+            Debug.Log("í´ë¦­ëœ ìœ„ì¹˜ì˜ ì›”ë“œ ì¢Œí‘œ: " + hit.point);
             FocusCamera.transform.position = hit.point;
         }
         else
         {
-            Debug.Log("·¹ÀÌÄ³½ºÆ®¿¡ ÀÇÇÑ Ãæµ¹ÀÌ ¾ø½À´Ï´Ù.");
+            Debug.Log("ë ˆì´ìºìŠ¤íŠ¸ì— ì˜í•œ ì¶©ëŒì´ ì—†ìŠµë‹ˆë‹¤.");
         }
-        // // Å¬¸¯µÈ UI ¿ä¼ÒÀÇ ½ºÅ©¸° ÁÂÇ¥¸¦ °¡Á®¿É´Ï´Ù.
+        // // í´ë¦­ëœ UI ìš”ì†Œì˜ ìŠ¤í¬ë¦° ì¢Œí‘œë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
         // Vector2 screenPoint = eventData.position;
         //
         // Vector3 viewportPoint = new Vector3(screenPoint.x / Screen.width, 1 - (screenPoint.y / Screen.height), 0);//new Vector3(screenPoint.x / Screen.width, screenPoint.y / Screen.height, 0);
         //
-        // // ½ºÅ©¸° ÁÂÇ¥¸¦ ¿ùµå ÁÂÇ¥·Î º¯È¯ÇÕ´Ï´Ù.
+        // // ìŠ¤í¬ë¦° ì¢Œí‘œë¥¼ ì›”ë“œ ì¢Œí‘œë¡œ ë³€í™˜í•©ë‹ˆë‹¤.
         // Ray ray = renderTextureCamera.ScreenPointToRay(viewportPoint);
         // RaycastHit hit;
         // if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         // {
-        //     // Å¬¸¯µÈ ÁöÁ¡ÀÇ ¿ùµå ÁÂÇ¥¸¦ Ãâ·ÂÇÕ´Ï´Ù.
-        //     Debug.Log("Å¬¸¯µÈ À§Ä¡ÀÇ ¿ùµå ÁÂÇ¥: " + hit.point);
+        //     // í´ë¦­ëœ ì§€ì ì˜ ì›”ë“œ ì¢Œí‘œë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+        //     Debug.Log("í´ë¦­ëœ ìœ„ì¹˜ì˜ ì›”ë“œ ì¢Œí‘œ: " + hit.point);
         //     FocusCamera.transform.position = hit.point;
         // }
         // else
         // {
-        //     Debug.Log("·¹ÀÌÄ³½ºÆ®¿¡ ÀÇÇÑ Ãæµ¹ÀÌ ¾ø½À´Ï´Ù.");
+        //     Debug.Log("ë ˆì´ìºìŠ¤íŠ¸ì— ì˜í•œ ì¶©ëŒì´ ì—†ìŠµë‹ˆë‹¤.");
         // }
     }
 }

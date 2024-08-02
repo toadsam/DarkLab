@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro; // TextMeshPro ���ӽ����̽� �߰�
 public class SeeDetector : MonoBehaviour
 {
-    public float rayDistance = 1f;  // ������ �Ÿ�
+    public float rayDistance = 0.3f;  // ������ �Ÿ�
     public LayerMask layerMask;     // ����ĳ��Ʈ�� ������ �޴� ���̾�
     public float detectionTime = 2f; // ���� �ð�
     public LayerMask ignoreLayerMask; // ������ ���̾�
