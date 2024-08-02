@@ -78,6 +78,28 @@ namespace ScaryEvents
                 // 실행된 이벤트를 playedObjectInfoHolders에 추가하고 이벤트 비활성화
                 playedObjectInfoHolders.Add(objectInfoHolder);
                 objectInfoHolder.DisableObjectDependentEvents();
+                
+                // 매치된 event 의 tier 만큼의 damage 를 Player 에게 줌 (ProgressChecker.Instance.TakeDamage에서 처리)
+                if (selectedEvent.metaData.tier.HasFlag(scaryEventTier.Tier5))
+                {
+                    ProgressChecker.Instance.TakeDamage(0.5f);
+                }
+                else if (selectedEvent.metaData.tier.HasFlag(scaryEventTier.Tier5))
+                {
+                    ProgressChecker.Instance.TakeDamage(0.4f);
+                }
+                else if (selectedEvent.metaData.tier.HasFlag(scaryEventTier.Tier3))
+                {
+                    ProgressChecker.Instance.TakeDamage(0.3f);
+                }
+                else if (selectedEvent.metaData.tier.HasFlag(scaryEventTier.Tier2))
+                {
+                    ProgressChecker.Instance.TakeDamage(0.2f);
+                }
+                else if (selectedEvent.metaData.tier.HasFlag(scaryEventTier.Tier1))
+                {
+                    ProgressChecker.Instance.TakeDamage(0.1f);
+                }
             }
         }
 

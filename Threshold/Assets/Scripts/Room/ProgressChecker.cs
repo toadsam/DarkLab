@@ -66,7 +66,7 @@ public class ProgressChecker : Singleton<ProgressChecker>
         DateTime currentGameTime = startTime.Add(elapsedTime);
 
         // 시간 표시 업데이트
-        timerText.text = currentGameTime.ToString("hh:mm tt");
+        timerText.text = currentGameTime.ToString("hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
     }
     
     // Related to Health
