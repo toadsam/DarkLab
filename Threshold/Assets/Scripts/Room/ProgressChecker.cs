@@ -3,8 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
-
-
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ProgressChecker : Singleton<ProgressChecker>
 {
@@ -15,6 +15,13 @@ public class ProgressChecker : Singleton<ProgressChecker>
 
     public float currentSeconds = 0;
     public float maxSeconds = 180;
+
+    //Death Animation
+    public float fadeDuration = 1f;
+    public float fallBackSpeed = 2f;
+    private Transform cameraTransform;
+    private Image fadeOverlay;
+
     // 시간 효과 관련
     private DateTime startTime;
     private TimeSpan gameDuration;
@@ -46,6 +53,11 @@ public class ProgressChecker : Singleton<ProgressChecker>
         timerText = inputTimerText;
         isGameStarted = true;
     }
+
+    public void AssignDeathUIComponents(Image inputFadeOverlay)
+    {
+        fadeOverlay = inputFadeOverlay;
+    }
     
     // Related to Time
     public void Update()
@@ -67,6 +79,8 @@ public class ProgressChecker : Singleton<ProgressChecker>
 
         // 시간 표시 업데이트
         timerText.text = currentGameTime.ToString("hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+
+        cameraTransform = MainManager.Instance.player.transform;
     }
     
     // Related to Health
@@ -88,7 +102,43 @@ public class ProgressChecker : Singleton<ProgressChecker>
     public void GameDone()
     {
         isGameStarted = false;
-        
+
         // 게임 종료 Animation 등장 + Title Scene 으로 이동.
+        StartCoroutine(GameOverSequence());
+    }
+
+    private IEnumerator GameOverSequence()
+    {
+        float elapsedTime = 0f;
+        Vector3 initialPosition = cameraTransform.localPosition;
+        Quaternion initialRotation = cameraTransform.localRotation;
+        Quaternion targetRotation = Quaternion.Euler(cameraTransform.localEulerAngles.x - 90f, cameraTransform.localEulerAngles.y, cameraTransform.localEulerAngles.z);
+
+        while (elapsedTime < fallBackSpeed)
+        {
+            cameraTransform.localPosition = Vector3.Lerp(initialPosition, initialPosition + Vector3.back * 2f, elapsedTime / fallBackSpeed);
+            cameraTransform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, elapsedTime / fallBackSpeed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cameraTransform.localPosition = initialPosition + Vector3.back * 2f;
+        cameraTransform.localRotation = targetRotation;
+
+        elapsedTime = 0f;
+        Color originalColor = fadeOverlay.color;
+        Color targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 1f);
+
+        while (elapsedTime < fadeDuration)
+        {
+            fadeOverlay.color = Color.Lerp(originalColor, targetColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        fadeOverlay.color = targetColor;
+
+        // 타이틀 씬으로 이동
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
     }
 }

@@ -10,9 +10,11 @@ public class HealthAndTimer : MonoBehaviour
     // UI components
     public Image healthBar;
     public TextMeshProUGUI timerText;
+    public Image fadeOverlay;
 
     public void Awake()
     {
         ProgressChecker.Instance.AssignUIComponents(healthBar, timerText);
+        ProgressChecker.Instance.AssignDeathUIComponents(fadeOverlay);
     }
 }
