@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace ScaryEvents.ScaryEffects
 {
@@ -174,7 +175,7 @@ namespace ScaryEvents.ScaryEffects
                 }
             }
             Vector3[] originalVertices = mesh.vertices;
-            
+
             Vector3[] movedVertices = new Vector3[originalVertices.Length];
             float[] randomOffsets = new float[originalVertices.Length];
 
@@ -195,23 +196,6 @@ namespace ScaryEvents.ScaryEffects
                 mesh.vertices = movedVertices;
                 mesh.RecalculateNormals();
                 mesh.RecalculateBounds();
-                // for (int i = 0; i < originalVertices.Length; i++)
-                // {
-                //     // Perlin Noise를 여러 번 중첩
-                //     float noiseValue1 = Mathf.PerlinNoise(originalVertices[i].x * 0.1f + value, originalVertices[i].z * 0.1f + value);
-                //     float noiseValue2 = Mathf.PerlinNoise(originalVertices[i].x * 0.2f + value, originalVertices[i].z * 0.2f + value);
-                //     float noiseValue3 = Mathf.PerlinNoise(originalVertices[i].x * 0.4f + value, originalVertices[i].z * 0.4f + value);
-                    
-                //     float combinedNoise = (noiseValue1 + noiseValue2 + noiseValue3) / 3.0f;
-
-                //     float offset = Mathf.Lerp(0, randomOffsets[i], value);
-                //     movedVertices[i] = originalVertices[i] + Vector3.down * offset * combinedNoise;
-                //     // float noiseValue = Mathf.PerlinNoise(originalVertices[i].x * 0.1f + value, originalVertices[i].z * 0.1f + value);
-                //     // float offset = Mathf.Lerp(0, randomOffsets[i], value);
-                //     // movedVertices[i] = originalVertices[i] + Vector3.down * offset * noiseValue;
-                // }
-                // mesh.vertices = movedVertices;
-                // mesh.RecalculateBounds();
             })
             .SetEase(ease)
             .SetLoops(doTweenLoops, doTweenLoopType);
@@ -220,22 +204,35 @@ namespace ScaryEvents.ScaryEffects
         public void MoveAllRoomObjectsUp()
         {
             GameObject[] roomObjects = GameObject.FindGameObjectsWithTag("RoomObject");
+            Dictionary<Transform, Vector3> originalPositions = new Dictionary<Transform, Vector3>();
+
             foreach (GameObject parentObject in roomObjects)
             {
                 foreach (Transform child in parentObject.transform)
                 {
-                    child.DOMove(child.position + targetPosition, duration)
-                        .SetEase(ease)
-                        .SetRelative(isRelative)
-                        .SetLoops(doTweenLoops, doTweenLoopType);
+                    if (child.tag != "FixedObject")
+                    {
+                        if (!originalPositions.ContainsKey(child))
+                            originalPositions[child] = child.position;
 
-                    child.DOShakeRotation(duration, shakePosition)
-                        .SetRelative(isRelative)
-                        .SetLoops(doTweenLoops, doTweenLoopType);
+                        child.DOMove(child.position + targetPosition, duration)
+                            .SetEase(ease)
+                            .SetRelative(isRelative)
+                            .SetLoops(doTweenLoops, doTweenLoopType);
+
+                        child.DOShakeRotation(duration, shakePosition)
+                            .SetRelative(isRelative)
+                            .SetLoops(doTweenLoops, doTweenLoopType)
+                            .OnComplete(() =>
+                            {
+                                child.DOMove(originalPositions[child], 0)
+                                    .SetEase(Ease.Linear);
+                            });
+                    }
                 }
             }
         }
-
+        
         #endregion
     }
 }

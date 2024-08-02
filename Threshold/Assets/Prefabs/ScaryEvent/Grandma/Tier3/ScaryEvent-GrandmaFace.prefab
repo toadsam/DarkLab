@@ -72,6 +72,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 4510356346872246768, guid: 8602b6507273e4ab79f9eff0f1fc8608,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaData:
-    tier: 0
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:

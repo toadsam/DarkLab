@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 1
+  duration: 0.8
   delay: 0
   ease: 1
-  loops: 3
+  loops: 2
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaData:
-    tier: 2
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
