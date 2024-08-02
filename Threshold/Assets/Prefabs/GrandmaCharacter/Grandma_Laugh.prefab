@@ -344,6 +344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDistance: 2
-  lookAtDuration: 0.5
+  moveToPlayerDuration: 0.3
+  offsetFromPlayer: {x: 0, y: 0, z: 0.8}
   laughSound: {fileID: 8300000, guid: e274d2edd48874c49822b9b27bf96eca, type: 3}
+  celloSound: {fileID: 8300000, guid: dd98ba34729c35249ab46ff64b11c4c4, type: 3}
+  celloSoundDuration: 8
   laughAnimation: {fileID: 7400000, guid: c4261d3f8d0a3427cb2d35b93aa55054, type: 2}

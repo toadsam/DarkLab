@@ -6,10 +6,11 @@ public class GrandmaLaugh : MonoBehaviour
 {
     private Transform playerTransform;
     public float triggerDistance = 1f;
-    public float lookAtDuration = 1f;
     public float moveToPlayerDuration = 1f;
     public Vector3 offsetFromPlayer = new Vector3(0, 0, 1f);
     public AudioClip laughSound;
+    public AudioClip celloSound;
+    public float celloSoundDuration = 1f;
     public AnimationClip laughAnimation;
     private AudioSource audioSource;
     private Animator animator;
@@ -22,6 +23,9 @@ public class GrandmaLaugh : MonoBehaviour
         audioSource.clip = laughSound;
 
         animator = GetComponent<Animator>();
+
+        if (celloSound != null)
+            StartCoroutine(PlayCelloSound());
     }
 
     private void Update()
@@ -37,26 +41,26 @@ public class GrandmaLaugh : MonoBehaviour
         }
     }
 
+    IEnumerator PlayCelloSound()
+    {
+        audioSource.clip = celloSound;
+        audioSource.Play();
+        yield return new WaitForSeconds(celloSoundDuration);
+        audioSource.Stop();
+        audioSource.clip = laughSound;
+    }
+
     IEnumerator LookAtPlayerAndLaugh()
     {
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-
-        float elapsedTime = 0;
-        Quaternion initialRotation = transform.rotation;
-
-        while (elapsedTime < lookAtDuration)
-        {
-            transform.rotation = Quaternion.Slerp(initialRotation, lookRotation, (elapsedTime / lookAtDuration));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
         transform.rotation = lookRotation;
+
+        yield return new WaitForSeconds(0.3f);
 
         // 플레이어 앞으로 이동
         Vector3 targetPosition = playerTransform.position + playerTransform.forward * offsetFromPlayer.z;
-        elapsedTime = 0;
+        float elapsedTime = 0;
         Vector3 startPosition = transform.position;
 
         while (elapsedTime < moveToPlayerDuration)
