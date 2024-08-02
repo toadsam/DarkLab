@@ -53,6 +53,8 @@ namespace ScaryEvents.ScaryEffects
                     ShadowMove();
                     break;
             }
+            
+            DelayAndStopEffect();
         }
 
         private void Active()
