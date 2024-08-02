@@ -111,7 +111,8 @@ public class RoomManager : MonoBehaviour
 
             activeObjects[groupIndex] = nextObject;
             MainManager.Instance.player.GetComponent<Player>().Controller.enabled = false;
-            MainManager.Instance.player.transform.position = MainManager.Instance.resetPos;
+            MainManager.Instance.player.transform.position = MainManager.Instance.resetPos.position;
+            MainManager.Instance.player.transform.rotation = MainManager.Instance.resetPos.rotation;
             MainManager.Instance.player.GetComponent<Player>().Controller.enabled = true;
         }
     }

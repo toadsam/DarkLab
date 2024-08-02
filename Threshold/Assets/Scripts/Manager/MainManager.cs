@@ -15,13 +15,12 @@ public class MainManager : MonoBehaviour
     //public GameManager gameManager;
     public ObjectEventHandler objectEventHandler;
     public GameObject player;
-    public Vector3 resetPos;
+    public Transform resetPos;
     public RandomObjectSelector randomObjectSelector;
     public InteractableDoor interactableDoor;
 
     private void Awake()
     {
-        resetPos = player.transform.position;
         if (Instance == null)
         {
             Instance = this;
