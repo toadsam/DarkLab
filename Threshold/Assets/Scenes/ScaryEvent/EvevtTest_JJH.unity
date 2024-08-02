@@ -5657,6 +5657,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1362388593003339367, guid: 65e7b82de8923f144a383751573bb784,
         type: 3}
+      propertyPath: deactiveDelay
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362388593003339367, guid: 65e7b82de8923f144a383751573bb784,
+        type: 3}
       propertyPath: objectToSpawn
       value: 
       objectReference: {fileID: 783118141}
@@ -5668,7 +5673,7 @@ PrefabInstance:
     - target: {fileID: 3607140565240856553, guid: 65e7b82de8923f144a383751573bb784,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6416326844423070006, guid: 65e7b82de8923f144a383751573bb784,
         type: 3}
