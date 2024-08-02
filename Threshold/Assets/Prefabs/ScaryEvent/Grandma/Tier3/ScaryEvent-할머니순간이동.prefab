@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7335050088365085337
 Transform:
   m_ObjectHideFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 6582255467241578457}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &753721940208659696
 MonoBehaviour:
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaData:
-    tier: 0
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
@@ -137,10 +137,13 @@ MonoBehaviour:
   stateType: 3
   frontCreation: 1
   isDisappearance: 1
+  createBigObject: 0
   deactiveDelay: 2
   animationClips: []
-  objectToSpawn: {fileID: 0}
+  objectToSpawn: {fileID: 7239978539277158466, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
+    type: 3}
   targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1

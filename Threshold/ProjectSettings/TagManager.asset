@@ -12,7 +12,6 @@ TagManager:
   - RoomObject
   - Proximity
   - See
-  - MoveObject
   - FixedObject
   layers:
   - Default

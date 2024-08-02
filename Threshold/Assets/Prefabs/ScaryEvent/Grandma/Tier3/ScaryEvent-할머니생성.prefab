@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 5287898418832791261}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9086758007864477622
 MonoBehaviour:
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaData:
-    tier: 0
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
@@ -137,10 +137,13 @@ MonoBehaviour:
   stateType: 3
   frontCreation: 1
   isDisappearance: 1
+  createBigObject: 0
   deactiveDelay: 4
   animationClips: []
-  objectToSpawn: {fileID: 0}
+  objectToSpawn: {fileID: 8119585942790232786, guid: 52b46bdb7d30c4742b0f2036377ec60f,
+    type: 3}
   targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1
