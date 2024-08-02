@@ -12,8 +12,7 @@ namespace ScaryEvents.ScaryEffects
         Deactive,
         Spawn,
         SpawnAndPlayAnimation,
-        MoveShadow,
-        FootstepDelay
+        MoveShadow
     }
 
     public class ScaryStateEffect : ScaryEffect
@@ -27,16 +26,12 @@ namespace ScaryEvents.ScaryEffects
         public AnimationClip[] animationClips;
         public GameObject objectToSpawn;
         public Vector3 targetPosition = Vector3.zero;
+        public Vector3 targetRotation = Vector3.zero;
         public bool isRelative;
         public LoopType doTweenLoopType = LoopType.Restart;
         public int doTweenLoops = 1;
 
         private GameObject playerTransform;
-
-        void Awake()
-        {
-
-        }
 
         public override void StartEffectInternal()
         {
@@ -56,9 +51,6 @@ namespace ScaryEvents.ScaryEffects
                     break;
                 case StateType.MoveShadow:
                     ShadowMove();
-                    break;
-                case StateType.FootstepDelay:
-                    //FootstepDelay();
                     break;
             }
         }
@@ -97,35 +89,21 @@ namespace ScaryEvents.ScaryEffects
         }
 
         private IEnumerator SpawnAndPlayAnimation()
-        {
-            // var a = targetSource.GetCurrentTarget<Transform>("transform");
-            Debug.Log("안녕");
+        {   
             Transform playerTransform = MainManager.Instance.player.transform;
             GameObject targetObject;
             if(frontCreation)
             {
-                Camera mainCamera = playerTransform.GetComponentInChildren<Camera>();
-                if (mainCamera == null)
-                {
-                    Debug.LogError("메인 카메라가 타겟 오브젝트에 부착되어 있지 않습니다.");
-                    yield break;
-                }
-                // new Vector3(player.position.x, currentPosition.y, player.position.z) +
-                Debug.Log(playerTransform.position);
-                Vector3 spawnPosition = new Vector3(playerTransform.forward.x, playerTransform.position.y, playerTransform.forward.z);
-
-                Debug.Log(spawnPosition);
-
+                Vector3 spawnPosition = playerTransform.position + new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z);
                 targetObject = Instantiate(objectToSpawn, spawnPosition, playerTransform.rotation * Quaternion.Euler(0, 180, 0));
 
                 if(createBigObject)
-                {
                     targetObject.transform.position -= new Vector3(0, 1.4f, 0);
-                }
             }
             else 
             {
-                targetObject = Instantiate(objectToSpawn, new Vector3(playerTransform.position.x, playerTransform.position.y + 0.15f, playerTransform.position.z), playerTransform.rotation);
+                Quaternion rotation = Quaternion.Euler(targetRotation);
+                targetObject = Instantiate(objectToSpawn, targetPosition , rotation);
             }
 
             Animator animator = targetObject.GetComponent<Animator>();
@@ -159,22 +137,5 @@ namespace ScaryEvents.ScaryEffects
                 .SetLoops(doTweenLoops, doTweenLoopType)
                 .OnComplete(() => targetObject.SetActive(false));
         }
-
-        // private void FootstepDelay()
-        // {
-        //     var footstepManager = inputObject.GetComponent<FootstepAudioManager>();
-        //     if (footstepManager != null)
-        //     {
-        //         footstepManager.SetDelayMode(true);
-        //         StartCoroutine(StopFootstepDelayAfterDuration(footstepManager));
-        //     }
-        // }
-
-        // private IEnumerator StopFootstepDelayAfterDuration(FootstepAudioManager footstepManager)
-        // {
-        //     yield return new WaitForSeconds(duration);
-        //     footstepManager.SetDelayMode(false);
-        //     StopEffect();
-        // }
     }
 }

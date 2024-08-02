@@ -70,10 +70,10 @@ MonoBehaviour:
   targetRotation: {x: 0, y: 0, z: 0}
   targetScale: {x: 1, y: 1, z: 1}
   shakePosition: 10
+  isFadeOut: 0
   amplitude: 0.1
   frequency: 1
   speed: 1
-  material: {fileID: 0}
   vertexOffset: 0.1
   centerRadius: 1
 --- !u!1 &5502443407714586536
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaryEventTier: 3
-  scaryEventWhen: 0
+  metaData:
+    tier: 8
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:

@@ -34,11 +34,8 @@ namespace ScaryEvents.ScaryEffects
         public float amplitude = 0.1f;
         public float frequency = 1.0f;
         public float speed = 1.0f;
-        public Material material;
         public float vertexOffset = 0.1f;
         public float centerRadius = 1.0f;
-
-        private Material originalMaterial;
         
         public override void StartEffectInternal()
         {
@@ -78,6 +75,7 @@ namespace ScaryEvents.ScaryEffects
         public void Position()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
+            if (a == null) return;
             a.DOMove(new Vector3(targetPosition.x,targetPosition.y,targetPosition.z), duration)
                 .SetEase(ease)
                 .SetRelative(isRelative)
@@ -87,6 +85,7 @@ namespace ScaryEvents.ScaryEffects
         public void Rotation()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
+            if (a == null) return;
             a.DORotate(new Vector3(targetRotation.x,targetRotation.y,targetRotation.z), duration, RotateMode.FastBeyond360)
                 .SetEase(ease)
                 .SetRelative(isRelative)
@@ -96,6 +95,7 @@ namespace ScaryEvents.ScaryEffects
         public void Scale()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
+            if (a == null) return;
             a.DOScale(new Vector3(targetScale.x, targetScale.y, targetScale.z), duration)
                 .SetEase(ease)
                 .SetRelative(isRelative)
@@ -105,6 +105,7 @@ namespace ScaryEvents.ScaryEffects
         public void Shaking()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
+            if (a == null) return;
             a.DOShakePosition(duration, shakePosition, doTweenLoops, 90, false, isFadeOut)
                 .SetRelative(isRelative)
                 .SetLoops(doTweenLoops, doTweenLoopType);;
@@ -112,8 +113,9 @@ namespace ScaryEvents.ScaryEffects
 
         public void Fade()
         {
-            var renderer = targetSource.GetCurrentTarget<Renderer>("renderer");
-            var material = renderer.material;
+            var a = targetSource.GetCurrentTarget<Renderer>("renderer");
+            if (a == null) return;
+            var material = a.material;
 
             Color color = material.color;
             color.a = 0;
@@ -126,20 +128,27 @@ namespace ScaryEvents.ScaryEffects
 
         public void WavyTexture()
         {
-            var material = targetSource.GetCurrentTarget<Renderer>("renderer").material;
-            Vector2 originalOffset = material.mainTextureOffset;
+            Material a;
+            var ff = targetSource.GetCurrentTarget<Renderer>("renderer");
 
-            material.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
+            if(ff == null) 
+                return;
+            else 
+                a = ff.material;
+
+            Vector2 originalOffset = a.mainTextureOffset;
+
+            a.DOOffset(new Vector2(originalOffset.x, originalOffset.y + amplitude), frequency)
                 .SetEase(ease)
                 .SetLoops(doTweenLoops, doTweenLoopType)
-                .OnStepComplete(() => material.mainTextureOffset = originalOffset);
+                .OnStepComplete(() => a.mainTextureOffset = originalOffset);
         }
 
         public void MoveMeshVertices()
         {
             var a = targetSource.GetCurrentTarget<Transform>("transform");
             if (a == null) return;
-
+            
             var meshFilter = a.GetComponent<MeshFilter>();
             if (meshFilter != null)
             {
@@ -157,7 +166,15 @@ namespace ScaryEvents.ScaryEffects
         private void ApplyMeshEffect(MeshFilter meshFilter)
         {
             Mesh mesh = meshFilter.mesh;
+            if (mesh != null)
+            {
+                if (!mesh.isReadable)
+                {
+                    return;
+                }
+            }
             Vector3[] originalVertices = mesh.vertices;
+            
             Vector3[] movedVertices = new Vector3[originalVertices.Length];
             float[] randomOffsets = new float[originalVertices.Length];
 

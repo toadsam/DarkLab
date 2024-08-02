@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interaction
-  - FocusObject
   - Group1
   - Group2
   - Group3
@@ -13,6 +12,8 @@ TagManager:
   - RoomObject
   - Proximity
   - See
+  - MoveObject
+  - FixedObject
   layers:
   - Default
   - TransparentFX
