@@ -65,6 +65,7 @@ MonoBehaviour:
   stateType: 4
   frontCreation: 1
   isDisappearance: 0
+  createBigObject: 0
   deactiveDelay: 5
   animationClips:
   - {fileID: 7400000, guid: b5b2b317902b04f8cab85abb07a95312, type: 2}
@@ -119,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaryEventTier: 0
-  scaryEventWhen: 0
+  metaData:
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:

@@ -74,7 +74,6 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   speed: 1
-  material: {fileID: 0}
   vertexOffset: 0.1
   centerRadius: 1
 --- !u!1 &4191022870815915316
@@ -124,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaData:
-    tier: 12
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:

@@ -74,7 +74,6 @@ MonoBehaviour:
   amplitude: 0.1
   frequency: 1
   speed: 1
-  material: {fileID: 0}
   vertexOffset: 0.1
   centerRadius: 1
 --- !u!1 &2267707125228200492
@@ -109,7 +108,7 @@ Transform:
   - {fileID: 1125856209023827213}
   - {fileID: 1230328433934477025}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3949757320779553519
 MonoBehaviour:
@@ -124,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaData:
-    tier: 12
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:

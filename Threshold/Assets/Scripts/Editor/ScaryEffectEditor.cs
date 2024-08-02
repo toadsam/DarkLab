@@ -30,7 +30,6 @@ public class ScaryEffectEditor : Editor
     SerializedProperty amplitude;
     SerializedProperty frequency;
     SerializedProperty speed;
-    SerializedProperty material;
     SerializedProperty vertexOffset;
     SerializedProperty centerRadius;
 
@@ -112,7 +111,6 @@ public class ScaryEffectEditor : Editor
             amplitude = serializedObject.FindProperty("amplitude");
             frequency = serializedObject.FindProperty("frequency");
             speed = serializedObject.FindProperty("speed");
-            material = serializedObject.FindProperty("material");
             vertexOffset = serializedObject.FindProperty("vertexOffset");
             centerRadius = serializedObject.FindProperty("centerRadius");
         }
@@ -201,6 +199,7 @@ public class ScaryEffectEditor : Editor
             frontCreation = serializedObject.FindProperty("frontCreation");
             isDisappearance = serializedObject.FindProperty("isDisappearance");
             createBigObject = serializedObject.FindProperty("createBigObject");
+            targetRotation = serializedObject.FindProperty("targetRotation");
             deactiveDelay = serializedObject.FindProperty("deactiveDelay");
             animationClips = serializedObject.FindProperty("animationClips");
             objectToSpawn = serializedObject.FindProperty("objectToSpawn");
@@ -294,7 +293,6 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(amplitude);
                 EditorGUILayout.PropertyField(frequency);
                 EditorGUILayout.PropertyField(speed);
-                EditorGUILayout.PropertyField(material);
                 break;
             case DoTweenType.MoveMeshVertices:
                 EditorGUILayout.PropertyField(vertexOffset);
@@ -450,6 +448,8 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(frontCreation);
                 EditorGUILayout.PropertyField(isDisappearance);
                 EditorGUILayout.PropertyField(createBigObject);
+                EditorGUILayout.PropertyField(targetPosition);
+                EditorGUILayout.PropertyField(targetRotation);
                 EditorGUILayout.PropertyField(deactiveDelay);
                 EditorGUILayout.PropertyField(animationClips);
                 break;

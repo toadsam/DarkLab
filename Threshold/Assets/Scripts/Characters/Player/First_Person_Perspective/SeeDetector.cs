@@ -104,7 +104,7 @@ public class SeeDetector : MonoBehaviour
     void TriggerSeeEvent()
     {
         MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
-        Debug.Log("See �±��� ������Ʈ�� 2�� ���� �����߽��ϴ�!");
+        Debug.Log("See : 2초이상 바라보았습니다!");
         MainManager.Instance.objectEventHandler.targrt = null;
     }
 
@@ -114,7 +114,7 @@ public class SeeDetector : MonoBehaviour
         {
             MainManager.Instance.objectEventHandler.targrt = other.GetComponent<ObjectInfoHolder>();
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
-            Debug.Log("Proximity ������Ʈ�� ������ ������: " + other.gameObject.name);
+            Debug.Log("Proximity 지나간 물체의 이름: " + other.gameObject.name);
         }
     }
 
@@ -122,7 +122,7 @@ public class SeeDetector : MonoBehaviour
     {
         if (other.CompareTag("Proximity"))
         {
-            Debug.Log("Proximity ������Ʈ���� �־���: " + other.gameObject.name);
+            Debug.Log("Proximity 나간 물체의 이름: " + other.gameObject.name);
         }
     }
 

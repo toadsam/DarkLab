@@ -47,28 +47,37 @@ namespace ScaryEvents
             if (objectInfoHolder.isObjectDependentEvent)
             {
                 objectInfoHolder.objectDependentEvents.Invoke();
+                objectInfoHolder.DisableObjectDependentEvents();
                 return;
             }
+
+            List<ScaryEvent> matchingEvents = new List<ScaryEvent>();
 
             for (int i = 0; i < scaryEvents.Length; i++)
             {
                 if (objectInfoHolder.objectTier.HasFlag(scaryEvents[i].metaData.tier))
                 {
-                    scaryEvents[i].currentEventTarget = objectInfoHolder;
-                    //if (scaryEvents[i].currentEventTarget != null)
-                    Debug.Log(scaryEvents[i].currentEventTarget);
-                    scaryEvents[i].ResetIndexForTargets();
-                    scaryEvents[i].StartEvent();
-                    
-                    // 모든 공포 이벤트 (Awake 포함) 은 Match 를 경유하므로, 공포 이벤트의 실행 시점을 공유하는 오브젝트 종속 공포 이벤트 또한 여기서 실행.
-                    objectInfoHolder.objectDependentEvents.Invoke();
-                    
-                    // 공포이벤트 비활성화
-                    playedObjectInfoHolders.Add(objectInfoHolder);
-                    objectInfoHolder.DisableObjectDependentEvents();
-                    
-                    break;
+                    matchingEvents.Add(scaryEvents[i]);
                 }
+            }
+
+            // 일치하는 이벤트가 있는 경우, 무작위로 선택하여 실행
+            if (matchingEvents.Count > 0)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, matchingEvents.Count);
+                ScaryEvent selectedEvent = matchingEvents[randomIndex];
+
+                selectedEvent.currentEventTarget = objectInfoHolder;
+                Debug.Log(selectedEvent.currentEventTarget);
+                selectedEvent.ResetIndexForTargets();
+                selectedEvent.StartEvent();
+                
+                // 오브젝트 종속 이벤트 실행
+                objectInfoHolder.objectDependentEvents.Invoke();
+                
+                // 실행된 이벤트를 playedObjectInfoHolders에 추가하고 이벤트 비활성화
+                playedObjectInfoHolders.Add(objectInfoHolder);
+                objectInfoHolder.DisableObjectDependentEvents();
             }
         }
 

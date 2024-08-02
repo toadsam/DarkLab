@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSource: {fileID: 0}
-  duration: 2
+  duration: 0
   delay: 0
   ease: 1
   loops: 1
@@ -65,7 +65,8 @@ MonoBehaviour:
   stateType: 4
   frontCreation: 1
   isDisappearance: 1
-  deactiveDelay: 0
+  createBigObject: 0
+  deactiveDelay: 0.3
   animationClips:
   - {fileID: 7400000, guid: c4261d3f8d0a3427cb2d35b93aa55054, type: 2}
   objectToSpawn: {fileID: 4510356346872246768, guid: fd1506e6e01274c9586aa9ebd4a593e3,
@@ -105,7 +106,7 @@ Transform:
   m_Children:
   - {fileID: 171113510106782497}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9010254292291904860
 MonoBehaviour:

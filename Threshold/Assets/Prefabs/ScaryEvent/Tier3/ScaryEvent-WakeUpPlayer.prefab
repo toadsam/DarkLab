@@ -65,12 +65,14 @@ MonoBehaviour:
   stateType: 4
   frontCreation: 0
   isDisappearance: 0
+  createBigObject: 0
   deactiveDelay: 5
   animationClips:
   - {fileID: 7400000, guid: f0aeb6fc081ab493890a79ab3ae9889e, type: 2}
   objectToSpawn: {fileID: 3076443712502478793, guid: 9e0cb3434ce304214becd82242963998,
     type: 3}
-  targetPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: -0.1, y: 0, z: 0.267}
+  targetRotation: {x: 0, y: -90, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1
@@ -119,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaryEventTier: 0
-  scaryEventWhen: 0
+  metaData:
+    tier: 4
   currentEventTarget: {fileID: 0}
   onStart:
     m_PersistentCalls:
