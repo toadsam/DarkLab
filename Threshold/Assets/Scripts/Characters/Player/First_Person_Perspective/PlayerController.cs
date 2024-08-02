@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {   
         //&& WakeUp.isWakeUp
-        if (canLook)
+        if (canLook && !GrandMaMove.isGrandEvent && WakeUp.isWakeUp)
         {
             CameraLook();
         }

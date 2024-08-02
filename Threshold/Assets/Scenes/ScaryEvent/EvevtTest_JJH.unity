@@ -5584,6 +5584,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6352730366649272052, guid: 44bf17255ef8bb94ba43b5df23bd8318,
         type: 3}
+      propertyPath: chaseSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352730366649272052, guid: 44bf17255ef8bb94ba43b5df23bd8318,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 345610174}
+    - target: {fileID: 6352730366649272052, guid: 44bf17255ef8bb94ba43b5df23bd8318,
+        type: 3}
+      propertyPath: chaseSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eb6c89e92e6fa6b4c83ad59e8df7f02e, type: 3}
+    - target: {fileID: 6352730366649272052, guid: 44bf17255ef8bb94ba43b5df23bd8318,
+        type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 345610184}
@@ -5657,6 +5672,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1362388593003339367, guid: 65e7b82de8923f144a383751573bb784,
         type: 3}
+      propertyPath: stateType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362388593003339367, guid: 65e7b82de8923f144a383751573bb784,
+        type: 3}
       propertyPath: deactiveDelay
       value: 100
       objectReference: {fileID: 0}
@@ -5673,7 +5693,7 @@ PrefabInstance:
     - target: {fileID: 3607140565240856553, guid: 65e7b82de8923f144a383751573bb784,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6416326844423070006, guid: 65e7b82de8923f144a383751573bb784,
         type: 3}
@@ -5831,6 +5851,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "ScaryEvent-\uD560\uBA38\uB2C8\uC21C\uAC04\uC774\uB3D9"
       objectReference: {fileID: 0}
+    - target: {fileID: 4286388103219610897, guid: be1579aa6f5a46943a34e91e541bbf51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7335050088365085337, guid: be1579aa6f5a46943a34e91e541bbf51,
         type: 3}
       propertyPath: m_RootOrder
@@ -5984,9 +6009,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 342773659503801770, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
         type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 345610174}
+    - target: {fileID: 342773659503801770, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
+        type: 3}
+      propertyPath: teleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eb6c89e92e6fa6b4c83ad59e8df7f02e, type: 3}
+    - target: {fileID: 342773659503801770, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
+        type: 3}
       propertyPath: playerTransform
       value: 
-      objectReference: {fileID: 674804261}
+      objectReference: {fileID: 345610184}
     - target: {fileID: 7239978539277158466, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
         type: 3}
       propertyPath: m_Name
@@ -5995,7 +6030,7 @@ PrefabInstance:
     - target: {fileID: 7239978539277158466, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7319338730113531114, guid: 8423f3bf2438b914ea7b0f0b9b15fe7b,
         type: 3}

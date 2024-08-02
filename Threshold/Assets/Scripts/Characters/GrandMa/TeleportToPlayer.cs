@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class TeleportToPlayer : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class TeleportToPlayer : MonoBehaviour
     public float teleportOffset = 2f; // 플레이어 앞에서 떨어진 거리
     public float teleportHeightOffset = 0f; // Y축 위치 조절
     public float fadeDuration = 1f;   // 투명화 시간
+    public GameObject playerCamera;       // 플레이어의 카메라 참조
 
     public AudioClip moveSound;       // 이동 시 사운드 클립
     public AudioClip teleportSound;   // 순간이동 시 사운드 클립
@@ -43,10 +44,19 @@ public class TeleportToPlayer : MonoBehaviour
 
         // AudioSource 컴포넌트 추가
         audioSource = gameObject.AddComponent<AudioSource>();
-
-        StartCoroutine(MoveAndTeleport());
     }
 
+    /*void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(MoveAndTeleport());
+        }
+    }*/
+    public void StartGranma() 
+    {
+        StartCoroutine(MoveAndTeleport());
+    }
     IEnumerator MoveAndTeleport()
     {
         // 목표 위치로 이동
@@ -55,6 +65,15 @@ public class TeleportToPlayer : MonoBehaviour
             Vector3 currentPosition = transform.position;
             currentPosition = Vector3.MoveTowards(currentPosition, new Vector3(targetPosition.x, currentPosition.y, targetPosition.z), moveSpeed * Time.deltaTime);
             transform.position = currentPosition;
+
+            // 카메라가 할머니를 바라보도록 설정
+            if (playerCamera != null)
+            {
+                Vector3 directionToGrandma = transform.position - playerCamera.transform.position;
+                Quaternion lookRotation = Quaternion.LookRotation(directionToGrandma);
+                playerCamera.transform.rotation = Quaternion.Slerp(playerCamera.transform.rotation, lookRotation, Time.deltaTime * 10f);
+            }
+
             yield return null;
         }
 
@@ -74,15 +93,13 @@ public class TeleportToPlayer : MonoBehaviour
         // 순간이동 사운드 재생 (조금 더 일찍 재생)
         PlaySound(teleportSound);
 
-        // 플레이어 앞에 순간이동
-        Vector3 teleportPosition = playerTransform.position + playerTransform.forward * teleportOffset;
-        teleportPosition.y = playerTransform.position.y + teleportHeightOffset; // Y축 위치 조정
+         Vector3 teleportPosition = playerTransform.position + playerTransform.forward * teleportOffset;
+        teleportPosition.y = playerTransform.position.y + teleportHeightOffset + 1.4f; // Y축 위치 조정
         transform.position = teleportPosition;
 
         // 사라짐
         yield return StartCoroutine(FadeOutAndDisappear(disappearDelay));
     }
-
 
     IEnumerator FadeOutAndDisappear(float delay)
     {
