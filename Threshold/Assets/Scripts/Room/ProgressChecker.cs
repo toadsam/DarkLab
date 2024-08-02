@@ -18,7 +18,7 @@ public class ProgressChecker : Singleton<ProgressChecker>
 
     //Death Animation
     public float fadeDuration = 1f;
-    public float fallBackSpeed = 2f;
+    public float fallBackSpeed = 1f;
     private Transform cameraTransform;
     private Image fadeOverlay;
 
@@ -112,7 +112,9 @@ public class ProgressChecker : Singleton<ProgressChecker>
         float elapsedTime = 0f;
         Vector3 initialPosition = cameraTransform.localPosition;
         Quaternion initialRotation = cameraTransform.localRotation;
-        Quaternion targetRotation = Quaternion.Euler(cameraTransform.localEulerAngles.x - 90f, cameraTransform.localEulerAngles.y, cameraTransform.localEulerAngles.z);
+        Quaternion targetRotation = Quaternion.Euler(cameraTransform.localEulerAngles.x - 75f, cameraTransform.localEulerAngles.y, cameraTransform.localEulerAngles.z);
+
+        yield return new WaitForSeconds(0.3f);
 
         while (elapsedTime < fallBackSpeed)
         {
@@ -139,6 +141,6 @@ public class ProgressChecker : Singleton<ProgressChecker>
         fadeOverlay.color = targetColor;
 
         // 타이틀 씬으로 이동
-        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
     }
 }

@@ -485,7 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2601655553783437928}
   timerText: {fileID: 3664090967149392822}
-  fadeOverlay: {fileID: 0}
+  fadeOverlay: {fileID: 2263712029529568976}
 --- !u!1 &9173483471917133513
 GameObject:
   m_ObjectHideFlags: 0
