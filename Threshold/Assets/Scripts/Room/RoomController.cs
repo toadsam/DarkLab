@@ -60,7 +60,8 @@ public class RoomController : MonoBehaviour
         selectedSection.sectionCandidates[currentChangeRoomInfo.sectionIndices[selectedSectionIndex] + 1].SetActive(true);
         
         currentChangeRoomInfo.sectionIndices[selectedSectionIndex]++;
-        MainManager.Instance.player.transform.position = MainManager.Instance.resetPos;
+        MainManager.Instance.player.transform.position = MainManager.Instance.resetPos.position;
+        MainManager.Instance.player.transform.rotation = MainManager.Instance.resetPos.rotation;
         
     }
 }
