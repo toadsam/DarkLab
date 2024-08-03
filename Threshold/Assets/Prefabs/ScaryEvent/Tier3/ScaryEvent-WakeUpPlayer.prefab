@@ -66,7 +66,7 @@ MonoBehaviour:
   frontCreation: 0
   isDisappearance: 1
   createBigObject: 0
-  deactiveDelay: 5
+  deactiveDelay: 7
   animationClips:
   - {fileID: 7400000, guid: f0aeb6fc081ab493890a79ab3ae9889e, type: 2}
   objectToSpawn: {fileID: 3076443712502478793, guid: 9e0cb3434ce304214becd82242963998,
