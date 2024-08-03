@@ -5,19 +5,21 @@ namespace ScaryEvents
 {
     public class RandomObjectSelector : MonoBehaviour
     {
+        public AudioSource doorOpenAudio;
+
         private ObjectInfoHolder[] objectInfoHolders;
         private ObjectInfoHolder selectedObject;
-        private System.Random random = new System.Random(); // ·£´ý ÀÎ½ºÅÏ½º »ý¼º
+        private System.Random random = new System.Random(); // ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         private void Start()
         {
-            // È°¼ºÈ­ µÇ¾î ÀÖ´Â ¸ðµç ObjectInfoHolder ½ºÅ©¸³Æ®¸¦ °¡Áø ¿ÀºêÁ§Æ®µéÀ» ¹è¿­¿¡ ÀúÀå
+            // È°ï¿½ï¿½È­ ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ObjectInfoHolder ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             objectInfoHolders = FindObjectsOfType<ObjectInfoHolder>();
 
-            // ¹è¿­ÀÌ ºñ¾îÀÖÁö ¾Ê´Ù¸é
+            // ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½
             if (objectInfoHolders.Length > 0)
             {
-                // ·£´ýÀ¸·Î ÇÏ³ª ¼±ÅÃ
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½ï¿½
                 int randomIndex = random.Next(objectInfoHolders.Length);
                 selectedObject = objectInfoHolders[randomIndex];
 
@@ -29,14 +31,14 @@ namespace ScaryEvents
 
         public void ResetSelectedObject()
         {
-            Debug.Log("¸ÊÀÌ È°¼ºÈ­ µÇ¾ú½À´Ï´Ù.");
-            // È°¼ºÈ­ µÇ¾î ÀÖ´Â ¸ðµç ObjectInfoHolder ½ºÅ©¸³Æ®¸¦ °¡Áø ¿ÀºêÁ§Æ®µéÀ» ¹è¿­¿¡ ÀúÀå
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+            // È°ï¿½ï¿½È­ ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ObjectInfoHolder ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             objectInfoHolders = FindObjectsOfType<ObjectInfoHolder>();
 
-            // ¹è¿­ÀÌ ºñ¾îÀÖÁö ¾Ê´Ù¸é
+            // ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½
             if (objectInfoHolders.Length > 0)
             {
-                // ·£´ýÀ¸·Î ÇÏ³ª ¼±ÅÃ
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½ï¿½
                 int randomIndex = random.Next(objectInfoHolders.Length);
                 selectedObject = objectInfoHolders[randomIndex];
 
@@ -55,7 +57,7 @@ namespace ScaryEvents
                 if (collider != null && !collider.enabled)
                 {
                     MainManager.Instance.interactableDoor.isLocked = false;
-                    Debug.Log("¿Ï·áµÇ¾ú½À´Ï´Ù.");
+                    doorOpenAudio.Play();
                   //  selectedObject.TriggerEvent();
                 }
                 else
