@@ -18,6 +18,11 @@ public class BedEvent : MonoBehaviour
     public float specialObjectDelay = 1f; // 특정 오브젝트가 나타나는 지연 시간
     public bool triggerEvent = false;  // 이벤트를 실행할 조건 변수
 
+    public GameObject objectToActivate;
+    public GameObject objectToDeactivate;
+    public GameObject objectToDeactivate2;
+    public float delayTime = 5.0f;
+
     private Vector3 originalChildPosition;
     private Quaternion originalParentRotation; // 부모 오브젝트의 원래 회전
     private bool rotationComplete = false; // 회전 완료 여부 체크
@@ -116,5 +121,30 @@ public class BedEvent : MonoBehaviour
         rotationComplete = false;
         shaking = true;
         triggerEvent = false;
+    }
+
+    public void TriggerStart()
+    {
+        triggerEvent = true;
+        Invoke("ActivateDeactivateObjects", delayTime);
+    }
+
+    private void ActivateDeactivateObjects()
+    {
+        if (triggerEvent)
+        {
+            if (objectToActivate != null)
+            {
+                objectToActivate.SetActive(true);
+            }
+            if (objectToDeactivate != null)
+            {
+                objectToDeactivate.SetActive(false);
+            }
+            if (objectToDeactivate2 != null)
+            {
+                objectToDeactivate2.SetActive(false);
+            }
+        }
     }
 }
