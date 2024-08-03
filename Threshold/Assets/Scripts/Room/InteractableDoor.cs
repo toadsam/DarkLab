@@ -18,6 +18,7 @@ public class InteractableDoor : MonoBehaviour
             {
                 onDoorOpen.Invoke();
                 MainManager.Instance.randomObjectSelector.ResetSelectedObject();
+                isLocked = true;
             }
             else
             {
