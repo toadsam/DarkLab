@@ -280,7 +280,7 @@ public class SeeDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Proximity"))
+        if (other.CompareTag("Proximity") && WakeUp.isWakeUp)
         {
             MainManager.Instance.objectEventHandler.targrt = other.GetComponent<ObjectInfoHolder>();
             MainManager.Instance.objectEventHandler.Match(MainManager.Instance.objectEventHandler.targrt);
@@ -290,7 +290,7 @@ public class SeeDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Proximity"))
+        if (other.CompareTag("Proximity") && WakeUp.isWakeUp)
         {
             Debug.Log("Proximity 나간 물체의 이름: " + other.gameObject.name);
         }
