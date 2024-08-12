@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private AudioSource _audioSource;
 
+    public AudioClip footstepClip;
+    public float footstepInterval = 0.5f;
+    private float footstepTimer;
+    
+
     public static PlayerController instance;
     private void Awake()
     {
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        footstepTimer = footstepInterval;
     }
 
     private void FixedUpdate()
@@ -64,11 +70,24 @@ public class PlayerController : MonoBehaviour
 
         _rigidbody.velocity = dir;
 
-        if(curMovementInput != Vector2.zero)
-            if(!_audioSource.isPlaying)
-                _audioSource.Play();
+        HandleFootsteps();
+    }
+
+    void HandleFootsteps()
+    {
+        if (curMovementInput != Vector2.zero)
+        {
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0)
+            {
+                _audioSource.PlayOneShot(footstepClip);
+                footstepTimer = footstepInterval;
+            }
+        }
         else
-            _audioSource.Stop();
+        {
+            footstepTimer = 0;
+        }
     }
 
     void CameraLook()
