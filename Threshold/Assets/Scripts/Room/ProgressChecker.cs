@@ -17,10 +17,9 @@ public class ProgressChecker : Singleton<ProgressChecker>
     public float maxSeconds = 180;
 
     //Death Animation
-    public float fadeDuration = 1f;
+    public float fadeDuration = 0.7f;
     public float fallBackSpeed = 1f;
     private Transform cameraTransform;
-    private Image fadeOverlay;
 
     // 시간 효과 관련
     private DateTime startTime;
@@ -29,6 +28,7 @@ public class ProgressChecker : Singleton<ProgressChecker>
     // UI components
     private Image healthBar;
     private TextMeshProUGUI timerText;
+    private Image fadeOverlay;
     
     // inner logic
     private bool isGameStarted = false;
@@ -47,16 +47,12 @@ public class ProgressChecker : Singleton<ProgressChecker>
         gameDuration = TimeSpan.FromHours(7); // 7시간 (11:00 PM to 6:00 AM)
     }
     
-    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText)
+    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay)
     {
         healthBar = inputHealthBar;
         timerText = inputTimerText;
-        isGameStarted = true;
-    }
-
-    public void AssignDeathUIComponents(Image inputFadeOverlay)
-    {
         fadeOverlay = inputFadeOverlay;
+        isGameStarted = true;
     }
     
     // Related to Time
@@ -90,13 +86,13 @@ public class ProgressChecker : Singleton<ProgressChecker>
             return;
         
         currentHealth -= damage;
+        healthBar.fillAmount = currentHealth / maxHealth;
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             GameDone();
         }
-        
-        healthBar.fillAmount = currentHealth / maxHealth;
     }
     
     public void GameDone()
@@ -110,9 +106,14 @@ public class ProgressChecker : Singleton<ProgressChecker>
     private IEnumerator GameOverSequence()
     {
         float elapsedTime = 0f;
-        Vector3 initialPosition = cameraTransform.localPosition;
-        Quaternion initialRotation = cameraTransform.localRotation;
-        Quaternion targetRotation = Quaternion.Euler(cameraTransform.localEulerAngles.x - 75f, cameraTransform.localEulerAngles.y, cameraTransform.localEulerAngles.z);
+        Vector3 initialPosition = cameraTransform.position;
+        Quaternion initialRotation = cameraTransform.rotation;
+
+        // 카메라의 현재 방향을 기준으로 뒤로 넘어지도록 설정
+        Vector3 backwardOffset = -cameraTransform.forward * 5f;
+        Vector3 targetPosition = initialPosition + backwardOffset;
+        //Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x - 90f, cameraTransform.eulerAngles.y, cameraTransform.eulerAngles.z);
+        Quaternion targetRotation = initialRotation * Quaternion.Euler(-75f, 0, 0);
 
         yield return new WaitForSeconds(0.3f);
 

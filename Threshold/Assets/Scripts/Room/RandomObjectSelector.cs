@@ -1,11 +1,14 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using TMPro;
 
 namespace ScaryEvents
 {
     public class RandomObjectSelector : MonoBehaviour
     {
         public AudioSource doorOpenAudio;
+        public TextMeshProUGUI doorOpenText;
 
         private ObjectInfoHolder[] objectInfoHolders;
         private ObjectInfoHolder selectedObject;
@@ -58,13 +61,44 @@ namespace ScaryEvents
                 {
                     MainManager.Instance.interactableDoor.isLocked = false;
                     doorOpenAudio.Play();
-                  //  selectedObject.TriggerEvent();
+                    StartCoroutine(StartFadeCoroutine());
+                    //selectedObject.TriggerEvent();
                 }
                 else
                 {
                     Debug.Log($"Selected object: {selectedObject.name} collider is still enabled.");
                 }
             }
+        }
+
+        IEnumerator StartFadeCoroutine()
+        {
+            doorOpenText.gameObject.SetActive(true);
+
+            float fadeCount = 0;
+            Color originalColor = doorOpenText.color;
+
+            // Fade in
+            while (fadeCount < 1.0f)
+            {
+                fadeCount += 0.01f;
+                yield return new WaitForSeconds(0.01f);
+                doorOpenText.color = new Color(originalColor.r, originalColor.g, originalColor.b, fadeCount);
+            }
+
+            yield return new WaitForSeconds(0.3f);
+
+            fadeCount = 1.0f;
+
+            // Fade out
+            while (fadeCount > 0.0f)
+            {
+                fadeCount -= 0.01f;
+                yield return new WaitForSeconds(0.01f);
+                doorOpenText.color = new Color(originalColor.r, originalColor.g, originalColor.b, fadeCount);
+            }
+
+            doorOpenText.gameObject.SetActive(false);
         }
 
         private void PrintAllObjectInfoHolders()
