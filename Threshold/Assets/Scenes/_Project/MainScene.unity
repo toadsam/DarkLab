@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.031004949, g: 0.026486034, b: 0.024474407, a: 1}
+  m_IndirectSpecularColor: {r: 0.031018125, g: 0.026448686, b: 0.024485277, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1316,6 +1316,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 500084407}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &537779748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 325311864913608226, guid: 8bae5eda1d117cd4090733b2dfea7781,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845954861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &537779750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537779748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6185548, y: 3.0641778, z: 1.6146739}
+  m_Center: {x: 0.19072258, y: -0.1492791, z: -0.018087393}
 --- !u!1001 &553022568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10650,6 +10677,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1973223092}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 325311864913608226, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 537779750}
     - targetCorrespondingSourceObject: {fileID: 1621710611436644904, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
       insertIndex: -1
@@ -11496,7 +11527,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7917035712886466551, guid: 3a5e0c6a475d9a844846466df703642a,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: af5ed4c16b90545b390950e5b1e9c15a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
