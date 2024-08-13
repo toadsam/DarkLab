@@ -20,7 +20,6 @@ public class ProgressChecker : Singleton<ProgressChecker>
     public float fadeDuration = 0.7f;
     public float fallBackSpeed = 1f;
     private Transform cameraTransform;
-    private Image fadeOverlay;
 
     // 시간 효과 관련
     private DateTime startTime;
@@ -29,6 +28,7 @@ public class ProgressChecker : Singleton<ProgressChecker>
     // UI components
     private Image healthBar;
     private TextMeshProUGUI timerText;
+    private Image fadeOverlay;
     
     // inner logic
     private bool isGameStarted = false;
@@ -47,16 +47,12 @@ public class ProgressChecker : Singleton<ProgressChecker>
         gameDuration = TimeSpan.FromHours(7); // 7시간 (11:00 PM to 6:00 AM)
     }
     
-    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText)
+    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay)
     {
         healthBar = inputHealthBar;
         timerText = inputTimerText;
-        isGameStarted = true;
-    }
-
-    public void AssignDeathUIComponents(Image inputFadeOverlay)
-    {
         fadeOverlay = inputFadeOverlay;
+        isGameStarted = true;
     }
     
     // Related to Time

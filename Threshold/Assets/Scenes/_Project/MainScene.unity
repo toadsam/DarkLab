@@ -8211,6 +8211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5657880647610687000, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
+      propertyPath: doorOpenText
+      value: 
+      objectReference: {fileID: 1984273267}
+    - target: {fileID: 5657880647610687000, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
       propertyPath: onDoorClose.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1845954866}
@@ -11268,11 +11273,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1752984286021583074, guid: f59427037a5375743b14e5606f3a8a16,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 3644515582333244092, guid: f59427037a5375743b14e5606f3a8a16,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -11408,11 +11408,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9003578424245739623, guid: f59427037a5375743b14e5606f3a8a16,
-        type: 3}
-      propertyPath: fadeOverlay
-      value: 
-      objectReference: {fileID: 1984273267}
     - target: {fileID: 9164733065942372218, guid: f59427037a5375743b14e5606f3a8a16,
         type: 3}
       propertyPath: m_Name
@@ -11425,14 +11420,14 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f59427037a5375743b14e5606f3a8a16, type: 3}
 --- !u!114 &1984273267 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2263712029529568976, guid: f59427037a5375743b14e5606f3a8a16,
+  m_CorrespondingSourceObject: {fileID: 4714742455995811375, guid: f59427037a5375743b14e5606f3a8a16,
     type: 3}
   m_PrefabInstance: {fileID: 1984273266}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1987200992
@@ -11515,6 +11510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpenAudio: {fileID: 1987200997}
+  doorOpenText: {fileID: 1984273267}
 --- !u!82 &1987200997
 AudioSource:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class HealthAndTimer : MonoBehaviour
 
     public void Awake()
     {
-        ProgressChecker.Instance.AssignUIComponents(healthBar, timerText);
-        ProgressChecker.Instance.AssignDeathUIComponents(fadeOverlay);
+        ProgressChecker.Instance.AssignUIComponents(healthBar, timerText, fadeOverlay);
     }
 }
