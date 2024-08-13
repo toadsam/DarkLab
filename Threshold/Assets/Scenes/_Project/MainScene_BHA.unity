@@ -515,6 +515,7 @@ MonoBehaviour:
   ignoreLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  dotPrefab: {fileID: 0}
   interactionUI: {fileID: 923455519}
   CameraTransform: {fileID: 1192536612}
   infoText: {fileID: 1337416196}
@@ -1592,11 +1593,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 486324943138899547, guid: 88948a6d1880526488847c3a28a99850,
+        type: 3}
+      propertyPath: footstepClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d96f9b9942ba74294946738a52309102, type: 3}
     - target: {fileID: 2994357607998892120, guid: 88948a6d1880526488847c3a28a99850,
         type: 3}
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3116800814708106265, guid: 88948a6d1880526488847c3a28a99850,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d96f9b9942ba74294946738a52309102, type: 3}
     - target: {fileID: 4041897909341949181, guid: 88948a6d1880526488847c3a28a99850,
         type: 3}
       propertyPath: m_RootOrder
@@ -6698,7 +6709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectEventHandler: {fileID: 1987200993}
   player: {fileID: 427410702}
-  resetPos: {x: 0, y: 0, z: 0}
+  resetPos: {fileID: 0}
   randomObjectSelector: {fileID: 1987200996}
   interactableDoor: {fileID: 1927514045}
 --- !u!4 &1987200995
@@ -6728,6 +6739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1058f0ce8364542a8af479b73f5376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpenAudio: {fileID: 0}
 --- !u!1 &2017445557
 GameObject:
   m_ObjectHideFlags: 0
