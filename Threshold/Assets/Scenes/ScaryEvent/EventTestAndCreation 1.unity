@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -745,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &568164750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5743,10 +5743,12 @@ MonoBehaviour:
   stateType: 3
   frontCreation: 1
   isDisappearance: 1
+  createBigObject: 0
   deactiveDelay: 0
   animationClips: []
   objectToSpawn: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1
@@ -7063,10 +7065,10 @@ MonoBehaviour:
   targetRotation: {x: 1, y: 1, z: 1}
   targetScale: {x: 0.6, y: 0.6, z: 0.6}
   shakePosition: 5
+  isFadeOut: 0
   amplitude: 0.1
   frequency: 1
   speed: 1
-  material: {fileID: 0}
   vertexOffset: 0.1
   centerRadius: 1
 --- !u!4 &1541168113
@@ -12395,6 +12397,7 @@ MonoBehaviour:
   colorChangeSpeed: 2
   shakeAmount: 0.1
   shakeSpeed: 20
+  eventDuration: 3
 --- !u!1 &2017881687
 GameObject:
   m_ObjectHideFlags: 0

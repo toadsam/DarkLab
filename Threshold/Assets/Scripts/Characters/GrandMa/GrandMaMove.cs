@@ -283,6 +283,7 @@ public class GrandMaMove : MonoBehaviour
             Color originalColor = material.color;
             material.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0);
         }
+        gameObject.SetActive(false);
     }
 }
 
