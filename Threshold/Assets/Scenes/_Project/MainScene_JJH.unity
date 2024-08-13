@@ -10898,6 +10898,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1973223092}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8478648199103079846, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1863753692}
     - targetCorrespondingSourceObject: {fileID: 1621710611436644904, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
       insertIndex: -1
@@ -10939,6 +10943,32 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1845954861}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1863753690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8478648199103079846, guid: 8bae5eda1d117cd4090733b2dfea7781,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845954861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863753692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863753690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d84a6524c4c0e4c840457511857ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightTargets: []
+  transformTargets: []
+  rendererTargets: []
+  objectTier: -1
+  isObjectDependentEvent: 0
+  objectDependentEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1877789831
 PrefabInstance:
   m_ObjectHideFlags: 0
