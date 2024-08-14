@@ -94,6 +94,9 @@ namespace ScaryEvents.ScaryEffects
         {   
             Transform playerTransform = MainManager.Instance.player.transform;
             Camera playerCamera = playerTransform.gameObject.GetComponentInChildren<Camera>();
+
+            PlayerController playerController = playerTransform.GetComponent<PlayerController>();
+
             GameObject targetObject;
             if(frontCreation)
             {
@@ -113,8 +116,10 @@ namespace ScaryEvents.ScaryEffects
             if (targetObject != null && playerCamera != null)
             {
                 Vector3 directionToObject = targetObject.transform.position - playerCamera.transform.position;
+                directionToObject.y += 2f;
                 Quaternion lookRotation = Quaternion.LookRotation(directionToObject);
                 playerCamera.transform.rotation = Quaternion.Slerp(playerCamera.transform.rotation, lookRotation, Time.deltaTime * 10f);
+                playerController.playerEventOff = false;
             }
 
             Animator animator = targetObject.GetComponent<Animator>();
@@ -132,6 +137,7 @@ namespace ScaryEvents.ScaryEffects
                 yield return new WaitForSeconds(deactiveDelay);
 
                 targetObject.SetActive(false);
+                playerController.playerEventOff = true;
 
                 // // 카메라 고정 해제 (원래 위치로 돌아가기)
                 // if (playerCamera != null)

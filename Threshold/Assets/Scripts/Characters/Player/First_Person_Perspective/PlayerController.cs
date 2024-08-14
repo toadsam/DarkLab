@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canLook = true;
+    public bool playerEventOff = true;
 
     private Rigidbody _rigidbody;
     private AudioSource _audioSource;
@@ -49,14 +50,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if(playerEventOff)
+            Move();
       
     }
 
     private void LateUpdate()
     {   
         //&& WakeUp.isWakeUp
-        if (canLook && !GrandMaMove.isGrandEvent && WakeUp.isWakeUp)
+        if (canLook && !GrandMaMove.isGrandEvent && WakeUp.isWakeUp && playerEventOff)
         {
             CameraLook();
         }
