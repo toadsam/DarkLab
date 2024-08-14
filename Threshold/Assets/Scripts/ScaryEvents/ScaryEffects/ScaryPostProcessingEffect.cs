@@ -10,7 +10,8 @@ namespace ScaryEvents.ScaryEffects
         ChromaticAberration,
         CloseEye,
         CameraMove,
-        WobbleSpace
+        WobbleSpace,
+        LimitedView
     }
     
     public class ScaryPostProcessingEffect : ScaryEffect
