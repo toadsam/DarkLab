@@ -14,4 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_Project/GrandMaRoom.unity
     guid: b48893f08dd79b34dbb76885701ce9ff
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 262760dd485ec594eb8c39d1a25954eb,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: f5ca1850ca573174e91de32072a0b968,
+      type: 2}
