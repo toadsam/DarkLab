@@ -6,19 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Korean (South Korea) (ko-KR).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Korean (South Korea) (ko-KR).asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Korean (South Korea) (ko-KR)_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Korean (South Korea) (ko-KR)_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/Locale/English (en).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/Locale/English (en).asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/Locale/Japanese (ja).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/Locale/Japanese (ja).asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Localization/Locale/Korean (South Korea) (ko-KR).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/Locale/Korean (South Korea) (ko-KR).asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations Shared Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations Shared Data.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_en.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_en.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ja.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ja.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ko-KR.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ko-KR.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Developments/LocalizationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Developments/LocalizationScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/Title.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/Title.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryAndLocalizationInDevelopment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryAndLocalizationInDevelopment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LocaleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LocaleManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +149,7 @@
       <workItem from="1722604335560" duration="1334000" />
       <workItem from="1723640275387" duration="1675000" />
       <workItem from="1723730841548" duration="3482000" />
+      <workItem from="1723824103064" duration="2261000" />
     </task>
     <servers />
   </component>

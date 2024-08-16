@@ -33,6 +33,7 @@ public class LocaleManager : MonoBehaviour
         Debug.Log("[LocaleManager] LocalizationSettings.InitializationOperation is done. Current locale is " + LocalizationSettings.SelectedLocale.name + " with sortOrder " + LocalizationSettings.SelectedLocale.SortOrder);
 
         int tempIndex = PlayerPrefs.GetInt("CurrentLocaleIndex", LocalizationSettings.SelectedLocale.SortOrder);
+        Debug.Log("[LocaleManager] PlayerPrefs.GetInt(\"CurrentLocaleIndex\") is " + tempIndex + " and LocalizationSettings.SelectedLocale.SortOrder is " + LocalizationSettings.SelectedLocale.SortOrder);
         
         currentLocaleIndex = tempIndex;
         localeDropdown.value = currentLocaleIndex;
