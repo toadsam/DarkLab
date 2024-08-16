@@ -14,16 +14,224 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: StoryTranslations
   m_TableCollectionNameGuidString: 95df2f3dc88571d42b364a5fd0c5dc93
-  m_Entries: []
+  m_Entries:
+  - m_Id: 93221060608
+    m_Key: 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032128
+    m_Key: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032129
+    m_Key: 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032130
+    m_Key: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032131
+    m_Key: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032132
+    m_Key: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032133
+    m_Key: 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032134
+    m_Key: 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032135
+    m_Key: 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032136
+    m_Key: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032137
+    m_Key: 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032138
+    m_Key: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032139
+    m_Key: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032140
+    m_Key: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032141
+    m_Key: 14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032142
+    m_Key: 15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032143
+    m_Key: 16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032144
+    m_Key: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032145
+    m_Key: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032146
+    m_Key: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032147
+    m_Key: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032148
+    m_Key: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032149
+    m_Key: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032150
+    m_Key: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032151
+    m_Key: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032152
+    m_Key: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032153
+    m_Key: 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032154
+    m_Key: 27
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032155
+    m_Key: 28
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032156
+    m_Key: 29
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032157
+    m_Key: 30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032158
+    m_Key: 31
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032159
+    m_Key: 32
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032160
+    m_Key: 33
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032161
+    m_Key: 34
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032162
+    m_Key: 35
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032163
+    m_Key: 36
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032164
+    m_Key: 37
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032165
+    m_Key: 38
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032166
+    m_Key: 39
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032167
+    m_Key: 40
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032168
+    m_Key: 41
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032169
+    m_Key: 42
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032170
+    m_Key: 43
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032171
+    m_Key: 44
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032172
+    m_Key: 45
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032173
+    m_Key: 46
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032174
+    m_Key: 47
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032175
+    m_Key: 48
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032176
+    m_Key: 49
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032177
+    m_Key: 50
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032178
+    m_Key: 51
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 1772215185208770584
+    rid: 1772215185208770589
   references:
     version: 2
     RefIds:
-    - rid: 1772215185208770584
+    - rid: 1772215185208770589
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1723732046161
+        m_CustomEpoch: 1723732380508

@@ -6,9 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Korean (South Korea) (ko-KR).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Localization-String-Tables-Korean (South Korea) (ko-KR).asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Korean (South Korea) (ko-KR)_BundledAssetGroupSchema.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Localization-String-Tables-Korean (South Korea) (ko-KR)_BundledAssetGroupSchema.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/Locale/Korean (South Korea) (ko-KR).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/Locale/Korean (South Korea) (ko-KR).asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations Shared Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations Shared Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_en.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_en.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ja.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ja.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ko-KR.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Localization/LocalizationTables/Story/StoryTranslations_ko-KR.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Developments/LocalizationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Developments/LocalizationScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/Title.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/Title.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryAndLocalizationInDevelopment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryAndLocalizationInDevelopment.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScaryEvents/ScaryEventTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AudioVolumeChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HealthAndTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LocaleManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/DoTweenLightExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.8/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
@@ -145,7 +156,7 @@
       <workItem from="1722591442362" duration="6000" />
       <workItem from="1722604335560" duration="1334000" />
       <workItem from="1723640275387" duration="1675000" />
-      <workItem from="1723730841548" duration="638000" />
+      <workItem from="1723730841548" duration="3482000" />
     </task>
     <servers />
   </component>

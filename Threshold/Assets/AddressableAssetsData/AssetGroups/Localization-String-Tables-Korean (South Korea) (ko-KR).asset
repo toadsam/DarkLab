@@ -16,7 +16,21 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: c0907948ee225cf4d85a394c77ed6cdf
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c38d7396bda4ed64898d0f10ce044b1c
+    m_Address: StoryTranslations_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23e43afa7d4292b438341c0af5a6884a
+    m_Address: GameUITranslations_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: e4fbb6dfaa49f4a4bbc82a5e5a64c204, type: 2}
   m_SchemaSet:

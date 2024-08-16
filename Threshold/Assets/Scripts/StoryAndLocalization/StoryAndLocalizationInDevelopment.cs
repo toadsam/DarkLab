@@ -380,13 +380,46 @@ public Dictionary<int, Dictionary<string, string>> ScriptTranslations = new Dict
 
     #endregion
 
+    #region Basic UI
+
+    public Dictionary<string, Dictionary<string, string>> GameUITranslations = new Dictionary<string, Dictionary<string, string>>()
+    {
+        {"GameStart", new Dictionary<string, string>()
+            {
+                {"ko", "게임 시작"},
+                {"en", "Start Game"},
+                {"ja", "ゲーム開始"}
+            }
+        },
+        {"Settings", new Dictionary<string, string>()
+            {
+                {"ko", "설정"},
+                {"en", "Settings"},
+                {"ja", "設定"}
+            }
+        },
+        {"Exit", new Dictionary<string, string>()
+            {
+                {"ko", "종료"},
+                {"en", "Exit"},
+                {"ja", "終了"}
+            }
+        },
+        {"Language", new Dictionary<string, string>()
+            {
+                {"ko", "언어"},
+                {"en", "Language"},
+                {"ja", "言語"}
+            }
+        }
+    };
+
+    #endregion
+
     private void Start()
     {
-        // 테이블 이름을 지정합니다.
-        string tableName = "Story";
-
-        // 번역을 추가합니다.
-        AddTranslationsToTable(ScriptTranslations, tableName);
+        AddTranslationsToTable(ScriptTranslations, "StoryTranslations");
+        AddTranslationsToTable(GameUITranslations, "GameUITranslations");
     }
     
     void AddTranslationsToTable(Dictionary<int, Dictionary<string, string>> translations, string tableName, string keyPrefix = "", bool useIndex = false, int startIndex = 1)

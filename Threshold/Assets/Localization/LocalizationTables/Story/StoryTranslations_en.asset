@@ -17,7 +17,270 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 95df2f3dc88571d42b364a5fd0c5dc93, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 93221060608
+    m_Localized: Wake up at 6, meetings until quitting time, work from quitting time
+      until 11 PM.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032128
+    m_Localized: Sleep at 1 AM, wake up at 6 again. Feeling averse to this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032129
+    m_Localized: Even if you enjoy work, wouldn't this be tough?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032130
+    m_Localized: When I think it's tough, I wonder if I don't actually like work?
+      Is it a lie?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032131
+    m_Localized: It might be related to childhood work, but aren't we living to be
+      happy? Honestly, I can't really empathize...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032132
+    m_Localized: Don't put others down. If you envy someone's relationships, pursue
+      that a bit more.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032133
+    m_Localized: If you have envy or admiration, move towards getting closer to that.
+      But don't get too caught up in it...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032134
+    m_Localized: No matter how badly someone did something, isn't it not good to
+      talk behind their back?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032135
+    m_Localized: Hmm... I should try not to do that. But the irritation... Hearing
+      things differently. Constantly picking faults.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032136
+    m_Localized: Ugh... it's hard to take. Is it all because of lack of sleep? I've
+      been lacking sleep lately...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032137
+    m_Localized: I'm not that great myself, but I keep getting irritated. Shouldn't
+      I reflect more?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032138
+    m_Localized: I don't know why I have to worry about these things. Why are there
+      so many impressive people?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032139
+    m_Localized: In reality, these people might barely make up 10%. Looking around...
+      people I'm not sure about...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032140
+    m_Localized: I think it might be a problem of different times spent focusing
+      or immersing, but since I'm the one seeing it now, honestly, I'm not sure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032141
+    m_Localized: People who live like they're all that must be hard to work with.
+      Be less sensitive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032142
+    m_Localized: I seem to have become quite sensitive lately, let's take care of
+      ourselves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032143
+    m_Localized: It's amazing to see people who are friendly with everyone. How do
+      they live like that? It would be best to enjoy without thinking too much!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032144
+    m_Localized: Woke up with my whole body soaked in sweat. Strange...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032145
+    m_Localized: Usually I don't remember the content of my dreams, but only an unpleasant
+      feeling remains. Did I have an unpleasant dream?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032146
+    m_Localized: Having nightmares lately. Can't recall the content properly, but
+      remember a few things I saw.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032147
+    m_Localized: I wake up in my studio apartment, open the door to leave and enter.
+      After passing through a dark place, I'm standing in the same room. Suffocating.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032148
+    m_Localized: Every time I wake up, the feeling of my heart being squeezed is
+      extremely unpleasant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032149
+    m_Localized: Couldn't do the work properly... Tasks are piling up, but I can't
+      concentrate. My mind is tangled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032150
+    m_Localized: Even listening to music is difficult. It's inefficient. I think
+      it might get better if I sleep, but I have nightmares every time I sleep.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032151
+    m_Localized: The image of my grandmother from childhood keeps coming to mind.
+      My body feels stuffy, and dark thoughts arise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032152
+    m_Localized: When I was young, sometimes in dreams I'd experience terrifying,
+      unpleasant, chilling, horrifying things and end up wailing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032153
+    m_Localized: When I woke up, I'd find traces of having actually cried, half-awake.
+      It feels like that's happening a lot lately.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032154
+    m_Localized: I feel so heavy and suffocated. My head is dizzy, everything's a
+      mess, and I feel nauseous. It's a dazed feeling, like I can't get a grip on
+      anything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032155
+    m_Localized: When I play the cello, thoughts of my grandmother come to mind.
+      Before that incident, when my parents were busy, I grew up under my grandmother's
+      care.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032156
+    m_Localized: In a way, maybe I took after my grandmother in playing the cello
+      too. I'm grateful, but after that incident, and after grandmother passed away.
+      It was quite difficult.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032157
+    m_Localized: Lately, with the dreams and all, I often feel tired, listless, or
+      startled. I wonder if it's related to my poor physical condition...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032158
+    m_Localized: I couldn't properly cultivate my cello skills. Although I tried
+      to avoid it, it's really awful to have humiliating moments with someone I usually
+      looked down on a bit...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032159
+    m_Localized: Both my body and mind are so tired these days. I thought I'd been
+      through quite a lot of tough times.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032160
+    m_Localized: But these days, it's harder because it's hard. It seems like more
+      of these things are happening because I'm not in good condition.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032161
+    m_Localized: Why is it like this even when there's nothing particularly difficult
+      going on these days?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032162
+    m_Localized: I can't do it anymore. When I try to play the cello or listen to
+      the music I used to, it feels like my blood runs cold.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032163
+    m_Localized: It's similar to when I spent time with my grandmother before. When
+      grandmother started acting strange. It's similar to that time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032164
+    m_Localized: Grandmother also had nightmares at first. After that, her condition
+      gradually worsened. She complained of headaches and chills similar to mine,
+      and then suddenly became strange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032165
+    m_Localized: It was when I spent time with my grandmother as a child. That's
+      also when I became interested in music and the cello.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032166
+    m_Localized: I can't deny that it had a big influence, both good and bad.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032167
+    m_Localized: At some point, grandmother started acting strange. Every time she
+      woke up, she would scream or visibly weaken right away.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032168
+    m_Localized: Or she would feel dizzy. At that time, I thought it was simply because
+      she was getting old...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032169
+    m_Localized: My parents were both too busy to properly understand grandmother's
+      condition. Still, until that day, she was able to live normally.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032170
+    m_Localized: But from some point on, even that became impossible. She would scream
+      all day, or be in pain, as if everything had broken down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032171
+    m_Localized: Seeing my grandmother, who was an object of respect, in that state.
+      A guardian who disappeared in an instant. The situation where I, young as I
+      was, had to protect my grandmother remains.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032172
+    m_Localized: At that time, I could only think negatively, but now when I think
+      about it, these thoughts come to mind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032173
+    m_Localized: I'm somewhat okay when writing in my diary, but I can't go out much,
+      can't do the music I've been doing until now, and thus can't do any productive
+      activities.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032174
+    m_Localized: I have no friends, and my parents are gone now. What value do I
+      have, having lost all relationships and skills?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032175
+    m_Localized: Writing this is proof that I haven't gone crazy. I can speak. I
+      can breathe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032176
+    m_Localized: If there's no one else, I think I could live on. Rather than everyone
+      disappearing, shouldn't I be the one to disappear?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032177
+    m_Localized: There's something left in me who can't play the cello. Every time
+      I hear music, a vague anxiety. A severe feeling of suffocation comes over me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93242032178
+    m_Localized: I found an old album. Photos taken with grandmother. Grandmother
+      probably felt similar.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
