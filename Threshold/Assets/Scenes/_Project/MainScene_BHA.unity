@@ -123,6 +123,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &29742180
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625437077308761784, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502443407714586536, guid: ff41fe5d467154cbd873b766f4a974b6,
+        type: 3}
+      propertyPath: m_Name
+      value: ScaryEvent-PlayerAnim
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff41fe5d467154cbd873b766f4a974b6, type: 3}
 --- !u!4 &37795079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8947821445805190735, guid: 8bae5eda1d117cd4090733b2dfea7781,
@@ -483,6 +556,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &422932018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4843442024986794077, guid: ff41fe5d467154cbd873b766f4a974b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 29742180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427410702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2994357607998892120, guid: 88948a6d1880526488847c3a28a99850,
@@ -515,7 +600,9 @@ MonoBehaviour:
   ignoreLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  dotPrefab: {fileID: 0}
+  eyeIconUI: {fileID: 0}
+  eyeIconInitialScale: {x: 1, y: 1, z: 1}
+  eyeIconMaxScale: {x: 2, y: 2, z: 2}
   interactionUI: {fileID: 923455519}
   CameraTransform: {fileID: 1192536612}
   infoText: {fileID: 1337416196}
@@ -707,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lampLight: {fileID: 151559132}
   heartbeatSound: {fileID: 678338879}
+  heartbeatClip: {fileID: 0}
   pulseSpeed: 1
   maxIntensity: 3
   minIntensity: 0.5
@@ -715,6 +803,7 @@ MonoBehaviour:
   colorChangeSpeed: 2
   shakeAmount: 0.1
   shakeSpeed: 20
+  eventDuration: 5
 --- !u!65 &678338881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1621,12 +1710,12 @@ PrefabInstance:
     - target: {fileID: 4041897909341949181, guid: 88948a6d1880526488847c3a28a99850,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.222
+      value: -0.391
       objectReference: {fileID: 0}
     - target: {fileID: 4041897909341949181, guid: 88948a6d1880526488847c3a28a99850,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.08
+      value: -3.849
       objectReference: {fileID: 0}
     - target: {fileID: 4041897909341949181, guid: 88948a6d1880526488847c3a28a99850,
         type: 3}
@@ -6740,6 +6829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpenAudio: {fileID: 0}
+  doorOpenText: {fileID: 0}
 --- !u!1 &2017445557
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,7 +6932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2017881688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6856,7 +6946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exampleObjectInfoHolder: {fileID: 1845954862}
-  testedScaryEvent: {fileID: 495286615258753292}
+  testedScaryEvent: {fileID: 422932018}
 --- !u!4 &2017881689
 Transform:
   m_ObjectHideFlags: 0
@@ -6872,18 +6962,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &495286615258753292 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6696096357263739148, guid: e34d9034b8fc1844d85b3e937300b6bd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7590337052989008447}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 133fd2e871dadaa4492449bd8f42fa12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7590337052989008447
 PrefabInstance:
   m_ObjectHideFlags: 0
