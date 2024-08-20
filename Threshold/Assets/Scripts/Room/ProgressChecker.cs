@@ -17,8 +17,8 @@ public class ProgressChecker : Singleton<ProgressChecker>
     public float maxSeconds = 180;
 
     //Death Animation
-    public float fadeDuration = 0.7f;
-    public float fallBackSpeed = 1f;
+    public float fadeDuration = 0.3f;
+    public float fallBackSpeed = 2f;
     private Transform cameraTransform;
 
     // 시간 효과 관련
@@ -110,23 +110,36 @@ public class ProgressChecker : Singleton<ProgressChecker>
         Quaternion initialRotation = cameraTransform.rotation;
 
         // 카메라의 현재 방향을 기준으로 뒤로 넘어지도록 설정
-        Vector3 backwardOffset = -cameraTransform.forward * 5f;
+        Vector3 backwardOffset = -cameraTransform.forward * 2f;
         Vector3 targetPosition = initialPosition + backwardOffset;
         //Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x - 90f, cameraTransform.eulerAngles.y, cameraTransform.eulerAngles.z);
-        Quaternion targetRotation = initialRotation * Quaternion.Euler(-75f, 0, 0);
+        Quaternion targetRotation = initialRotation * Quaternion.Euler(-90f, 0, 0);
 
         yield return new WaitForSeconds(0.3f);
 
         while (elapsedTime < fallBackSpeed)
         {
-            cameraTransform.localPosition = Vector3.Lerp(initialPosition, initialPosition + Vector3.back * 2f, elapsedTime / fallBackSpeed);
-            cameraTransform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, elapsedTime / fallBackSpeed);
+            float t = elapsedTime / fallBackSpeed;
+
+            // 카메라의 위치와 회전 보간
+            Vector3 currentPosition = Vector3.Lerp(initialPosition, targetPosition, t);
+            Quaternion currentRotation = Quaternion.Lerp(initialRotation, targetRotation, t);
+
+            // 현재 위치와 회전을 적용
+            cameraTransform.position = currentPosition;
+            cameraTransform.rotation = currentRotation;
+            // cameraTransform.localPosition = Vector3.Lerp(initialPosition, initialPosition + Vector3.back * 2f, elapsedTime / fallBackSpeed);
+            // cameraTransform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, elapsedTime / fallBackSpeed);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        cameraTransform.localPosition = initialPosition + Vector3.back * 2f;
-        cameraTransform.localRotation = targetRotation;
+        // cameraTransform.localPosition = initialPosition + Vector3.back * 2f;
+        // cameraTransform.localRotation = targetRotation;
+
+        // 애니메이션이 끝나면 정확한 최종 위치와 회전 설정
+        cameraTransform.position = targetPosition;
+        cameraTransform.rotation = targetRotation;
 
         elapsedTime = 0f;
         Color originalColor = fadeOverlay.color;
