@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using Utils;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using DG.Tweening;
+using UnityEngine.Rendering;
 
 public class ProgressChecker : Singleton<ProgressChecker>
 {
@@ -29,6 +31,12 @@ public class ProgressChecker : Singleton<ProgressChecker>
     private Image healthBar;
     private TextMeshProUGUI timerText;
     private Image fadeOverlay;
+    private Volume damageVolume;
+
+    // Transition settings
+    private float finalWeight = 1f; // 최대 weight 값
+    private float onTransitionDuration = 0.5f; // 효과 적용 시간
+    private float offTransitionDuration = 0.5f; // 효과 사라지는 시간
     
     // inner logic
     private bool isGameStarted = false;
@@ -47,11 +55,12 @@ public class ProgressChecker : Singleton<ProgressChecker>
         gameDuration = TimeSpan.FromHours(7); // 7시간 (11:00 PM to 6:00 AM)
     }
     
-    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay)
+    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay, Volume inputVolume)
     {
         healthBar = inputHealthBar;
         timerText = inputTimerText;
         fadeOverlay = inputFadeOverlay;
+        damageVolume = inputVolume;
         isGameStarted = true;
     }
     
@@ -93,6 +102,26 @@ public class ProgressChecker : Singleton<ProgressChecker>
             currentHealth = 0;
             GameDone();
         }
+        else
+        {
+            StartCoroutine(DamageEffect());
+        }
+    }
+
+    private IEnumerator DamageEffect()
+    {
+        // Increase weight to show effect
+        yield return DOTween.To(() => damageVolume.weight, x => damageVolume.weight = x, finalWeight, onTransitionDuration)
+            .SetEase(Ease.InOutQuad)
+            .WaitForCompletion();
+
+        // Wait for effect duration
+        yield return new WaitForSeconds(1f);
+
+        // Decrease weight to hide effect
+        yield return DOTween.To(() => damageVolume.weight, x => damageVolume.weight = x, 0f, offTransitionDuration)
+            .SetEase(Ease.InOutQuad)
+            .WaitForCompletion();
     }
     
     public void GameDone()
