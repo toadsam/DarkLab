@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using Utils;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using DG.Tweening;
+using UnityEngine.Rendering;
 
 public class ProgressChecker : Singleton<ProgressChecker>
 {
@@ -17,8 +19,8 @@ public class ProgressChecker : Singleton<ProgressChecker>
     public float maxSeconds = 180;
 
     //Death Animation
-    public float fadeDuration = 0.7f;
-    public float fallBackSpeed = 1f;
+    public float fadeDuration = 0.3f;
+    public float fallBackSpeed = 2f;
     private Transform cameraTransform;
 
     // 시간 효과 관련
@@ -29,6 +31,12 @@ public class ProgressChecker : Singleton<ProgressChecker>
     private Image healthBar;
     private TextMeshProUGUI timerText;
     private Image fadeOverlay;
+    private Volume damageVolume;
+
+    // Transition settings
+    private float finalWeight = 1f; // 최대 weight 값
+    private float onTransitionDuration = 0.5f; // 효과 적용 시간
+    private float offTransitionDuration = 0.5f; // 효과 사라지는 시간
     
     // inner logic
     private bool isGameStarted = false;
@@ -47,11 +55,12 @@ public class ProgressChecker : Singleton<ProgressChecker>
         gameDuration = TimeSpan.FromHours(7); // 7시간 (11:00 PM to 6:00 AM)
     }
     
-    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay)
+    public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay, Volume inputVolume)
     {
         healthBar = inputHealthBar;
         timerText = inputTimerText;
         fadeOverlay = inputFadeOverlay;
+        damageVolume = inputVolume;
         isGameStarted = true;
     }
     
@@ -93,6 +102,26 @@ public class ProgressChecker : Singleton<ProgressChecker>
             currentHealth = 0;
             GameDone();
         }
+        else
+        {
+            StartCoroutine(DamageEffect());
+        }
+    }
+
+    private IEnumerator DamageEffect()
+    {
+        // Increase weight to show effect
+        yield return DOTween.To(() => damageVolume.weight, x => damageVolume.weight = x, finalWeight, onTransitionDuration)
+            .SetEase(Ease.InOutQuad)
+            .WaitForCompletion();
+
+        // Wait for effect duration
+        yield return new WaitForSeconds(1f);
+
+        // Decrease weight to hide effect
+        yield return DOTween.To(() => damageVolume.weight, x => damageVolume.weight = x, 0f, offTransitionDuration)
+            .SetEase(Ease.InOutQuad)
+            .WaitForCompletion();
     }
     
     public void GameDone()
@@ -110,23 +139,36 @@ public class ProgressChecker : Singleton<ProgressChecker>
         Quaternion initialRotation = cameraTransform.rotation;
 
         // 카메라의 현재 방향을 기준으로 뒤로 넘어지도록 설정
-        Vector3 backwardOffset = -cameraTransform.forward * 5f;
+        Vector3 backwardOffset = -cameraTransform.forward * 2f;
         Vector3 targetPosition = initialPosition + backwardOffset;
         //Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x - 90f, cameraTransform.eulerAngles.y, cameraTransform.eulerAngles.z);
-        Quaternion targetRotation = initialRotation * Quaternion.Euler(-75f, 0, 0);
+        Quaternion targetRotation = initialRotation * Quaternion.Euler(-90f, 0, 0);
 
         yield return new WaitForSeconds(0.3f);
 
         while (elapsedTime < fallBackSpeed)
         {
-            cameraTransform.localPosition = Vector3.Lerp(initialPosition, initialPosition + Vector3.back * 2f, elapsedTime / fallBackSpeed);
-            cameraTransform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, elapsedTime / fallBackSpeed);
+            float t = elapsedTime / fallBackSpeed;
+
+            // 카메라의 위치와 회전 보간
+            Vector3 currentPosition = Vector3.Lerp(initialPosition, targetPosition, t);
+            Quaternion currentRotation = Quaternion.Lerp(initialRotation, targetRotation, t);
+
+            // 현재 위치와 회전을 적용
+            cameraTransform.position = currentPosition;
+            cameraTransform.rotation = currentRotation;
+            // cameraTransform.localPosition = Vector3.Lerp(initialPosition, initialPosition + Vector3.back * 2f, elapsedTime / fallBackSpeed);
+            // cameraTransform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, elapsedTime / fallBackSpeed);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        cameraTransform.localPosition = initialPosition + Vector3.back * 2f;
-        cameraTransform.localRotation = targetRotation;
+        // cameraTransform.localPosition = initialPosition + Vector3.back * 2f;
+        // cameraTransform.localRotation = targetRotation;
+
+        // 애니메이션이 끝나면 정확한 최종 위치와 회전 설정
+        cameraTransform.position = targetPosition;
+        cameraTransform.rotation = targetRotation;
 
         elapsedTime = 0f;
         Color originalColor = fadeOverlay.color;
