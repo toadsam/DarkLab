@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b1ebd11d-0289-4710-9caf-b839918509b3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threshold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/_Project/Title.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/_Project/Title.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Font SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Font SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Videos/TV_Texture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Videos/TV_Texture.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/ProgressChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/ProgressChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryAndLocalizationInDevelopment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryAndLocalizationInDevelopment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryScriptVisualizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StoryAndLocalization/StoryScriptVisualizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Test.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +154,7 @@
       <workItem from="1723730841548" duration="3482000" />
       <workItem from="1723824103064" duration="2261000" />
       <workItem from="1724156274986" duration="7846000" />
-      <workItem from="1724677564552" duration="2953000" />
+      <workItem from="1724677564552" duration="6192000" />
     </task>
     <servers />
   </component>

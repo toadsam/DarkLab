@@ -416,10 +416,40 @@ public Dictionary<int, Dictionary<string, string>> ScriptTranslations = new Dict
 
     #endregion
 
+    #region Tutorial
+
+    public Dictionary<string, Dictionary<string, string>> TutorialTranslations = new Dictionary<string, Dictionary<string, string>>()
+    {
+        {"TutorialMove", new Dictionary<string, string>()
+            {
+                {"ko", "WASD 를 통해 이동할 수 있습니다."},
+                {"en", "You can move using WASD keys."},
+                {"ja", "WASDキーで移動できます。"}
+            }
+        },
+        {"TutorialInteract", new Dictionary<string, string>()
+            {
+                {"ko", "표식이 나타날 경우 E 버튼을 눌러 상호작용 할 수 있습니다."},
+                {"en", "When a marker appears, press the E button to interact."},
+                {"ja", "マーカーが表示されたら、Eボタンを押して相互作用できます。"}
+            }
+        },
+        {"TutorialHealth", new Dictionary<string, string>()
+            {
+                {"ko", "공포 이벤트를 보면, 체력이 감소합니다. 게임의 플레이 횟수에 따라 최대 체력이 늘어납니다."},
+                {"en", "When you encounter a fear event, your health decreases. Your maximum health increases based on the number of times you've played the game."},
+                {"ja", "恐怖イベントに遭遇すると、体力が減少します。プレイ回数に応じて最大体力が増加します。"}
+            }
+        }
+    };
+
+    #endregion
+
     private void Start()
     {
         AddTranslationsToTable(ScriptTranslations, "StoryTranslations");
         AddTranslationsToTable(GameUITranslations, "GameUITranslations");
+        AddTranslationsToTable(TutorialTranslations, "TutorialTranslations");
     }
     
     void AddTranslationsToTable(Dictionary<int, Dictionary<string, string>> translations, string tableName, string keyPrefix = "", bool useIndex = false, int startIndex = 1)

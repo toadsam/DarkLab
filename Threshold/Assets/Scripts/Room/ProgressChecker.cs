@@ -41,10 +41,13 @@ public class ProgressChecker : Singleton<ProgressChecker>
     // inner logic
     private bool isGameStarted = false;
     
+    private DateTime startDate = new DateTime(2015, 9, 1); // 시작 날짜 설정
+    
     public void StartGameSession()
     {
         currentProgress = PlayerPrefs.GetInt("Progress", currentProgress) + 1;
         PlayerPrefs.SetInt("Progress", currentProgress);
+        Debug.Log("Progress : " + currentProgress);
 
         maxHealth = 3 + Mathf.Round(currentProgress / 5f);
         currentHealth = maxHealth;
@@ -53,6 +56,13 @@ public class ProgressChecker : Singleton<ProgressChecker>
         currentSeconds = maxSeconds;
         startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 0, 0); // 11:00 PM
         gameDuration = TimeSpan.FromHours(7); // 7시간 (11:00 PM to 6:00 AM)
+    }
+    
+    // 진행도에 따른 날짜 반환
+    public string GetCurrentProgressDate()
+    {
+        DateTime currentDate = startDate.AddDays(currentProgress - 1);
+        return currentDate.ToString("yyyy.MM.dd");
     }
     
     public void AssignUIComponents(Image inputHealthBar, TextMeshProUGUI inputTimerText, Image inputFadeOverlay, Volume inputVolume)

@@ -31,6 +31,13 @@ MonoBehaviour:
     - Locale-ko
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5d3d91c3b02d6a4f9954819309e9720
+    m_Address: TutorialTranslations_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: e4fbb6dfaa49f4a4bbc82a5e5a64c204, type: 2}
   m_SchemaSet:

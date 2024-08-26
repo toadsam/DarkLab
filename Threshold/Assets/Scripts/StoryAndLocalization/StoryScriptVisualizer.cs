@@ -7,16 +7,19 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class StoryScriptVisualizer : MonoBehaviour
 {
+    public TextMeshProUGUI dateText;
     public TextMeshProUGUI storyText;
     
     public void GetProgressAndShowStory()
     {
+        ProgressChecker.Instance.StartGameSession();
         StartCoroutine(GetProgressAndShowStoryRoutine());
     }
     
     private IEnumerator GetProgressAndShowStoryRoutine()
     {
         Debug.Log("GetProgressAndShowStoryRoutine : " + ProgressChecker.Instance.currentProgress);
+        dateText.text = ProgressChecker.Instance.GetCurrentProgressDate();
         var operation = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("StoryTranslations", ProgressChecker.Instance.currentProgress.ToString());
         yield return operation;
         
