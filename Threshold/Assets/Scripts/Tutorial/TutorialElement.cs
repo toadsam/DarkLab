@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Tutorial
@@ -16,14 +17,14 @@ namespace Tutorial
             }
         }
 
-        public Button[] tutorialDoneTrigger;
+        public Button[] tutorialDoneTriggerButtons;
         public TutorialElementTrigger[] tutorialElementTriggers;
         public List<GameObject> tutorialPanel;
         private int currentTutorialIndex = 0;
 
         public void StartAndSetTutorial()
         {
-            foreach (var button in tutorialDoneTrigger)
+            foreach (var button in tutorialDoneTriggerButtons)
             {
                 button.onClick.AddListener(NextTutorial);
             }
@@ -55,7 +56,7 @@ namespace Tutorial
             PlayerPrefs.SetInt(tutorialElementId, 1);
             currentTutorialIndex = 0;
             
-            foreach (var button in tutorialDoneTrigger)
+            foreach (var button in tutorialDoneTriggerButtons)
             {
                 button.onClick.RemoveListener(NextTutorial);
             }

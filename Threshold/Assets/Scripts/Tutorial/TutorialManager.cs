@@ -9,7 +9,7 @@ public class TutorialManager : MonoBehaviour
     private Dictionary<string, TutorialElement> tutorialElementDictionary = new Dictionary<string, TutorialElement>();
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         foreach (var tutorialElement in tutorialElements)
         {
@@ -38,7 +38,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (tutorialElementDictionary.ContainsKey(id))
         {
-            tutorialElementDictionary[id].CheckTutorialDone();
+            tutorialElementDictionary[id].StartAndSetTutorial();
         }
         else
         {
