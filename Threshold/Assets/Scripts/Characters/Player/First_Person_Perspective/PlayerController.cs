@@ -50,9 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(playerEventOff)
-            Move();
-      
+        Move();
     }
 
     private void LateUpdate()
