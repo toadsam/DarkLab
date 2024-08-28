@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(playerEventOff)
+        if(playerEventOff && WakeUp.isWakeUp)
             Move();
       
     }
