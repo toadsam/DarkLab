@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     public static void IsMove(bool changeMove)  //이걸 통해서 바꾸면 된다.
     {
         isMove = changeMove;
+        WakeUp.isWakeUp = changeMove;
     }
 
     private void Move()
