@@ -32,11 +32,13 @@ public class PlayerController : MonoBehaviour
     public AudioClip footstepClip;
     public float footstepInterval = 0.5f;
     private float footstepTimer;
-    
+
+    public static bool isMove;
 
     public static PlayerController instance;
     private void Awake()
     {
+        isMove = true;
         instance = this;
         _rigidbody = GetComponent<Rigidbody>();
         _audioSource = GetComponent<AudioSource>();
@@ -50,7 +52,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if(playerEventOff && WakeUp.isWakeUp&&isMove)
+            Move();
     }
 
     private void LateUpdate()
@@ -60,6 +63,11 @@ public class PlayerController : MonoBehaviour
         {
             CameraLook();
         }
+    }
+
+    public static void IsMove(bool changeMove)  //이걸 통해서 바꾸면 된다.
+    {
+        isMove = changeMove;
     }
 
     private void Move()
