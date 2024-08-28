@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {   
         //&& WakeUp.isWakeUp
-        if (canLook && !GrandMaMove.isGrandEvent && WakeUp.isWakeUp && playerEventOff)
+        if (canLook && !GrandMaMove.isGrandEvent && WakeUp.isWakeUp && playerEventOff && isMove)
         {
             CameraLook();
         }
@@ -68,6 +68,18 @@ public class PlayerController : MonoBehaviour
     public static void IsMove(bool changeMove)  //이걸 통해서 바꾸면 된다.
     {
         isMove = changeMove;
+    }
+    
+    public void TogglePlayerInput(bool enable)
+    {
+        canLook = enable;
+        isMove = enable;
+        if (!enable)
+        {
+            // 움직임 멈추기
+            curMovementInput = Vector2.zero;
+            _rigidbody.velocity = Vector3.zero;
+        }
     }
 
     private void Move()

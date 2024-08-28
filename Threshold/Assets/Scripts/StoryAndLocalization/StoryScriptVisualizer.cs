@@ -19,7 +19,8 @@ public class StoryScriptVisualizer : MonoBehaviour
     private IEnumerator GetProgressAndShowStoryRoutine()
     {
         Debug.Log("GetProgressAndShowStoryRoutine : " + ProgressChecker.Instance.currentProgress);
-        dateText.text = ProgressChecker.Instance.GetCurrentProgressDate();
+        Debug.Log("GetProgressAndShowStoryRoutine : " + ProgressChecker.Instance.GetCurrentProgressDate());
+        dateText.text = ProgressChecker.Instance.GetCurrentProgressDate().ToString();
         var operation = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("StoryTranslations", ProgressChecker.Instance.currentProgress.ToString());
         yield return operation;
         
