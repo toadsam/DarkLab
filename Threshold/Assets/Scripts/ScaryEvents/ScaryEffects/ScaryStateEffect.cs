@@ -12,6 +12,7 @@ namespace ScaryEvents.ScaryEffects
         Deactive,
         Spawn,
         SpawnAndPlayAnimation,
+        SpawnShadow,
         MoveShadow
     }
 
@@ -48,6 +49,9 @@ namespace ScaryEvents.ScaryEffects
                     break;
                 case StateType.SpawnAndPlayAnimation:
                     StartCoroutine(SpawnAndPlayAnimation());
+                    break;
+                case StateType.SpawnShadow:
+                    StartCoroutine(SpawnShadow());
                     break;
                 case StateType.MoveShadow:
                     ShadowMove();
@@ -138,6 +142,44 @@ namespace ScaryEvents.ScaryEffects
 
                 targetObject.SetActive(false);
                 playerController.playerEventOff = true;
+            }
+        }
+
+        private IEnumerator SpawnShadow()
+        {
+            Transform playerTransform = MainManager.Instance.player.transform;
+            Camera playerCamera = playerTransform.gameObject.GetComponentInChildren<Camera>();
+
+            GameObject targetObject;
+            if(frontCreation)
+            {
+                Vector3 spawnPosition = playerTransform.position + new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z);
+                targetObject = Instantiate(objectToSpawn, spawnPosition, playerTransform.rotation * Quaternion.Euler(0, 180, 0));
+
+                if(createBigObject)
+                    targetObject.transform.position -= new Vector3(0, 1.4f, 0);
+            }
+            else 
+            {
+                Quaternion rotation = Quaternion.Euler(targetRotation);
+                targetObject = Instantiate(objectToSpawn, targetPosition , rotation);
+            }
+
+            Animator animator = targetObject.GetComponent<Animator>();
+
+            if (animator != null && animationClips.Length > 0)
+            {
+                int randomIndex = Random.Range(0, animationClips.Length);
+                AnimationClip selectedClip = animationClips[randomIndex];
+
+                animator.Play(selectedClip.name);
+            }
+
+            if(isDisappearance)
+            {
+                yield return new WaitForSeconds(deactiveDelay);
+
+                targetObject.SetActive(false);
             }
         }
 
