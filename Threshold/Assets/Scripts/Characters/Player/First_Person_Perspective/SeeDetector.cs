@@ -322,7 +322,7 @@ public class SeeDetector : MonoBehaviour
     {
         if (infoText != null)
         {
-            infoText.text = $"Object Name: {gameObject.name}";
+            infoText.text = $"상호작용";
         }
     }
 }
