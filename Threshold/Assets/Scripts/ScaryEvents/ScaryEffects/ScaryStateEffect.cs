@@ -102,6 +102,9 @@ namespace ScaryEvents.ScaryEffects
             PlayerController playerController = playerTransform.GetComponent<PlayerController>();
 
             GameObject targetObject;
+
+            playerController.playerEventOff = false;
+
             if(frontCreation)
             {
                 Vector3 spawnPosition = playerTransform.position + new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z);
@@ -119,9 +122,8 @@ namespace ScaryEvents.ScaryEffects
             // 카메라를 생성된 오브젝트의 얼굴 부분으로 이동 및 고정
             if (targetObject != null && playerCamera != null)
             {
-                playerController.playerEventOff = false;
                 Vector3 directionToObject = targetObject.transform.position - playerCamera.transform.position;
-                directionToObject.y += 2f;
+                directionToObject.y += 3f;
                 Quaternion lookRotation = Quaternion.LookRotation(directionToObject);
                 playerCamera.transform.rotation = Quaternion.Slerp(playerCamera.transform.rotation, lookRotation, Time.deltaTime * 10f);
             }

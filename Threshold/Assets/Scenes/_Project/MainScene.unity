@@ -3603,6 +3603,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1959333048146698004, guid: f922003feac9dcf4587e9d1b9b7043be,
         type: 3}
+      propertyPath: weight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959333048146698004, guid: f922003feac9dcf4587e9d1b9b7043be,
+        type: 3}
       propertyPath: sharedProfile
       value: 
       objectReference: {fileID: 11400000, guid: a6e2fe33db4b94f29a831c42365d6e54,
