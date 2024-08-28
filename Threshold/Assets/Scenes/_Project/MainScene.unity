@@ -7837,6 +7837,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1260251445523183387, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bfdf0c62f29f4d41ae9aff605b05abc, type: 3}
     - target: {fileID: 1289870828270893650, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
       propertyPath: m_LocalPosition.y
