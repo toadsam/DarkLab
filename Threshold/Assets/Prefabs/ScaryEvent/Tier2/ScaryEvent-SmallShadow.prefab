@@ -62,7 +62,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  stateType: 4
+  stateType: 5
   frontCreation: 0
   isDisappearance: 1
   createBigObject: 0

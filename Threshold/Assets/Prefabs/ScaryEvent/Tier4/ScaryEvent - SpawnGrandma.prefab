@@ -72,6 +72,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 4510356346872246768, guid: fd1506e6e01274c9586aa9ebd4a593e3,
     type: 3}
   targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1
@@ -105,6 +106,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 171113510106782497}
+  - {fileID: 2587024812321059350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -147,3 +149,76 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &8527761042574459796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2587024812321059350}
+  - component: {fileID: 64235992555866528}
+  m_Layer: 0
+  m_Name: PostProcessingEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2587024812321059350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527761042574459796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7031327014217049839}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64235992555866528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527761042574459796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96d2ae4569e4a9409c6ef1c9ba86d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSource: {fileID: 0}
+  duration: 4
+  delay: 0
+  ease: 1
+  loops: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  showProperties: 0
+  effectType: 4
+  finalWeight: 1
+  onTransitionDuration: 0.3
+  offTransitionDuration: 1
+  useWobbleOnActivate: 0
+  useWobbleOnDeactivate: 0
+  wobbleMinWeight: 0.2
+  wobbleMaxWeight: 0.4
+  wobbleCount: 3
+  wobbleDuration: 0.5
+  targetVolume: {fileID: 0}

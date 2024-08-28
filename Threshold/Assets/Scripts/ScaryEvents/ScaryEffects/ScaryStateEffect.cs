@@ -12,6 +12,7 @@ namespace ScaryEvents.ScaryEffects
         Deactive,
         Spawn,
         SpawnAndPlayAnimation,
+        SpawnShadow,
         MoveShadow
     }
 
@@ -48,6 +49,9 @@ namespace ScaryEvents.ScaryEffects
                     break;
                 case StateType.SpawnAndPlayAnimation:
                     StartCoroutine(SpawnAndPlayAnimation());
+                    break;
+                case StateType.SpawnShadow:
+                    StartCoroutine(SpawnShadow());
                     break;
                 case StateType.MoveShadow:
                     ShadowMove();
@@ -98,6 +102,9 @@ namespace ScaryEvents.ScaryEffects
             PlayerController playerController = playerTransform.GetComponent<PlayerController>();
 
             GameObject targetObject;
+
+            playerController.playerEventOff = false;
+
             if(frontCreation)
             {
                 Vector3 spawnPosition = playerTransform.position + new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z);
@@ -116,10 +123,9 @@ namespace ScaryEvents.ScaryEffects
             if (targetObject != null && playerCamera != null)
             {
                 Vector3 directionToObject = targetObject.transform.position - playerCamera.transform.position;
-                directionToObject.y += 2f;
+                directionToObject.y += 3f;
                 Quaternion lookRotation = Quaternion.LookRotation(directionToObject);
                 playerCamera.transform.rotation = Quaternion.Slerp(playerCamera.transform.rotation, lookRotation, Time.deltaTime * 10f);
-                playerController.playerEventOff = false;
             }
 
             Animator animator = targetObject.GetComponent<Animator>();
@@ -138,12 +144,44 @@ namespace ScaryEvents.ScaryEffects
 
                 targetObject.SetActive(false);
                 playerController.playerEventOff = true;
+            }
+        }
 
-                // // 카메라 고정 해제 (원래 위치로 돌아가기)
-                // if (playerCamera != null)
-                // {
-                //     Camera.main.transform.rotation = playerTransform.rotation; // 원래 회전값으로 복귀
-                // }
+        private IEnumerator SpawnShadow()
+        {
+            Transform playerTransform = MainManager.Instance.player.transform;
+            Camera playerCamera = playerTransform.gameObject.GetComponentInChildren<Camera>();
+
+            GameObject targetObject;
+            if(frontCreation)
+            {
+                Vector3 spawnPosition = playerTransform.position + new Vector3(playerTransform.forward.x, 0, playerTransform.forward.z);
+                targetObject = Instantiate(objectToSpawn, spawnPosition, playerTransform.rotation * Quaternion.Euler(0, 180, 0));
+
+                if(createBigObject)
+                    targetObject.transform.position -= new Vector3(0, 1.4f, 0);
+            }
+            else 
+            {
+                Quaternion rotation = Quaternion.Euler(targetRotation);
+                targetObject = Instantiate(objectToSpawn, targetPosition , rotation);
+            }
+
+            Animator animator = targetObject.GetComponent<Animator>();
+
+            if (animator != null && animationClips.Length > 0)
+            {
+                int randomIndex = Random.Range(0, animationClips.Length);
+                AnimationClip selectedClip = animationClips[randomIndex];
+
+                animator.Play(selectedClip.name);
+            }
+
+            if(isDisappearance)
+            {
+                yield return new WaitForSeconds(deactiveDelay);
+
+                targetObject.SetActive(false);
             }
         }
 

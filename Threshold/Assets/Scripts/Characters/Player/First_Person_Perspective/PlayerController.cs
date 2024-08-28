@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         if(playerEventOff && WakeUp.isWakeUp&&isMove)
             Move();
-      
     }
 
     private void LateUpdate()

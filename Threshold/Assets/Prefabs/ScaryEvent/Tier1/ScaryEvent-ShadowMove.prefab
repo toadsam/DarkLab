@@ -62,7 +62,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showProperties: 1
-  stateType: 4
+  stateType: 5
   frontCreation: 1
   isDisappearance: 1
   createBigObject: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 4510356346872246768, guid: d03ca684b746246fc9e076253f73d8ba,
     type: 3}
   targetPosition: {x: 0.5, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0}
   isRelative: 0
   doTweenLoopType: 0
   doTweenLoops: 1

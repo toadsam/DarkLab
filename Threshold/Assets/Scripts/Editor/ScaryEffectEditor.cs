@@ -453,6 +453,16 @@ public class ScaryEffectEditor : Editor
                 EditorGUILayout.PropertyField(deactiveDelay);
                 EditorGUILayout.PropertyField(animationClips);
                 break;
+            case StateType.SpawnShadow:
+                EditorGUILayout.PropertyField(objectToSpawn);
+                EditorGUILayout.PropertyField(frontCreation);
+                EditorGUILayout.PropertyField(isDisappearance);
+                EditorGUILayout.PropertyField(createBigObject);
+                EditorGUILayout.PropertyField(targetPosition);
+                EditorGUILayout.PropertyField(targetRotation);
+                EditorGUILayout.PropertyField(deactiveDelay);
+                EditorGUILayout.PropertyField(animationClips);
+                break;
             case StateType.MoveShadow:
                 EditorGUILayout.PropertyField(isRelative);
                 EditorGUILayout.PropertyField(doTweenLoopType);
