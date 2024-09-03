@@ -14,4 +14,9 @@ public class Test : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void goTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
