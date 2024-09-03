@@ -195,5 +195,8 @@ public class ProgressChecker : Singleton<ProgressChecker>
 
         // 타이틀 씬으로 이동
         UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
