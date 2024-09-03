@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.031004949, g: 0.026486034, b: 0.024474407, a: 1}
+  m_IndirectSpecularColor: {r: 0.031018125, g: 0.026448686, b: 0.024485277, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3464,7 +3464,7 @@ RectTransform:
   m_GameObject: {fileID: 923455519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.4125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1337416195}
@@ -5408,7 +5408,7 @@ RectTransform:
   m_GameObject: {fileID: 1337416194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.8875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 923455520}
@@ -5416,7 +5416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 151, y: -4}
+  m_AnchoredPosition: {x: 159, y: -6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337416196
@@ -7863,11 +7863,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1163839369542430361, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      propertyPath: m_TagString
+      value: FixedObject
+      objectReference: {fileID: 0}
     - target: {fileID: 1260251445523183387, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7bfdf0c62f29f4d41ae9aff605b05abc, type: 3}
+    - target: {fileID: 1270582683388536821, guid: 8bae5eda1d117cd4090733b2dfea7781,
+        type: 3}
+      propertyPath: m_TagString
+      value: FixedObject
+      objectReference: {fileID: 0}
     - target: {fileID: 1289870828270893650, guid: 8bae5eda1d117cd4090733b2dfea7781,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -12715,6 +12725,8 @@ PrefabInstance:
     - {fileID: 6621683658909131856, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
     - {fileID: 5485906773681662722, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
     - {fileID: 4331824265110361119, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
+    - {fileID: 3966186303132886885, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
+    - {fileID: 3476083213210497243, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2871791238047458871, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
     - {fileID: 8639693173419427028, guid: 8bae5eda1d117cd4090733b2dfea7781, type: 3}
