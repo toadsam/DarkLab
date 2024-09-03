@@ -15,6 +15,9 @@ namespace Utils
                 {
                     // 현재 상태의 반대로 설정
                     targetObject.SetActive(!targetObject.activeSelf);
+                    PlayerController.IsMove(!targetObject.activeSelf);
+                    Cursor.visible = targetObject.activeSelf;
+                    Cursor.lockState = targetObject.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
                 }
                 else
                 {

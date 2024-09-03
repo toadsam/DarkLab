@@ -924,7 +924,6 @@ GameObject:
   - component: {fileID: 764317925984128314}
   - component: {fileID: 5938147670282995973}
   - component: {fileID: 3793582702179201923}
-  - component: {fileID: 4108421365386118103}
   m_Layer: 5
   m_Name: OptionScreen
   m_TagString: Untagged
@@ -995,21 +994,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4108421365386118103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670439877664752416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f49008e4121cfc4a8cb1f3e595d5dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 3a5e0c6a475d9a844846466df703642a, type: 2}
-  audioBGMSlider: {fileID: 7959790486534975372}
-  audioEffectsSlider: {fileID: 8623711643395483271}
 --- !u!1 &3752758022539065837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1882,7 @@ GameObject:
   - component: {fileID: 1050493574128619397}
   - component: {fileID: 7086289935670477320}
   - component: {fileID: 6330387444211369720}
+  - component: {fileID: 7460047699285104477}
   m_Layer: 5
   m_Name: OptionCanvas
   m_TagString: Untagged
@@ -1947,7 +1932,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 27
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &1050493574128619397
 MonoBehaviour:
@@ -2002,6 +1987,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 6029286122322670928}
+--- !u!114 &7460047699285104477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6607344276698503247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f49008e4121cfc4a8cb1f3e595d5dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 3a5e0c6a475d9a844846466df703642a, type: 2}
+  audioBGMSlider: {fileID: 7959790486534975372}
+  audioEffectsSlider: {fileID: 8623711643395483271}
 --- !u!1 &6904434829468049782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,7 +2775,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4108421365386118103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.AudioVolumeChange, Assembly-CSharp
         m_MethodName: BGMControl
         m_Mode: 1
@@ -3304,7 +3304,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4108421365386118103}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.AudioVolumeChange, Assembly-CSharp
         m_MethodName: EffectsControl
         m_Mode: 1
